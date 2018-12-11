@@ -103,12 +103,13 @@ class SessionForm extends React.Component {
             </li>
 
             {this.renderlastItem()}
-    
           </ol>
 
           <div className="switch-session-action-container">
             <p>{this.props.switchText}</p>
-            {this.props.navLink}
+            <div onClick={this.props.clearErrors}>
+              {this.props.navLink}
+            </div>
           </div>
           
           {this.renderErrors()}
