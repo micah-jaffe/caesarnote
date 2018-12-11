@@ -6,8 +6,8 @@ import SignupFormContainer from './session/signup_form_container';
 const App = () => (
   <main>
     <h1>Caesarnote</h1>
-    <Route path="/login" component={LoginFormContainer}/>
-    <Route path="/signup" component={SignupFormContainer}/>
+    <Route path="/login" component={LoginFormContainer} />
+    <Route path="/signup" component={SignupFormContainer} />
   </main>
 );
 

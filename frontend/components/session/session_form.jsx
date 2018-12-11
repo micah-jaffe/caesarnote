@@ -47,15 +47,10 @@ class SessionForm extends React.Component {
             <label htmlFor="remember-me">Remember me for 30 days</label>
           </li>
         );
-      default:
-        return "hello"
     };
   }
 
-  render() {
-    let lastItem;
-
-    
+  render() {    
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
