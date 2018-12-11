@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleInput(field) {
@@ -20,6 +21,16 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     user.username = user.email.substr(0, user.email.indexOf('@')); 
     this.props.processForm(user);
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const demoUser = { 
+      email: 'demo@gmail.com',
+      password: 'password'
+    };
+
+    this.props.login(demoUser);
   }
 
   renderErrors() {
@@ -57,7 +68,7 @@ class SessionForm extends React.Component {
           <ol>
             <li className="row">
               <div>
-                <button>Continue as demo user</button> {/* ADD ONCLICK */}
+                <button onClick={this.demoLogin}>Continue as demo user</button>
               </div>
             </li>
 

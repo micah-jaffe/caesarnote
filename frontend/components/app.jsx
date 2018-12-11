@@ -11,7 +11,6 @@ import {
 
 const App = () => (
   <main>
-    <h1>Caesarnote</h1>
       <Switch>
         <ProtectedRoute path="/main" component={MainContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
