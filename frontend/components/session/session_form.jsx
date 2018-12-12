@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     const demoUser = { 
-      email: 'demo@gmail.com',
+      email: 'demouser@caesarnote.com',
       password: 'password'
     };
 
@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
 
           <div className="login-form-header">
             <img className="logo" src={window.images.logo} />
-            <h2 className="app-name">Notify</h2>
+            <h2 className="app-name">Caesarnote</h2>
             <h4 id="tagline">Remember everything important.</h4>
           </div>
           
