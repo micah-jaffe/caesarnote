@@ -16,6 +16,7 @@ class User < ApplicationRecord
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :notebooks
   has_many :notes
 
   attr_reader :password
