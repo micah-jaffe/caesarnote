@@ -33,14 +33,21 @@ class SessionForm extends React.Component {
     this.props.login(demoUser);
   }
 
-  renderErrors() {
-    return (
-      <ul className="session-form-errors">
-        {this.props.errors.map((err, i) => (
-          <li key={`error-${i}`}>{err}</li>
-        ))}
-      </ul>
-    );
+  mapErrorsToInputs() {
+    const errorsObj = {
+      email: null,
+      password: null
+    };
+
+    this.props.errors.forEach(err => {
+      ['email', 'password'].forEach(field => {
+        if (err.toLowerCase().includes(field)) {
+          errorsObj[field] = err;
+        }
+      });
+    });
+
+    return errorsObj;
   }
 
   renderFormFooter() {
@@ -74,7 +81,9 @@ class SessionForm extends React.Component {
     );
   }
 
-  render() {    
+  render() {
+    const errorsObj = this.mapErrorsToInputs(); 
+    
     return (
       <div className="login-page">
       
@@ -108,6 +117,10 @@ class SessionForm extends React.Component {
                 />
               </li>
 
+              <li className="session-error">
+                {errorsObj['email']}
+              </li>
+
               <li className="row">
                 <input 
                   className="login-input"
@@ -118,18 +131,21 @@ class SessionForm extends React.Component {
                 />
               </li>
 
+              <li className="session-error">
+                {errorsObj['password']}
+              </li>
+
               <li className="row">
                 <input id="continue-btn" type="submit" value="Continue" />
               </li>
-
             </ol>
-            {this.renderErrors()}
           </form>
 
           <div className="formFooter">
             {this.renderFormFooter()}
             {this.renderSwitchAction()}
           </div>
+
         </div>
 
       </div>
