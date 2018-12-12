@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    redirect_to new_session_url unless logged_in?
+    unless logged_in?
+      render json: ["Must be logged in to perform this action"], status: 404
+    end
   end
 end

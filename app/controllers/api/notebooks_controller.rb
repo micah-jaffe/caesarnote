@@ -1,5 +1,5 @@
 class Api::NotebooksController < ApplicationController
-  # before_action :require_login
+  before_action :require_login
 
   def index
     @notebooks = current_user.notebooks
@@ -18,12 +18,24 @@ class Api::NotebooksController < ApplicationController
   end
 
   def show
+    @notebook = Notebook.find(params[:id])
+    render :show
   end
 
   def update
+    @notebook = Notebook.find(params[:id])
+
+    if @notebook.update_attributes(notebook_params)
+      render :show
+    else
+      render json: @notebook.errors.full_messages, status: 422
+    end
   end
 
   def destroy
+    notebook = Notebook.find(params[:id])
+    notebook.destroy
+    render json: {}
   end
 
   def notebook_params
