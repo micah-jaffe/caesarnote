@@ -25,12 +25,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --more=development"
+    "start": "webpack --watch --more=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micah-jaffe/notify.git",
-    "postinstall": "webpack"
+    "url": "git+https://github.com/micah-jaffe/notify.git"
   },
   "keywords": [],
   "author": "",
