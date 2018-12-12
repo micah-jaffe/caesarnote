@@ -43,22 +43,33 @@ class SessionForm extends React.Component {
     );
   }
 
-  renderlastItem() {
+  renderFormFooter() {
     switch (this.props.formType) {
       case 'signup':
         return (
-          <li className="row disclaimer-container">
+          <div className="disclaimer-container">
             <p>By creating an account, you are agreeing to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
-          </li>
+          </div>
         );
       case 'login':
         return (
-          <li className="row remember-me-row">
+          <div className="remember-me-container">
             <input id="remember-me" type="checkbox" />
             <label htmlFor="remember-me">Remember me for 30 days</label>
-          </li>
+          </div>
         );
     };
+  }
+
+  renderSwitchAction() {
+    return (
+      <div className="switch-session-action-container">
+        <p>{this.props.switchText}</p>
+        <div onClick={this.props.clearErrors}>
+          {this.props.navLink}
+        </div>
+      </div>
+    );
   }
 
   render() {    
@@ -103,22 +114,18 @@ class SessionForm extends React.Component {
                 />
               </li>
 
-              <li>
+              <li className="row">
                 <input id="continue-btn" type="submit" value="Continue" />
               </li>
 
-              {this.renderlastItem()}
             </ol>
-
-            <div className="switch-session-action-container">
-              <p>{this.props.switchText}</p>
-              <div onClick={this.props.clearErrors}>
-                {this.props.navLink}
-              </div>
-            </div>
-            
             {this.renderErrors()}
           </form>
+
+          <div className="formFooter">
+            {this.renderFormFooter()}
+            {this.renderSwitchAction()}
+          </div>
         </div>
 
       </div>
