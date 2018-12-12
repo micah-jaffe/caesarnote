@@ -10,6 +10,12 @@
 #
 
 class Notebook < ApplicationRecord
-  validates :name, :user_id, presence: true
+  validates :user_id, presence: true
   belongs_to :user
+
+  before_save :set_default_name
+
+  def set_default_name
+    self.name = self.name.blank? ? 'Untitled' : self.name
+  end
 end
