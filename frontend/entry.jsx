@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import { login, signup, logout } from './actions/session_actions';
+import { fetchNotebook, fetchNotebooks, createNotebook, updateNotebook, deleteNotebook} from './actions/notebook_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,6 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
   window.signup = signup;
+
+  window.fetchNotebooks = fetchNotebooks;
+  window.fetchNotebook = fetchNotebook;
+  window.createNotebook = createNotebook;
+  window.updateNotebook = updateNotebook;
+  window.deleteNotebook = deleteNotebook;
+
 
   const root = document.getElementById('root');
   ReactDOM.render(

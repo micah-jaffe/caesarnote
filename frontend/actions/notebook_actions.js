@@ -1,8 +1,9 @@
-import * as NotebookApiUtil from '../util/session_api_util';
+import * as NotebookApiUtil from '../util/notebook_api_util';
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 export const REMOVE_NOTEBOOK = "REMOVE_NOTEBOOK";
+export const RECEIVE_NOTEBOOK_ERRORS = "RECEIVE_NOTEBOOK_ERRORS";
 
 const receiveNotebooks = (notebooks) => ({
   type: RECEIVE_NOTEBOOKS,
@@ -17,6 +18,11 @@ const receiveNotebook = (notebook) => ({
 const removeNotebook = (notebook) => ({
   type: REMOVE_NOTEBOOK,
   notebookId: notebook.id
+});
+
+export const receiveErrors = (errors) => ({
+  type: RECEIVE_NOTEBOOK_ERRORS,
+  errors
 });
 
 export const fetchNotebooks = () => (dispatch) => (
