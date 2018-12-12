@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Main = () => {
+const Main = (props) => {
   return (
-    <h1>Main</h1>
+    <main className="main">
+      <h1>Main</h1>
+      <button onClick={props.logout}>Logout</button>
+    </main>
   );
 };
 
