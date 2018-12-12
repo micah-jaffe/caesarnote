@@ -29,13 +29,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micah-jaffe/notify.git"
+    "url": "git+https://github.com/micah-jaffe/notify.git",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/micah-jaffe/notify/issues"
+  },
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
   },
   "homepage": "https://github.com/micah-jaffe/notify#readme"
 }
