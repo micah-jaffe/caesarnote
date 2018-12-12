@@ -32,12 +32,16 @@
 
 #signup-link {
   font-size: 15px;
+  text-decoration: none;
+  color: rgb(0, 168, 45);
 }
 
 #login-btn {
   padding: 10px 40px;
   border: 2px solid rgb(0, 168, 45);
   border-radius: 3px;
+  text-decoration: none;
+  color: rgb(0, 168, 45);
 }
 
 #login-btn:hover {

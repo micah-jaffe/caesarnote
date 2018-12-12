@@ -20,14 +20,14 @@ const Home = () => {
         </ul>
 
         <ul className="signup-login">
-          <li id="signup-link">
-            <Link style={linkStyle} to="/signup">Sign up</Link>
+          <li>
+            <Link id="signup-link" to="/signup">Sign up</Link>
           </li>
           <li>
             or
           </li>
-          <li id="login-btn">
-            <Link style={linkStyle} to="/login">Log in</Link>
+          <li>
+            <Link id="login-btn" to="/login">Log in</Link>
           </li>
         </ul>
 
