@@ -47,15 +47,17 @@ class SessionForm extends React.Component {
     switch (this.props.formType) {
       case 'signup':
         return (
-          <div className="disclaimer-container">
+          <div className="form-postscript">
             <p>By creating an account, you are agreeing to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
           </div>
         );
       case 'login':
         return (
-          <div className="remember-me-container">
-            <input id="remember-me" type="checkbox" />
-            <label htmlFor="remember-me">Remember me for 30 days</label>
+          <div className="form-postscript">
+            <input className="remember-me" type="checkbox" />
+            <label className="remember-me" htmlFor="remember-me">Remember me for 30 days</label>
+            <br/>
+            <a href="#">Forgot password?</a>
           </div>
         );
     };
