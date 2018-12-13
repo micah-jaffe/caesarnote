@@ -74,5 +74,4 @@ const UserSnippet = () => {
   );
 }
 
-
 export default UserProfile;

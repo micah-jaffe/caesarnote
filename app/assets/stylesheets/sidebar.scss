@@ -116,7 +116,31 @@
   display: none;
 }
 
-#blue-checkmark {
-  height: 15px;
-  width: 15px;
+.search-bar-container {
+  align-items: center;
+  background-color: rgb(51, 51, 51);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  font-weight: 300;
+  justify-content: space-between;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+
+.search-input {
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 14px;
+  font-family: $sans-serif;
+  line-height: 20px;
+  margin-left: 10px;
+  border: none;
+  color: white;
+  font-weight: 300;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
