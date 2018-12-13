@@ -30,7 +30,6 @@
   cursor: pointer;
 }
 
-
 .avatar {
   height: 28px;
   width: 28px;
@@ -41,4 +40,15 @@
 .profile-svg {
   margin-left: 9px;
   stroke: rgb(204, 204, 204);
+}
+
+.user-profile-dropdown {
+  height: 100px;
+  width: 100px;
+  background: red;
+  color: white;
+}
+
+.no-display {
+  display: none;
 }
