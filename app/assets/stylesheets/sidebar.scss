@@ -181,3 +181,20 @@
     }
   }
 }
+
+.nav-link {
+  color: rgb(204, 204, 204);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  height: 32px;
+  line-height: 32px;
+  margin-left: 3px;
+  margin-right: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  svg {
+    fill: red;
+  }
+}
