@@ -31,14 +31,19 @@ class NotebooksIndex extends React.Component {
         <div className="notebooks-table">
           <div className="header-row align-middle">
             <div>Title</div>
-            <div>Created By</div>
-            <div>Updated</div>
-            <div>Shared With</div>
-            <div>Actions</div>
+
+            <ul className="align-middle">
+              <li>Created By</li>
+              <li>Updated</li>
+              <li>Shared With</li>
+              <li>Actions</li>
+            </ul>
           </div>
         </div>
 
-        {notebookIndexItems}
+        <div>
+          {notebookIndexItems}
+        </div>
 
       </div>
     );

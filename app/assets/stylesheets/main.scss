@@ -102,3 +102,26 @@
   padding-bottom: 2px;
   text-align: center;
 }
+
+.notebooks-table {
+  border-top: 2px solid rgb(91, 107, 112);
+  margin-top: 8px;
+}
+.header-row {
+  background-color: rgb(248, 248, 248);
+  border-bottom: 1px solid rgb(237, 237, 237);
+  color: rgb(179, 179, 179);
+  font-size: 11px;
+  font-weight: 400;
+  justify-content: space-between;
+  padding-bottom: 13px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 13px;
+  text-transform: uppercase;
+
+  li {
+    margin-left: 25px;
+  }
+
+}
