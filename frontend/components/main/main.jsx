@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from './sidebar/sidebar';
 import NotebooksIndexContainer from './notebooks/notebooks_index_container';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 class Main extends React.Component {
   constructor(props) {
@@ -13,7 +13,9 @@ class Main extends React.Component {
       <main className="main">
         <Sidebar />
 
-        <Route path="/main/notebooks" component={NotebooksIndexContainer} />
+        <Switch>
+          <Route path="/main/notebooks" component={NotebooksIndexContainer} />
+        </Switch>
       </main>
     );
   }

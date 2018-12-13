@@ -2,7 +2,9 @@ import React from 'react';
 
 const NotebooksIndexItem = (props) => {
   return (
-    <h1>indexitem</h1>
+    <div className="notebooks-index-item horizontal">
+
+    </div>
   );
 }
 export default NotebooksIndexItem;
