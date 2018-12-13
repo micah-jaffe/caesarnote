@@ -20,7 +20,8 @@ const receiveErrors = (errors) => ({
 });
 
 export const clearErrors = (errors) => ({
-  type: CLEAR_SESSION_ERRORS
+  type: CLEAR_SESSION_ERRORS,
+  errors
 });
 
 export const login = (user) => (dispatch) => (
