@@ -51,7 +51,10 @@ const Dropdown = ({ visible, logout }) => {
     <div className={visible ? "user-profile-dropdown" : "no-display"}>
       <ul>
         <li>Account</li>
-        <li><UserSnippet /></li>
+        <li className="horizontal-row">
+          <UserSnippet />
+          <i className="fas fa-check"></i>
+        </li>
         <li className="hoverable">Settings</li>
         <li className="hoverable">Help</li>
         <li className="hoverable">What's new in Caesarnote Web</li>
@@ -64,10 +67,10 @@ const Dropdown = ({ visible, logout }) => {
 
 const UserSnippet = () => {
   return (
-    <div className="user-snippet">
+    <span className="user-snippet">
       <img className="avatar" src={window.images.avatar} />
       <span>{currentUser.username}</span>
-    </div>
+    </span>
   );
 }
 
