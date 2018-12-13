@@ -3,6 +3,8 @@
 .main {
   position: absolute;
   display: flex;
+  font-family: $sans-serif;
+  font-weight: 300;
   height: 100%;
   width: 100%;
 }
@@ -26,7 +28,6 @@
   }
 
   h1 {
-    // border: 1px solid red;
     color: rgb(51, 51, 51);
     font-size: 20px;
     font-weight: 400;
@@ -36,8 +37,6 @@
     margin-right: 25px;
     margin-top: 25px;
     overflow: hidden;
-    // padding-left: 13px;
-    // padding-right: 13px;
   }
 }
 
@@ -60,4 +59,46 @@
 .notebook-header-icons {
   justify-content: space-between;
   width: 75px;
+}
+
+.notebooks-index-container {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+
+  h2 {
+    color: rgb(49, 49, 49);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 80px;
+    min-height: 80px;
+  }
+}
+
+.notebooks-index-header-container {
+  color: rgb(51, 51, 51);
+  justify-content: space-between;
+  // margin-top: 10px;
+
+  h3 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+}
+
+#create-notebook-btn {
+  background-color: white;
+  border: none;
+  color: rgb(0, 168, 45);
+  cursor: pointer;
+  float: right;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-right: 20px;
+  outline-color: rgb(0, 168, 45);
+  padding-top: 0px;
+  padding-bottom: 2px;
+  text-align: center;
 }
