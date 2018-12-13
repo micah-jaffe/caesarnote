@@ -1,9 +1,18 @@
 import { connect } from 'react-redux';
 import NotebooksIndex from './notebooks_index';
-import { fetchNotebooks } from '../../../actions/notebook_actions';
+import { 
+  fetchNotebooks 
+} from '../../../actions/notebook_actions';
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchNotebooks: () => dispatch(fetchNotebooks())
+const mapStateToProps = (state) => ({
+  notebooks: Object.values(state.entities.notebooks)
 });
 
-export default connect(null, mapDispatchToProps)(NotebooksIndex);
+const mapDispatchToProps = (dispatch) => ({
+  fetchNotebooks: () => dispatch(fetchNotebooks()),
+  createNotebook: (notebook) => dispatch(createNotebook(notebook)),
+  updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
+  deleteNotebook: () => dispatch(deleteNotebook())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotebooksIndex);
