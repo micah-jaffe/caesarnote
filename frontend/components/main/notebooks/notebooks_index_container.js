@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
 import NotebooksIndex from './notebooks_index';
 import { 
-  fetchNotebooks 
+  fetchNotebooks,
+  createNotebook,
+  updateNotebook,
+  deleteNotebook
 } from '../../../actions/notebook_actions';
 
 const mapStateToProps = (state) => ({
