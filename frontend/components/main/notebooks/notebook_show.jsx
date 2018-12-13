@@ -2,7 +2,7 @@ import React from 'react';
 
 class NotebookShow extends React.Component {
   componentDidMount() {
-    // this.props.fetchNotebook(this.props.notebook.id);
+    this.props.fetchNotebook(this.props.match.params.notebookId);
   }
 
   render() {
