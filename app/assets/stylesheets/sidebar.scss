@@ -112,6 +112,10 @@
   align-items: center;
 }
 
+.fa-check {
+  color: rgb(0, 166, 45);
+}
+
 .no-display {
   display: none;
 }
@@ -124,10 +128,16 @@
   color: white;
   display: flex;
   font-weight: 300;
+  height: 30px;
   justify-content: space-between;
+  margin-bottom: 12px;
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 12px;
+
+  svg {
+    overflow: hidden;
+  }
 }
 
 .search-input {
@@ -142,5 +152,32 @@
 
   &::placeholder {
     color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.align-middle {
+  display: flex;
+  align-items: center;
+}
+
+.new-note-container {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+  
+
+  svg {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    svg {
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.15);
+    }
   }
 }
