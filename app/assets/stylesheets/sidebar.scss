@@ -189,12 +189,34 @@
   font-weight: 400;
   height: 32px;
   line-height: 32px;
-  margin-left: 3px;
-  margin-right: 3px;
+  padding-left: 8px;
+  // padding-right: 3px;
   overflow: hidden;
   text-overflow: ellipsis;
 
   svg {
-    fill: red;
+    fill: rgb(204, 204, 204);
   }
+
+  span {
+    padding-left: 3px;
+  }
+
+  &:hover {
+    background-color: rgb(47, 47, 47);
+    transition: all 0.1s ease-out;
+  }
+}
+
+.no-arrow {
+  padding-left: 16px;
+}
+
+.nav-bar {
+//   padding-left: 5px;
+  padding-top: 7px;
+}
+
+#upgrade {
+  fill: rgb(255, 179, 102);
 }
