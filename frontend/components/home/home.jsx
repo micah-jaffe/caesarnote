@@ -2,11 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const linkStyle = {
-    textDecoration: 'none',
-    color: 'rgb(0, 168, 45)'
-  };
-
   return ( 
     <div className="home">
       <nav className="main-nav">
