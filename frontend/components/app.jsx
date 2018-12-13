@@ -10,7 +10,7 @@ import {
 } from '../util/route_util';
 
 const App = () => (
-  <main>
+  <div>
       <Switch>
         <ProtectedRoute path="/main" component={MainContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
@@ -18,7 +18,7 @@ const App = () => (
         <AuthRoute exact path="/" component={HomeContainer}/>
         <Redirect to="/" />
       </Switch>
-  </main>
+  </div>
 );
 
 export default App;
