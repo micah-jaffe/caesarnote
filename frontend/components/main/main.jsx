@@ -10,7 +10,6 @@ class Main extends React.Component {
     return (
       <main className="main">
         <Sidebar />
-        <h1>Main</h1>
         <button onClick={this.props.logout}>Logout</button>
         
       </main>

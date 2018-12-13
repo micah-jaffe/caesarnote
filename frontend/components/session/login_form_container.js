@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import { login, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ errors, users }) => ({
+const mapStateToProps = ({ errors }) => ({
   errors: errors.session,
   formType: 'login',
   switchText: 'Don\'t have an account?',
-  navLink: <Link to="/signup">Create account</Link>,
-  username: users.username
+  navLink: <Link to="/signup">Create account</Link>
 });
 
 const mapDispatchToProps = (dispatch) => ({
