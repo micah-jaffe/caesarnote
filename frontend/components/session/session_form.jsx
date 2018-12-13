@@ -1,4 +1,5 @@
 import React from 'react';
+import { login } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -32,24 +33,7 @@ class SessionForm extends React.Component {
 
     this.props.login(demoUser);
   }
-
-  mapErrorsToInputs() {
-    const errorsObj = {
-      email: null,
-      password: null
-    };
-
-    this.props.errors.forEach(err => {
-      ['email', 'password'].forEach(field => {
-        if (err.toLowerCase().includes(field)) {
-          errorsObj[field] = err;
-        }
-      });
-    });
-
-    return errorsObj;
-  }
-
+  
   renderFormFooter() {
     switch (this.props.formType) {
       case 'signup':
@@ -74,16 +58,16 @@ class SessionForm extends React.Component {
     return (
       <div className="switch-session-action-container">
         <p>{this.props.switchText}</p>
-        <div onClick={this.props.clearErrors}>
-          {this.props.navLink}
-        </div>
+        <p>{this.props.navLink}</p>
       </div>
     );
   }
 
-  render() {
-    const errorsObj = this.mapErrorsToInputs(); 
-    
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
+  render() {    
     return (
       <div className="login-page">
       
@@ -118,7 +102,7 @@ class SessionForm extends React.Component {
               </li>
 
               <li className="session-error">
-                {errorsObj['email']}
+                {this.props.errors.email}
               </li>
 
               <li className="row">
@@ -132,7 +116,7 @@ class SessionForm extends React.Component {
               </li>
 
               <li className="session-error">
-                {errorsObj['password']}
+                {this.props.errors.password}
               </li>
 
               <li className="row">
