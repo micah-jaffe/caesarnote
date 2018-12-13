@@ -11,13 +11,13 @@ import {
 
 const App = () => (
   <div>
-      <Switch>
-        <ProtectedRoute path="/main" component={MainContainer} />
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-        <AuthRoute exact path="/" component={HomeContainer}/>
-        <Redirect to="/" />
-      </Switch>
+    <Switch>
+      <ProtectedRoute path="/main" component={MainContainer} />
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/" component={HomeContainer}/>
+      <Redirect to="/" />
+    </Switch>
   </div>
 );
 

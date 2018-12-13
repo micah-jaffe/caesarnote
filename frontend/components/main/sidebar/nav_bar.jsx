@@ -33,7 +33,6 @@ class NavBar extends React.Component {
           </li>
           <li className="align-middle nav-link no-arrow">
             <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="upgrade"><path d="M12 5a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm-1.223 10.602c0 .18.126.313.3.374.175.06.37.005.485-.136l3.043-3.671c.084-.103.115-.238.084-.366a.428.428 0 0 0-.242-.29l-1.313-.715V8.396c0-.181-.136-.312-.31-.372a.442.442 0 0 0-.485.136l-3.043 3.671a.42.42 0 0 0 .158.656l1.323.713v2.402z"></path></svg>
-            {/* <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className=""><defs><path d="M12 5a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm-1.223 10.602c0 .18.126.313.3.374.175.06.37.005.485-.136l3.043-3.671c.084-.103.115-.238.084-.366a.428.428 0 0 0-.242-.29l-1.313-.715V8.396c0-.181-.136-.312-.31-.372a.442.442 0 0 0-.485.136l-3.043 3.671a.42.42 0 0 0 .158.656l1.323.713v2.402z" id="6a"></path></defs><g fill="#ccc" fillRule="evenodd"><path d="M12 5a7 7 0 1 1 0 14 7 7 0 0 1 0-14z" fill="#FFF"></path><mask id="6b" fill="#fff"></mask><use fill="#000" fillRule="nonzero"></use></g></svg> */}
             <span>Upgrade</span>
           </li>
         </ul>
