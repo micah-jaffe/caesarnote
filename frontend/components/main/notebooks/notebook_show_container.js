@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Notebook from './notebook';
-import { fetchNotebook, fetchNotebooks } from '../../../actions/notebook_actions';
+import NotebookShow from './notebook_show';
+import { fetchNotebook } from '../../../actions/notebook_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   notebook: state.entities.notebooks[ownProps.match.params.notebookId]
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Notebook);
+)(NotebookShow);
