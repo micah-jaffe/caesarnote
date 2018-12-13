@@ -4,15 +4,13 @@ import UserProfileContainer from './user_profile_container';
 class Sidebar extends React.Component {
   render() {
     return (
-      <div className="sidebar">
-        Sidebar goes here
-
+      <section className="sidebar">
         <UserProfileContainer />
         {/*SearchBar */}
         {/*NewNote */}
         {/*NavBar */}
 
-      </div>
+      </section>
     );
   }
 };
