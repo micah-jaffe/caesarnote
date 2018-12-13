@@ -40,13 +40,76 @@
 .profile-svg {
   margin-left: 9px;
   stroke: rgb(204, 204, 204);
+  margin-top: 3px;;
 }
 
 .user-profile-dropdown {
-  height: 100px;
-  width: 100px;
-  background: red;
-  color: white;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: rgb(102, 102, 102);
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  overflow: visible;
+  padding-top: 10px;
+  position: absolute;
+  left: 15px;
+  top: 56px;
+  width: 290px;
+
+  li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: $sans-serif;
+    line-height: 21px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    position: relative;
+    transition: 0.1s;
+  }
+
+  .hoverable:hover {
+    background-color: rgb(240, 240, 240);
+  }
+
+  li:first-child {
+    color: rgb(179, 179, 179);
+    cursor: default;
+    font-size: 13px;
+  }
+
+  li:nth-of-type(2) {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    cursor: default;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+  }
+
+  li:last-child {
+    border-top: 1px solid rgb(230, 230, 230);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 8px;
+
+    &:hover {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+}
+
+.user-snippet {
+  display: flex;
+  align-items: center;
 }
 
 .no-display {

@@ -33,24 +33,40 @@ class UserProfile extends React.Component {
         <span 
           className="user-profile" 
           tabIndex="0" 
-          onFocus={this.showDropdown} 
+          onFocus={this.showDropdown}
           onBlur={this.hideDropdown}
         >
-          <img className="avatar" src={window.images.avatar} />
-          <span>{currentUser ? currentUser.username : ''}</span>
+          <UserSnippet />
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" className="profile-svg"><path fill="none" d="M7 2L4 5 1 2"></path></svg>
         </span>
 
-        <Dropdown visible={this.state.dropdown} />
+        <Dropdown visible={this.state.dropdown} logout={this.props.logout} />
       </div>
     );
   }
 };
 
-const Dropdown = ({ visible }) => {
+const Dropdown = ({ visible, logout }) => {
   return (
     <div className={visible ? "user-profile-dropdown" : "no-display"}>
-      hello
+      <ul>
+        <li>Account</li>
+        <li><UserSnippet /></li>
+        <li className="hoverable">Settings</li>
+        <li className="hoverable">Help</li>
+        <li className="hoverable">What's new in Caesarnote Web</li>
+        <li className="hoverable">Switch to older version of Caesarnote</li>
+        <li className="hoverable" onMouseDown={logout}>Sign out {currentUser.username}</li>
+      </ul>
+    </div>
+  );
+};
+
+const UserSnippet = () => {
+  return (
+    <div className="user-snippet">
+      <img className="avatar" src={window.images.avatar} />
+      <span>{currentUser.username}</span>
     </div>
   );
 }
