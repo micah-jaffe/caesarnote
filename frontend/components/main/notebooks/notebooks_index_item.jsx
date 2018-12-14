@@ -43,7 +43,7 @@ class NotebooksIndexItem extends React.Component {
 
         <ul className="align-middle">
           <li>-</li>
-          <li>put update</li>
+          <li>{this.props.notebook.last_updated}</li>
           <li>Only you</li>
           <li 
             className="notebook-actions-icon" 

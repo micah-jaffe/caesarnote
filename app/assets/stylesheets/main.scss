@@ -4,12 +4,6 @@ body {
   overscroll-behavior-y: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: inherit;
-  display: flex;
-}
-
 .main {
   position: relative;
   display: flex;
@@ -19,6 +13,12 @@ a {
   width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+    display: flex;
+  }
 }
 
 .notebook-container {
@@ -333,12 +333,4 @@ a {
   &:hover {
     cursor: pointer;
   }
-}
-
-.dropdown {
-  display: block;
-  background: red;
-  width: 500px;
-  min-height: 500px;
-  z-index: 10;
 }
