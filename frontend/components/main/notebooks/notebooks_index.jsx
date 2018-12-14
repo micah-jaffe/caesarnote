@@ -1,5 +1,5 @@
 import React from 'react';
-import NotebookIndexItem from './notebooks_index_item';
+import NotebookIndexItemContainer from './notebooks_index_item_container';
 
 class NotebooksIndex extends React.Component {
   componentDidMount() {
@@ -8,10 +8,9 @@ class NotebooksIndex extends React.Component {
 
   render() {
     const notebookIndexItems = this.props.notebooks.map((notebook, i) => (
-      <NotebookIndexItem 
+      <NotebookIndexItemContainer
         key={`notebook-${i}`} 
         notebook={notebook} 
-        deleteNotebook={this.props.deleteNotebook} 
       />
     ));
 

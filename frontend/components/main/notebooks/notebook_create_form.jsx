@@ -18,16 +18,31 @@ class NotebookCreateForm extends React.Component {
     e.preventDefault();
     const notebook = Object.assign({}, this.state);
     notebook.user_id = this.props.userId;
-    this.props.createNotebook(notebook);
+    this.props.action(notebook);
     this.props.closeModal();
+  }
+
+  renderHeading() {
+    if (this.props.formType === 'create') {
+      return (
+        <>
+          <h2>Create new notebook</h2>
+          <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</p>
+        </>
+      );
+    } else if (this.props.formType === 'update') {
+      return (
+        <>
+          <h2>Rename notebook</h2>
+        </>
+      );
+    }
   }
 
   render() {
     return (
       <div className="create-notebook-modal">
-        
-        <h2>Create new notebook</h2>
-        <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</p>
+        {this.renderHeading()}
 
         <form className="create-notebook-form" onSubmit={this.handleSubmit}>
           <label>

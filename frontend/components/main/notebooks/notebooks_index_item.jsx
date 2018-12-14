@@ -22,13 +22,14 @@ class NotebooksIndexItem extends React.Component {
   }
 
   render() {
+    const notebookId = this.props.notebook.id;
     const noAction = () => undefined;
 
     const dropdownItems = {
       "Move to...": noAction,
       "Share notebook...": noAction,
-      "Rename notebook": noAction,
-      "Delete notebook": () => this.props.deleteNotebook(this.props.notebook.id),
+      "Rename notebook": () => this.props.openUpdateNotebookModal(),
+      "Delete notebook": () => this.props.deleteNotebook(notebookId),
       "Add shortcut": noAction,
       "Set as default notebook": this.hideDropdown,
     };

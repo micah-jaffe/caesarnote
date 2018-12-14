@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NotebookCreateFormContainer from '../notebooks/notebook_create_form_container';
+import NotebookUpdateFormContainer from '../notebooks/notebook_update_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -11,7 +12,10 @@ function Modal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'create_notebook':
-      component = <NotebookCreateFormContainer/>;
+      component = <NotebookCreateFormContainer />;
+      break;
+    case 'update_notebook':
+      component = <NotebookUpdateFormContainer />;
       break;
     default:
       return null;

@@ -7,7 +7,7 @@ import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = ({ session }) => ({
   userId: session.id,
-  formType: 'create'
+  formType: 'update'
 });
 
 const mapDispatchToProps = (dispatch) => ({
