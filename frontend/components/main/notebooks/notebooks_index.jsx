@@ -19,7 +19,7 @@ class NotebooksIndex extends React.Component {
           <h3>My notebook list</h3>
 
           <span className="align-middle">
-            <button id="create-notebook-btn" className="align-middle" onClick={}>
+            <button id="create-notebook-btn" className="align-middle" onClick={this.props.openCreateNotebookModal}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#00a82d" id="69a" d="M19 17v-2h2v2h2v2h-2v2h-2v-2h-2v-2h2zm-1-2.874a4.002 4.002 0 0 0-2.952 4.497H9V4h7c1.105 0 2 .873 2 1.95v8.176zM6 4h2v14.623H6V4zm9.5 4h-4c-.276 0-.5.15-.5.333v1.334c0 .184.224.333.5.333h4c.276 0 .5-.15.5-.333V8.333C16 8.15 15.776 8 15.5 8z"></path></svg>
               New Notebook
             </button>

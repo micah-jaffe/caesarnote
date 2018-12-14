@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './modal/modal';
 import Sidebar from './sidebar/sidebar';
 import NotebookShowContainer from './notebooks/notebook_show_container';
 import NotebooksIndexContainer from './notebooks/notebooks_index_container';
@@ -12,7 +13,7 @@ class Main extends React.Component {
   render() {
     return (
       <main className="main">
-        {/* <Modal /> */}
+        <Modal />
         <Sidebar />
 
         <Switch>
