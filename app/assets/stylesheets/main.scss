@@ -134,7 +134,7 @@ body {
 
   li {
     margin-left: 20px;
-    min-width: 100px;
+    width: 120px;
 
     &:last-child {
       text-align: right;
@@ -162,7 +162,10 @@ body {
     font-weight: 300;
     line-height: 21px;
     margin-left: 20px;
-    min-width: 100px;
+    padding: 0;
+    width: 120px;
+    // border: 1px solid red;
+    text-align: left;
 
     &:last-child {
       text-align: right;
