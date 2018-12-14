@@ -12,6 +12,7 @@ class Main extends React.Component {
   render() {
     return (
       <main className="main">
+        {/* <Modal /> */}
         <Sidebar />
 
         <Switch>
