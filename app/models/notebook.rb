@@ -10,8 +10,8 @@
 #
 
 class Notebook < ApplicationRecord
-  validates :user_id, presence: true
   belongs_to :user
+  has_many :notes, dependent: :destroy
 
   before_save :set_default_name
 
@@ -22,6 +22,6 @@ class Notebook < ApplicationRecord
   end
 
   def last_updated
-    time_ago_in_words(self.updated_at) + " ago"
+    time_ago_in_words(self.updated_at) + ' ago'
   end
 end

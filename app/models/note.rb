@@ -12,8 +12,16 @@
 #
 
 class Note < ApplicationRecord
-  validates :title, presence: true
-  validates :notebook_id, presence: true # REMOVE ONCE NOTEBOOK FEATURE IS ADDED
-
   belongs_to :user
+  belongs_to :notebook
+
+  include ActionView::Helpers::DateHelper
+
+  def set_default_name
+    self.name = self.name.blank? ? 'Untitled' : self.name
+  end
+
+  def last_updated
+    time_ago_in_words(self.updated_at) + ' ago'
+  end
 end

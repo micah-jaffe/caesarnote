@@ -1,2 +1,1 @@
-json.extract! notebook, :id, :name, :user_id
-json.last_updated notebook.last_updated
+json.extract! notebook, :id, :name, :user_id, :last_updated
