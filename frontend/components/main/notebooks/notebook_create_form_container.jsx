@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import NotebookCreateForm from './notebook_create_form';
 import { createNotebook } from '../../../actions/notebook_actions';
 import { currentUser } from '../../../reducers/selectors';
 import { closeModal } from '../../../actions/modal_actions';
 
 
-const mapStateToProps = (state) => ({
-  currentUser: currentUser(state)
+const mapStateToProps = ({ session }) => ({
+  userId: session.id
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
   closeModal: () => dispatch(closeModal())
 });
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NotebookCreateForm));
+)(NotebookCreateForm);

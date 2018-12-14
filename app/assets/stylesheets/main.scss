@@ -13,6 +13,8 @@ a {
   font-weight: 300;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .notebook-container {
@@ -22,7 +24,6 @@ a {
   flex-direction: column;
   font-family: $sans-serif;
   font-weight: 300;
-  overflow: scroll;
   width: 345px;
 
   header {
@@ -112,7 +113,6 @@ a {
 .notebooks-table {
   border-top: 2px solid rgb(91, 107, 112);
   margin-top: 8px;
-  overflow: scroll;
 }
 .header-row {
   background-color: rgb(248, 248, 248);
@@ -217,4 +217,111 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.create-notebook-modal {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 2px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 24px;
+  padding: 25px;
+  transition: width 1s ease-in;;
+  min-width: 500px;
+
+  h2 {
+    color: rgb(85, 85, 85);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    margin-bottom: 15px;
+  }
+
+  p {
+   color: rgb(119, 119, 119);
+   font-size: 13px;
+   line-height: 20px;
+   margin-bottom: 18px; 
+  }
+
+  label {
+   color: rgb(122, 128, 131);
+   font-size: 12px;
+   font-weight: 500;
+   line-height: 18px;
+  }
+
+  .form-input {
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 40px;
+    line-height: 18px;
+    padding-bottom: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 500px;
+  }
+
+  .submittal-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid rgb(237, 237, 237);
+    float: right;
+    width: 100%;
+  }
+
+  .continue-btn {
+    background-color: rgb(0, 168, 45);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    margin-left: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .cancel-btn {
+    background-color: white;
+    border: 1px solid rgb(237, 237, 237);
+    border-radius: 4px;
+    color: rgb(179, 179, 179);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 37px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+
+    &:hover {
+      color: rgb(150, 150, 150);
+      border-color: rgb(195, 195, 195);
+    }
+  }
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
