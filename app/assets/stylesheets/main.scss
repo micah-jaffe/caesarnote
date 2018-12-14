@@ -1,5 +1,9 @@
 @import "variables";
 
+body {
+  overscroll-behavior-y: none;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
@@ -7,7 +11,7 @@ a {
 }
 
 .main {
-  position: absolute;
+  position: relative;
   display: flex;
   font-family: $sans-serif;
   font-weight: 300;
@@ -24,6 +28,7 @@ a {
   flex-direction: column;
   font-family: $sans-serif;
   font-weight: 300;
+  height: 100vh;
   width: 345px;
 
   header {

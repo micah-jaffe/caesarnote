@@ -4,12 +4,18 @@
   background-color: rgb(26, 26, 26);
   color: white;
   height: 100%;
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   min-width: 241px;
   width: 241px;
   font-family: $sans-serif;
+}
+
+.sidebar-wrapper {
+  position: relative;
+  min-width: 241px;
+  width: 241px;
 }
 
 .user-profile-container {

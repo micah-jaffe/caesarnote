@@ -7,12 +7,14 @@ import NavBar from './nav_bar';
 class Sidebar extends React.Component {
   render() {
     return (
-      <section className="sidebar">
-        <UserProfileContainer />
-        <SearchBar />
-        <NewNote />
-        <NavBar />
-      </section>
+      <div className="sidebar-wrapper">
+        <section className="sidebar">
+          <UserProfileContainer />
+          <SearchBar />
+          <NewNote />
+          <NavBar />
+        </section>
+      </div>
     );
   }
 };
