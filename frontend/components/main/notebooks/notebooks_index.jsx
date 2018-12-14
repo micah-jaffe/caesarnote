@@ -39,12 +39,10 @@ class NotebooksIndex extends React.Component {
               <li>Actions</li>
             </ul>
           </div>
-        </div>
 
-        <div>
           {notebookIndexItems}
-        </div>
 
+        </div>
       </div>
     );
   }

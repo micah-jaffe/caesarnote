@@ -106,6 +106,7 @@
 .notebooks-table {
   border-top: 2px solid rgb(91, 107, 112);
   margin-top: 8px;
+  overflow: scroll;
 }
 .header-row {
   background-color: rgb(248, 248, 248);
@@ -121,7 +122,76 @@
   text-transform: uppercase;
 
   li {
-    margin-left: 25px;
+    margin-left: 20px;
+    min-width: 100px;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+.notebooks-index-item {
+  font-size: 11px;
+  font-weight: 400;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 10px;
+
+  ul {
+    min-width: 345px;
+    justify-content: space-between;
   }
 
+  li {
+    color: rgb(119, 119, 119);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+    margin-left: 20px;
+    min-width: 100px;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  > div {
+    color: rgb(49, 49, 49);
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+
+  .notebook-index-icon {
+    padding-right: 5px;
+  }
+
+
+  &:nth-of-type(2n+1) {
+      background-color: rgb(248, 248, 248);
+  }
+
+  &:hover {
+    background-color: rgb(242, 242, 242);
+    transition: all 0.1s ease-out;
+  }
+
+  .notebook-link {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &:visited {
+      color: rgb(49, 49, 49);
+    }
+  }
 }
