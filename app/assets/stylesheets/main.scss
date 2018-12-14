@@ -164,16 +164,16 @@ body {
     margin-left: 20px;
     padding: 0;
     width: 130px;
-    text-align: left;
+    text-align: left;    
+  }
 
-    &:last-child {
+  .notebook-actions-icon {
       text-align: right;
 
       &:hover {
         cursor: pointer;
       }
     }
-  }
 
   > div {
     color: rgb(49, 49, 49);
@@ -334,5 +334,26 @@ body {
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+.dropdown {
+  background-attachment: scroll;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: rgba(99, 114, 130, 0.16) 0px 0px 0px 1px, rgba(27, 39, 51, 0.08) 0px 4px 12px 0px;
+  box-sizing: border-box;
+  color: rgb(102, 102, 102);
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  min-width: 150px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+
+  li {
+    text-transform: none;
+    text-align: left;
   }
 }

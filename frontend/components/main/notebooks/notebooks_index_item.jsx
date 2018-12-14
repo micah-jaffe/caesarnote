@@ -30,7 +30,7 @@ class NotebooksIndexItem extends React.Component {
       "Rename notebook": noAction,
       "Delete notebook": noAction,
       "Add shortcut": noAction,
-      "Set as default notebook": noAction,
+      "Set as default notebook": this.hideDropdown,
     };
 
     return (
@@ -47,9 +47,12 @@ class NotebooksIndexItem extends React.Component {
           <li>Only you</li>
           <li 
             className="notebook-actions-icon" 
-            tabIndex="0" 
+            tabIndex="0"
+            onFocus={this.showDropdown}
+            
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" className="svg"><path fill="#7a8083" d="M25 19a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path></svg>
+            <Dropdown visible={this.state.dropdown} classname="index-item" items={dropdownItems}/>
           </li>
         </ul>
       </div>

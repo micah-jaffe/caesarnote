@@ -4,11 +4,11 @@ const Dropdown = ({ visible, classname, items }) => {
   return (
     <div className={visible ? `${classname} dropdown` : "no-display"}>
       <ul>
-        {Object.entries(items).map((pair, i) => {
+        {Object.entries(items).map((pair, i) => (
           <li key={`item-${i}`} onClick={pair[1]}>
             {pair[0]}
           </li>
-        })}
+        ))}
       </ul>
     </div>
   );
