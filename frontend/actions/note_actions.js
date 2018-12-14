@@ -1,4 +1,4 @@
-import * as NotebookApiUtil from '../util/note_api_util';
+import * as NoteApiUtil from '../util/note_api_util';
 
 export const RECEIVE_NOTES = "RECEIVE_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
@@ -26,28 +26,28 @@ export const receiveErrors = (errors) => ({
 });
 
 export const fetchNotes = () => (dispatch) => (
-  NotebookApiUtil.fetchNotes().then(
-    notes => dispatch(receiveNotebooks(notes)),
+  NoteApiUtil.fetchNotes().then(
+    notes => dispatch(receiveNotes(notes)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
 
 export const createNote = (note) => (dispatch) => (
-  NotebookApiUtil.createNote(note).then(
+  NoteApiUtil.createNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
 
 export const updateNote = (note) => (dispatch) => (
-  NotebookApiUtil.updateNote(note).then(
+  NoteApiUtil.updateNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
 
 export const deleteNote = (id) => (dispatch) => (
-  NotebookApiUtil.deleteNote(id).then(
+  NoteApiUtil.deleteNote(id).then(
     note => dispatch(removeNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )

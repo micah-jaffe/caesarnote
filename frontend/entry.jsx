@@ -5,7 +5,7 @@ import Root from './components/root';
 
 import { login, signup, logout } from './actions/session_actions';
 import { fetchNotebook, fetchNotebooks, createNotebook, updateNotebook, deleteNotebook} from './actions/notebook_actions';
-
+import { fetchNotes, createNote, updateNote, deleteNote} from './actions/note_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -41,6 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createNotebook = createNotebook;
   window.updateNotebook = updateNotebook;
   window.deleteNotebook = deleteNotebook;
+
+  window.fetchNotes = fetchNotes;
+  window.createNote = createNote;
+  window.updateNote = updateNote;
+  window.deleteNote = deleteNote;
 
 
   const root = document.getElementById('root');
