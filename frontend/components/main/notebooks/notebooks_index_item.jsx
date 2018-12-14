@@ -28,7 +28,7 @@ class NotebooksIndexItem extends React.Component {
       "Move to...": noAction,
       "Share notebook...": noAction,
       "Rename notebook": noAction,
-      "Delete notebook": noAction,
+      "Delete notebook": () => this.props.deleteNotebook(this.props.notebook.id),
       "Add shortcut": noAction,
       "Set as default notebook": this.hideDropdown,
     };

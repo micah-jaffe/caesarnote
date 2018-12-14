@@ -343,17 +343,40 @@ body {
   border-radius: 3px;
   box-shadow: rgba(99, 114, 130, 0.16) 0px 0px 0px 1px, rgba(27, 39, 51, 0.08) 0px 4px 12px 0px;
   box-sizing: border-box;
-  color: rgb(102, 102, 102);
+  color: rgb(85, 85, 85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 6px;
   margin-top: 6px;
-  min-width: 150px;
+  min-width: 200px;
   padding-bottom: 12px;
   padding-top: 12px;
+  position: relative;
+  right: 60px;
 
   li {
+    display: flex;
     text-transform: none;
     text-align: left;
+    transition: all 0.1s ease-in-out;
+    // max-width: 500%;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    width: 100%;
+    white-space: nowrap;
+
+    &:hover {
+     background-color: rgb(245, 245, 245); 
+     cursor: pointer;
+    }
   }
 }
