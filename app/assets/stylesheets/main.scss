@@ -351,18 +351,22 @@ body {
   line-height: 21px;
   margin-bottom: 6px;
   margin-top: 6px;
-  min-width: 200px;
   padding-bottom: 12px;
   padding-top: 12px;
-  position: relative;
-  right: 60px;
+  position: absolute;
+  right: 20px;
+  width: 200px;
+
+  ul {
+    width: inherit;
+  }
 
   li {
+    box-sizing: border-box;
     display: flex;
     text-transform: none;
     text-align: left;
     transition: all 0.1s ease-in-out;
-    // max-width: 500%;
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -371,8 +375,8 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 5px;
-    width: 100%;
     white-space: nowrap;
+    width: inherit;
 
     &:hover {
      background-color: rgb(245, 245, 245); 
