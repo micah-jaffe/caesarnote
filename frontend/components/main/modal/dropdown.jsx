@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Dropdown = ({ visible, className, items }) => {
+const Dropdown = ({ visible, classname, items }) => {
   return (
-    <div className={visible ? `${className} dropdown` : "no-display"}>
+    <div className={visible ? `${classname} dropdown` : "no-display"}>
       <ul>
         {Object.entries(items).map((pair, i) => {
           <li key={`item-${i}`} onClick={pair[1]}>

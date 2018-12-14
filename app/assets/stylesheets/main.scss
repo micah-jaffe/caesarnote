@@ -90,7 +90,6 @@ a {
 .notebooks-index-header-container {
   color: rgb(51, 51, 51);
   justify-content: space-between;
-  // margin-top: 10px;
 
   h3 {
     font-size: 15px;
@@ -119,6 +118,7 @@ a {
   border-top: 2px solid rgb(91, 107, 112);
   margin-top: 8px;
 }
+
 .header-row {
   background-color: rgb(248, 248, 248);
   border-bottom: 1px solid rgb(237, 237, 237);
@@ -166,6 +166,10 @@ a {
 
     &:last-child {
       text-align: right;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -329,4 +333,12 @@ a {
   &:hover {
     cursor: pointer;
   }
+}
+
+.dropdown {
+  display: block;
+  background: red;
+  width: 500px;
+  min-height: 500px;
+  z-index: 10;
 }
