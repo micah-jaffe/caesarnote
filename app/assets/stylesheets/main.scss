@@ -74,8 +74,10 @@ body {
 }
 
 .notebooks-index-container {
+  height: 100vh;
   padding-left: 30px;
   padding-right: 30px;
+  overflow: visible;
   width: 100%;
 
   h2 {
@@ -351,6 +353,7 @@ body {
   line-height: 21px;
   margin-bottom: 6px;
   margin-top: 6px;
+  overflow: visible;
   padding-bottom: 12px;
   padding-top: 12px;
   position: absolute;

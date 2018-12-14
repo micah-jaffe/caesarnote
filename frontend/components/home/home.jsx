@@ -7,7 +7,7 @@ const Home = () => {
       <nav className="main-nav">
         <img className="logo" src={window.images.logo} />
 
-        <ul className="dropdown">
+        <ul className="nav-links">
           <li>Plans</li>
           <li>Features</li>
           <li>Help &amp; Learning</li>
