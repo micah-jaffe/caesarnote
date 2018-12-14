@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
-import NewNote from '../sidebar/new_note';
+import NotebookCreateForm from '../notebooks/notebook_create_form';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -11,7 +11,7 @@ function Modal({ modal, closeModal }) {
   let component;
   switch (modal) {
     case 'create_notebook':
-      component = <NewNote/>;
+      component = <NotebookCreateForm/>;
       break;
     default:
       return null;
