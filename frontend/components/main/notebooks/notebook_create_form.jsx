@@ -18,7 +18,6 @@ class NotebookCreateForm extends React.Component {
     e.preventDefault();
     const notebook = Object.assign({}, this.state);
     notebook.user_id = this.props.userId;
-    // debugger;
     this.props.createNotebook(notebook);
     this.props.closeModal();
   }
@@ -43,7 +42,7 @@ class NotebookCreateForm extends React.Component {
           </label>
 
           <div className="submittal-container">
-            <span className="cancel-btn align-middle" onClick={this.props.closeModal}>Cancel</span>
+            <span className="cancel-btn" onClick={this.props.closeModal}>Cancel</span>
             <input className="continue-btn" type="submit" value="Continue" />
           </div>
         </form>

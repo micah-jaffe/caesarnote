@@ -11,14 +11,6 @@ class UserProfile extends React.Component {
     this.hideDropdown = this.hideDropdown.bind(this);
   }
 
-  renderProfileDropdown() {
-    return (
-      <div className="profile-dropdown">
-        hello
-    </div>
-    );
-  }
-
   showDropdown() {
     this.setState({ dropdown: true })
   }
