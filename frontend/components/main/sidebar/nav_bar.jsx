@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   render() {
@@ -15,9 +16,11 @@ class NavBar extends React.Component {
             <span>All Notes</span>
           </li>
           <li className="align-middle nav-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" className="nav shortcuts-arrow"><path d="M2 0l4 4-4 4z"></path></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M9 4h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9V4zM6 4h2v15H6V4zm5.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-4z"></path></svg>
-            <span>Notebooks</span>
+            <Link className="align-middle" to="/main/notebooks">
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" className="nav shortcuts-arrow"><path d="M2 0l4 4-4 4z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M9 4h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9V4zM6 4h2v15H6V4zm5.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-4z"></path></svg>
+              <span>Notebooks</span>
+            </Link>
           </li>
           <li className="align-middle nav-link no-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="nav"><path id="12a" d="M15.489 19h-11l.017-3.244s-.128-1.462 1.457-1.685c1.588-.223 2.837-.495 2.212-1.56-.578-.988-2.539-5.253.907-6.365a2.976 2.976 0 0 1 1.842 0c3.446 1.112 1.486 5.377.908 6.364-.625 1.066.624 1.338 2.21 1.561 1.587.223 1.459 1.685 1.459 1.685L15.489 19zm4.481 0h-3v-4c-.158-1.025-.862-1.525-2.11-1.502-.427-.704-1.895-3.985.638-4.779a2.27 2.27 0 0 1 1.355 0c2.532.794 1.093 3.835.667 4.54-.459.76.8.484 1.625 1.112C19.97 15 19.97 16 19.97 16v3z"></path></svg>

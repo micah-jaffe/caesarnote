@@ -1,5 +1,11 @@
 @import "variables";
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+  display: flex;
+}
+
 .main {
   position: absolute;
   display: flex;
