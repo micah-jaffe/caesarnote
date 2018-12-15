@@ -35,8 +35,9 @@ class NotebookShow extends React.Component {
           </div>
         </header>
 
-        
-        {this.renderNotesIndexItems()}
+        <div className="notes-index-wrapper">
+          {this.renderNotesIndexItems()}
+        </div>
         
 
       </section>

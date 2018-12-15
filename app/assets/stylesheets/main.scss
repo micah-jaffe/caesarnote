@@ -26,7 +26,6 @@ body {
   background: rgb(248, 248, 248);
   border-right: 1px solid rgb(230, 230, 230);
   width: 345px;
-  overflow: scroll;
 }
 
 .notebook-container {
@@ -36,11 +35,12 @@ body {
   font-weight: 300;  
 
   header {
+    border-bottom: 1px solid rgb(230, 230, 230);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     height: 166px;
-    border-bottom: 1px solid rgb(230, 230, 230);
+    justify-content: flex-end;
+    
   }
 
   h1 {
@@ -390,6 +390,11 @@ body {
      cursor: pointer;
     }
   }
+}
+
+.notes-index-wrapper {
+  overflow: scroll;
+  height: 100%;
 }
 
 .notes-index-item {
