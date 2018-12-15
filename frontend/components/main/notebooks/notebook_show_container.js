@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import NotebookShow from './notebook_show';
 import { fetchNotebook } from '../../../actions/notebook_actions';
+import { fetchNotes } from '../../../actions/note_actions';
+import { selectNotes } from '../../../reducers/selectors';
 
 const defaultNotebook = { 
   id: null,
@@ -9,12 +11,19 @@ const defaultNotebook = {
   user_id: null
 };
 
-const mapStateToProps = ({ entities: { notebooks } }, ownProps) => ({
-  notebook: notebooks[ownProps.match.params.notebookId] || defaultNotebook
-});
+const mapStateToProps = (state, ownProps) => {
+  const notebook = state.entities.notebooks[ownProps.match.params.notebookId] || defaultNotebook
+  const notes = selectNotes(notebook.id, state.entities)
+
+  return {
+    notebook,
+    notes
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   fetchNotebook: (id) => dispatch(fetchNotebook(id)),
+  fetchNotes: () => dispatch(fetchNotes())
 });
 
 export default withRouter(connect(

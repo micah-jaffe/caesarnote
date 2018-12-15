@@ -1,18 +1,29 @@
 import React from 'react';
+import NotesIndexItem from '../notes/notes_index_item'
 
 class NotebookShow extends React.Component {
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
+    this.props.fetchNotes();
+  }
+
+  renderNotesIndexItems() {
+    return this.props.notes.map(note => (
+      <NotesIndexItem key={note.id} note={note} />
+    ))
   }
 
   render() {
+    const numNotes = Object.keys(this.props.notes).length;
+
     return (
-      <section className="notebook-container">
+      <div className="notebook-container-wrapper">
+        <section className="notebook-container">
         <header>
           <h1>{this.props.notebook.name}</h1>
           <div className="notebook-info-header align-middle">
             <div className="notes-count">
-              0 Notes
+              {numNotes} Notes
             </div>
 
             <div className="notebook-header-icons align-middle">
@@ -23,7 +34,13 @@ class NotebookShow extends React.Component {
 
           </div>
         </header>
+
+        
+        {this.renderNotesIndexItems()}
+        
+
       </section>
+      </div>
     );
   }
 };

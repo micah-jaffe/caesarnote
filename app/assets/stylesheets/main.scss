@@ -21,15 +21,19 @@ body {
   }
 }
 
-.notebook-container {
+.notebook-container-wrapper {
+  height: 100vh;
   background: rgb(248, 248, 248);
   border-right: 1px solid rgb(230, 230, 230);
+  width: 345px;
+  overflow: scroll;
+}
+
+.notebook-container {
   display: flex;
   flex-direction: column;
   font-family: $sans-serif;
-  font-weight: 300;
-  height: 100vh;
-  width: 345px;
+  font-weight: 300;  
 
   header {
     display: flex;
@@ -385,5 +389,53 @@ body {
      background-color: rgb(245, 245, 245); 
      cursor: pointer;
     }
+  }
+}
+
+.notes-index-item {
+  background-color: rgb(248, 248, 248);
+  border-bottom: 1px solid rgb(230, 230, 230);
+  box-sizing: border-box;
+  color: rgb(77, 77, 77);
+  cursor: pointer;
+  font-size: 13px;
+  height: 121px;
+  line-height: 20px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 24px;
+  padding-top: 15px;
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    background-color: rgb(242, 242, 242);
+  }
+
+  h4 {
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  p {
+    color: rgb(77, 77, 77);
+    height: 40px;
+    line-height: 20px;
+    opacity: 1;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in;
+  }
+
+  span {
+    color: rgb(166, 166, 166);
+    font-size: 12px;
+    line-height: 18px;
   }
 }
