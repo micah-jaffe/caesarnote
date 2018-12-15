@@ -4,7 +4,12 @@ class NewNote extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.parseNotebookId = this.parseNotebookId.bind(this);
+  }
+
+  parseNotebookId() {
+    return parseInt(this.props.location.pathname.match(/\d+/))
   }
   
   handleClick(e) {
@@ -12,7 +17,8 @@ class NewNote extends React.Component {
     const newNote = {
       title: '',
       body: '',
-      notebook_id: this.props.notebookId
+      notebook_id: this.parseNotebookId(),
+      user_id: this.props.userId
     };
 
     this.props.createNote(newNote);

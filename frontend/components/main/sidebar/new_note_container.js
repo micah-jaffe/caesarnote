@@ -4,15 +4,15 @@ import NewNote from './new_note';
 import { createNote } from '../../../actions/note_actions';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state, ownProps) => ({
-  notebookId: 21 //ownProps.match.params.notebookId
+const mapStateToProps = ({ session }, ownProps) => ({
+  userId: session.id
 }); 
 
 const mapDispatchToProps = (dispatch) => ({
   createNote: (note) => dispatch(createNote(note))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewNote);
+)(NewNote));
