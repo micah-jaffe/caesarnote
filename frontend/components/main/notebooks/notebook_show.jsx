@@ -33,14 +33,18 @@ class NotebookShow extends React.Component {
     this.props.notes.sort((a, b) => a.last_updated < b.last_updated ? -1 : 1)
   }
 
+  selectNote(note) {
+    return () => {
+      this.setState({ selectedNote: note });
+      console.log(this.state);
+    }
+  }
+
   renderNotesIndexItems() {
     this.sortNotes();
-    // const sortedNotes = this.props.notes.reverse();
-    const sortedNotes = this.props.notes;
-    const selectNote = note => (this.setState({ selectedNote: note })); console.log(this.state);
 
-    return sortedNotes.map(note => (
-      <div key={note.id} onClick={() => selectNote(note)}>
+    return this.props.notes.map(note => (
+      <div key={note.id} onClick={this.selectNote(note)}>
         <NotesIndexItem note={note} />
       </div>
     ));
