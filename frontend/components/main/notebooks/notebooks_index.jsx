@@ -7,7 +7,8 @@ class NotebooksIndex extends React.Component {
   }
 
   render() {
-    const notebookIndexItems = this.props.notebooks.map((notebook, i) => (
+    const sortedNotebooks = this.props.notebooks.reverse();
+    const notebookIndexItems = sortedNotebooks.map((notebook, i) => (
       <NotebookIndexItemContainer
         key={`notebook-${i}`} 
         notebook={notebook} 
