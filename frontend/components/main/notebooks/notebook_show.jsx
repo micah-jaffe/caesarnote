@@ -1,6 +1,6 @@
 import React from 'react';
 import NotesIndexItem from '../notes/notes_index_item';
-import NoteShow from '../notes/note_show';
+import NoteShowContainer from '../notes/note_show_container';
 
 class NotebookShow extends React.Component {
   constructor(props) {
@@ -15,25 +15,11 @@ class NotebookShow extends React.Component {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
     this.sortNotes();
-
-    // debugger;
-
-    // this.setState({
-    //   selectedNote: this.props.notes[0]
-    // });
-
   }
 
   sortNotes() {
-    this.props.notes.sort((a, b) => a.last_updated < b.last_updated ? -1 : 1)
+    this.props.notes.sort((a, b) => a.last_updated < b.last_updated ? -1 : 1);
   }
-
-  // selectNote(note) {
-  //   return () => {
-  //     this.setState({ selectedNote: note });
-  //     console.log(this.state);
-  //   };
-  // }
 
   renderNotesIndexItems() {
     this.sortNotes();
@@ -48,7 +34,7 @@ class NotebookShow extends React.Component {
   renderNoteShow() {
     return (
       <div>
-        <NoteShow key={this.state.selectedNote.id} note={this.state.selectedNote} />
+        <NoteShowContainer />
       </div>
     );
   }

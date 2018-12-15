@@ -3,6 +3,6 @@ import noteSelectorReducer from './note_selector_reducer';
 import navLinkSelectorReducer from './nav_link_selector_reducer';
 
 export default combineReducers({
-  note: noteSelectorReducer,
+  noteId: noteSelectorReducer,
   navLink: navLinkSelectorReducer
 });
