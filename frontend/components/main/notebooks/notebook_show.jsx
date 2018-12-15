@@ -31,6 +31,10 @@ class NotebookShow extends React.Component {
     ));
   }
 
+  autosaveNote() {
+
+  }
+
   renderNoteShow() {
     return (
       <div>
