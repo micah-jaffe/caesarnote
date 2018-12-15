@@ -4,8 +4,9 @@ class NoteShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.note;
-    // debugger;
+    // this.state = this.props.note;
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(field) {
@@ -13,8 +14,9 @@ class NoteShow extends React.Component {
   }
 
   handleSubmit(e) {
+    let that = this;
     e.preventDefault();
-    console.log('hello');
+    console.log(that.state);
     
     // const user = Object.assign({}, this.state);
     // user.username = user.email.substr(0, user.email.indexOf('@'));
@@ -22,6 +24,7 @@ class NoteShow extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <section className="note-show">
         <div className="note-show-header">
@@ -30,8 +33,9 @@ class NoteShow extends React.Component {
 
         <div className="note-form">
           <form onSubmit={this.handleSubmit}>
-            <input type="text" onChange={this.handleInput('title')} value={this.state.title} />
-            <textarea cols="30" rows="10" onChange={this.handleInput('body')} value={this.state.body}></textarea>
+            <input type="text" onChange={this.handleInput('title')} value={this.props.note.title} />
+            <textarea cols="30" rows="10" onChange={this.handleInput('body')} value={this.props.note.body}></textarea>
+            <input type="submit" value="Submit"/>
           </form>
         </div>
 

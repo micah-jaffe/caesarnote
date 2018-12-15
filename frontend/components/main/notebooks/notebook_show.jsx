@@ -7,24 +7,43 @@ class NotebookShow extends React.Component {
     super(props);
 
     this.state = {
-      selectedNote: null
-    }
-    
+      selectedNote: { title: '', body: '' }
+    };
   }
 
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
 
-    this.setState({
-      selectedNote: this.props.notes.reverse()[0]
-    })
+    // this.setState({
+    //   selectedNote: this.props.notes.reverse()[0]
+    // });
+
+  }
+
+  componenDidUpdate() {
+    console.log(this.state)
+  }
+
+  renderNoteShow() {
+    return <NoteShow note={this.state.selectedNote} />
+  }
+
+  sortNotes() {
+    this.props.notes.sort((a, b) => a.last_updated < b.last_updated ? -1 : 1)
   }
 
   renderNotesIndexItems() {
-    const sortedNotes = this.props.notes.reverse();
+    this.sortNotes();
+    // const sortedNotes = this.props.notes.reverse();
+    const sortedNotes = this.props.notes;
+    const selectNote = note => (this.setState({ selectedNote: note })); console.log(this.state);
 
-    return sortedNotes.map(note => <NotesIndexItem key={note.id} note={note} />)
+    return sortedNotes.map(note => (
+      <div key={note.id} onClick={() => selectNote(note)}>
+        <NotesIndexItem note={note} />
+      </div>
+    ));
   }
 
   renderNotebookHeader() {
@@ -50,12 +69,11 @@ class NotebookShow extends React.Component {
   }
 
   render() {
-    const _nullNote = { title: '', body: '' }
     return (
-      <div className="main-wrapper">
+      <div className="notes-wrapper">
         <div className="notebook-container-wrapper">
-          <section className="notebook-container">
 
+          <section className="notebook-container">
             <div className="notebook-header-wrapper">
               {this.renderNotebookHeader()}
             </div>
@@ -64,16 +82,18 @@ class NotebookShow extends React.Component {
             <div className="notes-index-wrapper">
               {this.renderNotesIndexItems()}
             </div>
-
           </section>
 
-          <div className="note-show-wrapper">
-
-          </div>
         </div>
+
+      
       </div>
     );
   }
 };
 
 export default NotebookShow;
+
+{/* <div className="note-show-wrapper">
+  {this.renderNoteShow()}
+</div> */}
