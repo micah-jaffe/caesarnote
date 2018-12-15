@@ -15,10 +15,12 @@ class Note < ApplicationRecord
   belongs_to :user
   belongs_to :notebook
 
+  before_save :set_default_name
+
   include ActionView::Helpers::DateHelper
 
   def set_default_name
-    self.name = self.name.blank? ? 'Untitled' : self.name
+    self.title = self.title.blank? ? 'Untitled' : self.title
   end
 
   def last_updated

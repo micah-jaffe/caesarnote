@@ -1,5 +1,4 @@
 import React from 'react';
-import { login } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {

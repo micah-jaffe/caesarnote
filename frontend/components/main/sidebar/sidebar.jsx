@@ -1,7 +1,7 @@
 import React from 'react';
 import UserProfileContainer from './user_profile_container';
 import SearchBar from './search_bar';
-import NewNote from './new_note';
+import NewNoteContainer from './new_note_container';
 import NavBar from './nav_bar';
 
 class Sidebar extends React.Component {
@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
         <section className="sidebar">
           <UserProfileContainer />
           <SearchBar />
-          <NewNote />
+          <NewNoteContainer />
           <NavBar />
         </section>
       </div>
