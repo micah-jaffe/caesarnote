@@ -14,19 +14,14 @@ class NotebookShow extends React.Component {
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
+    this.sortNotes();
+
+    debugger;
 
     // this.setState({
-    //   selectedNote: this.props.notes.reverse()[0]
+    //   selectedNote: this.props.notes[0]
     // });
 
-  }
-
-  componenDidUpdate() {
-    console.log(this.state)
-  }
-
-  renderNoteShow() {
-    return <NoteShow note={this.state.selectedNote} />
   }
 
   sortNotes() {
@@ -37,7 +32,7 @@ class NotebookShow extends React.Component {
     return () => {
       this.setState({ selectedNote: note });
       console.log(this.state);
-    }
+    };
   }
 
   renderNotesIndexItems() {
@@ -48,6 +43,14 @@ class NotebookShow extends React.Component {
         <NotesIndexItem note={note} />
       </div>
     ));
+  }
+
+  renderNoteShow() {
+    return (
+      <div>
+        <NoteShow key={this.state.selectedNote.id} note={this.state.selectedNote} />
+      </div>
+    );
   }
 
   renderNotebookHeader() {
@@ -90,6 +93,9 @@ class NotebookShow extends React.Component {
 
         </div>
 
+        <div className="note-show-wrapper">
+          {this.renderNoteShow()}
+        </div>
       
       </div>
     );
@@ -98,6 +104,4 @@ class NotebookShow extends React.Component {
 
 export default NotebookShow;
 
-{/* <div className="note-show-wrapper">
-  {this.renderNoteShow()}
-</div> */}
+
