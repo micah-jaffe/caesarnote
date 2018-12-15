@@ -1,16 +1,24 @@
 import React from 'react';
-import NotesIndexItem from '../notes/notes_index_item'
+import NotesIndexItem from '../notes/notes_index_item';
+import NoteShow from '../notes/note_show';
 
 class NotebookShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.selectedNote = this.props.notes.reverse()[0];
+    this.state = {
+      selectedNote: null
+    }
+    
   }
 
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
+
+    this.setState({
+      selectedNote: this.props.notes.reverse()[0]
+    })
   }
 
   renderNotesIndexItems() {
@@ -42,24 +50,27 @@ class NotebookShow extends React.Component {
   }
 
   render() {
+    const _nullNote = { title: '', body: '' }
     return (
-      <div className="notebook-container-wrapper">
-        <section className="notebook-container">
+      <div className="main-wrapper">
+        <div className="notebook-container-wrapper">
+          <section className="notebook-container">
 
-          <div className="notebook-header-wrapper">
-            {this.renderNotebookHeader()}
-          </div>
-          
+            <div className="notebook-header-wrapper">
+              {this.renderNotebookHeader()}
+            </div>
+            
 
-          <div className="notes-index-wrapper">
-            {this.renderNotesIndexItems()}
-          </div>
-          
+            <div className="notes-index-wrapper">
+              {this.renderNotesIndexItems()}
+            </div>
+
+          </section>
+
           <div className="note-show-wrapper">
-           
-          </div>
 
-        </section>
+          </div>
+        </div>
       </div>
     );
   }
