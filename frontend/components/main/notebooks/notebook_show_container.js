@@ -4,6 +4,7 @@ import NotebookShow from './notebook_show';
 import { fetchNotebook } from '../../../actions/notebook_actions';
 import { fetchNotes } from '../../../actions/note_actions';
 import { selectNotes } from '../../../reducers/selectors';
+import { selectNote } from '../../../actions/selection_actions';
 
 const defaultNotebook = { 
   id: null,
@@ -23,7 +24,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchNotebook: (id) => dispatch(fetchNotebook(id)),
-  fetchNotes: () => dispatch(fetchNotes())
+  fetchNotes: () => dispatch(fetchNotes()),
+  selectNote: (id) => dispatch(selectNote(id))
 });
 
 export default withRouter(connect(

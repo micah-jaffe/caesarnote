@@ -1,14 +1,8 @@
-import {
-  SELECT_NOTE,
-} from '../actions/selection_actions';
+import { combineReducers } from 'redux';
+import noteSelectorReducer from './note_selector_reducer';
+import navLinkSelectorReducer from './nav_link_selector_reducer';
 
-const selectionReducer = (state = null, action) => {
-  switch (action.type) {
-    case SELECT_NOTE:
-      return action.note;
-    default:
-      return state;
-  }
-};
-
-export default selectionReducer;
+export default combineReducers({
+  note: noteSelectorReducer,
+  navLink: navLinkSelectorReducer
+});

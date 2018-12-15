@@ -16,7 +16,7 @@ class NotebookShow extends React.Component {
     this.props.fetchNotes();
     this.sortNotes();
 
-    debugger;
+    // debugger;
 
     // this.setState({
     //   selectedNote: this.props.notes[0]
@@ -28,18 +28,18 @@ class NotebookShow extends React.Component {
     this.props.notes.sort((a, b) => a.last_updated < b.last_updated ? -1 : 1)
   }
 
-  selectNote(note) {
-    return () => {
-      this.setState({ selectedNote: note });
-      console.log(this.state);
-    };
-  }
+  // selectNote(note) {
+  //   return () => {
+  //     this.setState({ selectedNote: note });
+  //     console.log(this.state);
+  //   };
+  // }
 
   renderNotesIndexItems() {
     this.sortNotes();
 
     return this.props.notes.map(note => (
-      <div key={note.id} onClick={this.selectNote(note)}>
+      <div key={note.id} onClick={() => this.props.selectNote(note.id)}>
         <NotesIndexItem note={note} />
       </div>
     ));
