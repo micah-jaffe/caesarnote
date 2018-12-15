@@ -8,9 +8,9 @@ class NotebookShow extends React.Component {
   }
 
   renderNotesIndexItems() {
-    return this.props.notes.map(note => (
-      <NotesIndexItem key={note.id} note={note} />
-    ))
+    const sortedNotes = this.props.notes.reverse();
+
+    return sortedNotes.map(note => <NotesIndexItem key={note.id} note={note} />)
   }
 
   render() {
