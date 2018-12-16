@@ -1,10 +1,9 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import NewNote from './new_note';
 import { createNote } from '../../../actions/note_actions';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = ({ session }, ownProps) => ({
+const mapStateToProps = ({ session }) => ({
   userId: session.id
 }); 
 

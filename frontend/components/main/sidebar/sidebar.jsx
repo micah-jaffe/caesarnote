@@ -2,7 +2,7 @@ import React from 'react';
 import UserProfileContainer from './user_profile_container';
 import SearchBar from './search_bar';
 import NewNoteContainer from './new_note_container';
-import NavBar from './nav_bar';
+import NavBarContainer from './nav_bar_container';
 
 class Sidebar extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class Sidebar extends React.Component {
           <UserProfileContainer />
           <SearchBar />
           <NewNoteContainer />
-          <NavBar />
+          <NavBarContainer />
         </section>
       </div>
     );
