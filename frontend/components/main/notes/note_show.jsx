@@ -92,15 +92,13 @@ class NoteShow extends React.Component {
         </div>
 
         <div className="note-form">
-          <form>
-            <div className="note-title-container">
-              {this.renderNoteTitle()}
-            </div>
+          <div className="note-title-container">
+            {this.renderNoteTitle()}
+          </div>
 
-            <div className="quill-editor-container">
-              {this.renderQuillEditor()}
-            </div>
-          </form>
+          <div className="quill-editor-container">
+            {this.renderQuillEditor()}
+          </div>
         </div>
 
         <div className="note-show-tags align-middle">
