@@ -16,11 +16,11 @@ class Main extends React.Component {
       <main className="main">
         <Modal />
         <Sidebar />
-        <NotesIndexContainer />
 
         <Switch>
           <Route path="/main/notebooks/:notebookId" component={NotebookShowContainer} />
           <Route path="/main/notebooks" component={NotebooksIndexContainer} />
+          <Route exact path="/main" component={NotesIndexContainer} />
         </Switch>
       </main>
     );
