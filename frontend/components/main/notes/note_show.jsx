@@ -57,9 +57,10 @@ class NoteShow extends React.Component {
 
         <div className="note-form">
           <form onSubmit={this.handleSubmit}>
-            <input 
+            <input
+              className="note-title"
               type="text" 
-              value={this.state.title} 
+              value={this.state.title === 'Untitled' ? '' : this.state.title} 
               onChange={this.handleInput('title')} 
               placeholder="Title"
             />

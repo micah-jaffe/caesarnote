@@ -500,6 +500,23 @@ body {
   cursor: pointer;
 }
 
+.note-title {
+  border: none;
+  color: black;
+  font-size: 34px;
+  font-weight: 300;
+  flex-grow: 1;
+  flex-shrink: 1;
+  line-height: 24px;
+  min-width: 300px;
+  padding-bottom: 4px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 8px;
+  width: 625px;
+
+}
+
 .quill-editor {
   // border: 1px solid red;
 }
