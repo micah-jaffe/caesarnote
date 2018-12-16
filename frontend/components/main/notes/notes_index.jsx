@@ -1,8 +1,8 @@
 import React from 'react';
-import NotesIndexItem from '../notes/notes_index_item';
-import NoteShowContainer from '../notes/note_show_container';
+import NotesIndexItem from './notes_index_item';
+import NoteShowContainer from './note_show_container';
 
-class NotebookShow extends React.Component {
+class NotesIndex extends React.Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,6 @@ class NotebookShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
   }
 
@@ -24,11 +23,11 @@ class NotebookShow extends React.Component {
 
   renderNotesIndexItems() {
     this.sortNotes();
-   
+
     return this.props.notes.map(note => (
       <div key={note.id} onClick={() => this.props.selectNote(note.id)}>
-        <NotesIndexItem 
-          note={note} 
+        <NotesIndexItem
+          note={note}
           selected={note.id === this.props.selectedNoteId}
         />
       </div>
@@ -41,12 +40,12 @@ class NotebookShow extends React.Component {
     );
   }
 
-  renderNotebookHeader() {
+  renderAllNotesHeader() {
     const numNotes = this.props.notes.length;
 
     return (
       <header className="notebook-header">
-        <h1>{this.props.notebook.name}</h1>
+        <h1>All Notes</h1>
         <div className="notebook-info-header align-middle">
           <div className="notes-count">
             {numNotes} Notes
@@ -70,9 +69,9 @@ class NotebookShow extends React.Component {
 
           <section className="notebook-container">
             <div className="notebook-header-wrapper">
-              {this.renderNotebookHeader()}
+              {this.renderAllNotesHeader()}
             </div>
-            
+
 
             <div className="notes-index-wrapper">
               {this.renderNotesIndexItems()}
@@ -84,12 +83,12 @@ class NotebookShow extends React.Component {
         <div className="note-show-wrapper">
           {this.renderNoteShow()}
         </div>
-      
+
       </div>
     );
   }
 };
 
-export default NotebookShow;
+export default NotesIndex;
 
 

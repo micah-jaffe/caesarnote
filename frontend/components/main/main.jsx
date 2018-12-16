@@ -1,9 +1,10 @@
 import React from 'react';
 import Modal from './modal/modal';
 import Sidebar from './sidebar/sidebar';
+import NotesIndexContainer from './notes/notes_index_container';
 import NotebookShowContainer from './notebooks/notebook_show_container';
 import NotebooksIndexContainer from './notebooks/notebooks_index_container';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Main extends React.Component {
       <main className="main">
         <Modal />
         <Sidebar />
+        <NotesIndexContainer />
 
         <Switch>
           <Route path="/main/notebooks/:notebookId" component={NotebookShowContainer} />
@@ -22,7 +24,7 @@ class Main extends React.Component {
         </Switch>
       </main>
     );
-  }
+  } 
 };
 
 export default Main;

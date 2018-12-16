@@ -4,4 +4,8 @@ export const currentUser = (state) => {
 
 export const selectNotes = (notebookId, entities) => {
   return Object.values(entities.notes).filter(note => note.notebook_id === notebookId);
-}
+};
+
+export const selectAllNotes = (entities) => {
+  return Object.values(entities.notes);
+};
