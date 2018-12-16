@@ -363,6 +363,7 @@ body {
   position: absolute;
   right: 20px;
   width: 200px;
+  z-index: 2;
 
   ul {
     width: inherit;
@@ -597,4 +598,8 @@ svg {
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+.note-show-dropdown {
+  top: 20px;
 }

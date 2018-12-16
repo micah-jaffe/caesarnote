@@ -5,7 +5,7 @@ const Dropdown = ({ visible, classname, items }) => {
     <div className={visible ? `${classname} dropdown` : "no-display"}>
       <ul>
         {Object.entries(items).map((pair, i) => (
-          <li key={`item-${i}`} onClick={pair[1]}>
+          <li key={`item-${i}`} onMouseDown={pair[1]}>
             {pair[0]}
           </li>
         ))}

@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import Dropdown from '../modal/dropdown';
 
 class NoteShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.note;
     this.state['fullscreen'] = false;
+    this.state['dropdown'] = false;
 
     this.handleInput = this.handleInput.bind(this);
     this.handleQuillChange = this.handleQuillChange.bind(this);
     this.toggleFullscreen = this.toggleFullscreen.bind(this);
+    this.openPaywall = this.openPaywall.bind(this);
+    this.showDropdown = this.showDropdown.bind(this);
+    this.hideDropdown = this.hideDropdown.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -20,6 +25,18 @@ class NoteShow extends React.Component {
 
   toggleFullscreen() {
     this.setState({ fullscreen: !this.state.fullscreen });
+  }
+
+  showDropdown() {
+    this.setState({ dropdown: true });
+  }
+
+  hideDropdown() {
+    this.setState({ dropdown: false });
+  }
+
+  openPaywall() {
+    this.props.openModal('paywall');
   }
 
   handleInput(field) {
@@ -39,6 +56,16 @@ class NoteShow extends React.Component {
   }
 
   renderNoteHeader() {
+    const dropdownItems = {
+      "Move to...": this.openPaywall,
+      "Share note...": this.openPaywall,
+      "Duplicate note": this.openPaywall,
+      "Delete note": this.openPaywall,
+      "Add shortcut": this.openPaywall,
+      "Copy internal link": this.openPaywall,
+      "View note info...": this.openPaywall
+    };
+
     return (
       <>
         <div>
@@ -48,8 +75,9 @@ class NoteShow extends React.Component {
         </div>
 
         <div className="align-middle">
-          <button className="share-btn" onClick={() => this.props.openModal('paywall')}>Share</button>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" className="note-dropdown-icon svg"><path fill="#7a8083" d="M25 19a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path></svg>
+          <button className="share-btn" onClick={this.openPaywall}>Share</button>
+          <svg tabIndex="0" onFocus={this.showDropdown} onBlur={this.hideDropdown} nxmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" className="note-dropdown-icon svg"><path fill="#7a8083" d="M25 19a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path></svg>
+          <Dropdown visible={this.state.dropdown} classname="note-show-dropdown" items={dropdownItems} />
         </div>
       </>
     );
@@ -117,3 +145,4 @@ class NoteShow extends React.Component {
 };
  
 export default NoteShow;
+ 

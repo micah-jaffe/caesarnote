@@ -10,6 +10,7 @@ const defaultNote = {
   user_id: 0,
   notebook_id: 0
 };
+
 const defaultNotebook = {
   id: null,
   name: null,
