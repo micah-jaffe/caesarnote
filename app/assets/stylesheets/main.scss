@@ -468,6 +468,38 @@ body {
   width: 100%;
 }
 
+.note-show-header {
+  border-bottom: 1px solid rgb(237, 237, 237);
+  box-sizing: border-box;
+  display: flex;
+  height: 54px;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.share-btn {
+  background-color: rgb(0, 168, 45);
+  border-radius: 4px;
+  border: 1px solid rgb(0, 168, 45);
+  color: white;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 13px;
+  margin-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.note-dropdown-icon {
+  cursor: pointer;
+}
+
 .quill-editor {
   // border: 1px solid red;
 }

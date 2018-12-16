@@ -3,19 +3,26 @@ import NoteShow from './note_show';
 import { updateNote } from '../../../actions/note_actions';
 
 const defaultNote = {
-  id: null,
+  id: 0,
   title: '',
   body: '',
-  user_id: null,
-  notebook_id: null
+  user_id: 0,
+  notebook_id: 0
+};
+const defaultNotebook = {
+  id: null,
+  name: null,
+  user_id: null
 };
 
 const mapStateToProps = (state) => {
   const selectedNoteId = state.ui.selection.noteId;
   const note = state.entities.notes[selectedNoteId] || defaultNote;
+  const notebook = state.entities.notebooks[note.notebookId] || defaultNotebook;
 
   return {
-    note
+    note,
+    notebook
   };
 };
 
