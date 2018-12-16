@@ -3,6 +3,7 @@ import { closeModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NotebookCreateFormContainer from '../notebooks/notebook_create_form_container';
 import NotebookUpdateFormContainer from '../notebooks/notebook_update_form_container';
+import Paywall from './paywall';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -16,6 +17,9 @@ function Modal({ modal, closeModal }) {
       break;
     case 'update_notebook':
       component = <NotebookUpdateFormContainer />;
+      break;
+    case 'paywall':
+      component = <Paywall />;
       break;
     default:
       return null;

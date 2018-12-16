@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import NoteShow from './note_show';
 import { updateNote } from '../../../actions/note_actions';
+import { openModal } from '../../../actions/modal_actions';
 
 const defaultNote = {
   id: 0,
@@ -27,7 +28,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  updateNote: (note) => dispatch(updateNote(note))
+  updateNote: (note) => dispatch(updateNote(note)),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(

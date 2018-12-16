@@ -42,7 +42,7 @@ class NoteShow extends React.Component {
         </div>
 
         <div className="align-middle">
-          <button className="share-btn">Share</button>
+          <button className="share-btn" onClick={() => this.props.openModal('paywall')}>Share</button>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" className="note-dropdown-icon svg"><path fill="#7a8083" d="M25 19a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path></svg>
         </div>
       </>

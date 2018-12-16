@@ -26,9 +26,9 @@ class NotebooksIndexItem extends React.Component {
     const noAction = () => undefined;
 
     const dropdownItems = {
-      "Move to...": noAction,
+      "Move to...": () => this.props.openModal('paywall'),
       "Share notebook...": noAction,
-      "Rename notebook": () => this.props.openUpdateNotebookModal(),
+      "Rename notebook": () => this.props.openModal('update_notebook'),
       "Delete notebook": () => this.props.deleteNotebook(notebookId).then(this.hideDropdown()),
       "Add shortcut": noAction,
       "Set as default notebook": this.hideDropdown,
