@@ -39,10 +39,10 @@ class NotebookCreateForm extends React.Component {
 
   render() {
     return (
-      <div className="create-notebook-modal">
+      <div className="modal-interior">
         {this.renderHeading()}
 
-        <form className="create-notebook-form" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label>
             Name
             <br/>

@@ -11,6 +11,7 @@ class NotebooksIndexItem extends React.Component {
 
     this.showDropdown = this.showDropdown.bind(this);
     this.hideDropdown = this.hideDropdown.bind(this);
+    this.openPaywall = this.openPaywall.bind(this);
   }
 
   showDropdown() {
@@ -21,17 +22,20 @@ class NotebooksIndexItem extends React.Component {
     this.setState({ dropdown: false })
   }
 
+  openPaywall() {
+    this.props.openModal('paywall');
+  }
+
   render() {
     const notebookId = this.props.notebook.id;
-    const noAction = () => undefined;
 
     const dropdownItems = {
-      "Move to...": () => this.props.openModal('paywall'),
-      "Share notebook...": noAction,
+      "Move to...": this.openPaywall,
+      "Share notebook...": this.openPaywall,
       "Rename notebook": () => this.props.openModal('update_notebook'),
       "Delete notebook": () => this.props.deleteNotebook(notebookId).then(this.hideDropdown()),
-      "Add shortcut": noAction,
-      "Set as default notebook": this.hideDropdown,
+      "Add shortcut": this.openPaywall,
+      "Set as default notebook": this.openPaywall,
     };
 
     return (
@@ -59,5 +63,6 @@ class NotebooksIndexItem extends React.Component {
       </div>
     );
   }
-}
+};
+
 export default NotebooksIndexItem;

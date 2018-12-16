@@ -236,7 +236,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.create-notebook-modal {
+.modal-interior {
   background-color: white;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 2px 15px 0px;
@@ -584,4 +584,17 @@ body {
 
 .selected-note {
   background-color: rgb(242, 242, 242);
+}
+
+svg {
+  cursor: pointer;
+}
+
+.fullscreen {
+  position: fixed;
+  background: white;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
