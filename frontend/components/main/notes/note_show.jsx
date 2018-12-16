@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import Dropdown from '../modal/dropdown';
+import { Link } from 'react-router-dom';
 
 class NoteShow extends React.Component {
   constructor(props) {
@@ -17,9 +18,13 @@ class NoteShow extends React.Component {
     this.hideDropdown = this.hideDropdown.bind(this);
   }
 
+  componentDidMount() {
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.note.id !== prevProps.note.id) {
       this.setState(Object.assign({}, this.props.note));
+      this.props.fetchNotebook(this.state.notebook_id);
     }
   }
 
@@ -68,10 +73,11 @@ class NoteShow extends React.Component {
 
     return (
       <>
-        <div>
+        <div className="align-middle">
           <svg onClick={this.toggleFullscreen} width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className="svg"><g fill="none"><path d="M0 0h20v20H0z"></path><path d="M3.405 4.4v1.997a.7.7 0 0 1-1.4 0V2.774a.69.69 0 0 1 .19-.572A.694.694 0 0 1 2.713 2h3.693a.7.7 0 1 1 0 1.399h-2.02l4.222 4.216a.7.7 0 1 1-.991.991L3.405 4.4zM12.6 17a.7.7 0 1 1 0-1.398h2.019l-4.243-4.239a.7.7 0 1 1 .991-.99L15.6 14.6v-1.996a.7.7 0 0 1 1.4 0V16.3a.7.7 0 0 1-.7.699h-3.7z" fill="#000" opacity=".34"></path></g></svg>
           <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className="svg"><g fill="none"><path d="M0 0h20v20H0z"></path><path fill="#CCC" d="M10 18h1V2h-1z"></path></g></svg>
-          <span>{this.props.notebook.name}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="svg" width="14" height="14" viewBox="0 0 14 14"><path fill="#7a8083" d="M3 2v10h7a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zM2 1h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2V1zm2 1v10h1V2H4zm2 3v1h4V5H6z"></path></svg>
+          <Link id="parent-notebook-link" to={`/main/notebooks/${this.props.notebook.id}`}>{this.props.notebook.name}</Link>
         </div>
 
         <div className="align-middle">

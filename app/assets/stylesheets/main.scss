@@ -603,3 +603,19 @@ svg {
 .note-show-dropdown {
   top: 20px;
 }
+
+#parent-notebook-link {
+  color: rgb(122, 128, 131);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 20px;
+  margin-left: 7px;
+  max-width: 195px;
+  text-decoration-color: rgb(122, 128, 131);
+  text-decoration-style: solid;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

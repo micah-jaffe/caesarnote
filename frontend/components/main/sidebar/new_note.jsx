@@ -9,7 +9,8 @@ class NewNote extends React.Component {
   }
 
   parseNotebookId() {
-    return parseInt(this.props.location.pathname.match(/\d+/))
+    // hardcode default notebook for now
+    return parseInt(this.props.location.pathname.match(/\d+/)) || 21
   }
   
   handleClick(e) {
