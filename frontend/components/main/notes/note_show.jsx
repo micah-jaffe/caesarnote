@@ -14,8 +14,10 @@ class NoteShow extends React.Component {
 
   handleInput(field) {
     return e => {
-      this.setState({ [field]: e.target.value });
-      this.props.updateNote(this.state);
+      this.setState(
+        { [field]: e.target.value },
+        () => this.props.updateNote(this.state)
+      );
     };
   }
 
