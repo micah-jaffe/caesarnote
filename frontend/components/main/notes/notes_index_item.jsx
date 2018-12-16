@@ -1,10 +1,10 @@
 import React from 'react';
 
-const NotesIndexItem = ({ note }) => {
+const NotesIndexItem = ({ note, selected }) => {
   const unformattedBody = $(note.body).text();
 
   return (
-    <div className="notes-index-item">
+    <div className={"notes-index-item" + (selected ? " selected-note" : "")}>
       <h4>{note.title}</h4>
       <p>{unformattedBody}</p>
       <span>{note.last_updated}</span>

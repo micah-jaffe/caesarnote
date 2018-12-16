@@ -1,6 +1,7 @@
 import React from 'react';
 import NotesIndexItem from '../notes/notes_index_item';
 import NoteShowContainer from '../notes/note_show_container';
+import { node } from 'prop-types';
 
 class NotebookShow extends React.Component {
   constructor(props) {
@@ -26,7 +27,10 @@ class NotebookShow extends React.Component {
 
     return this.props.notes.map(note => (
       <div key={note.id} onClick={() => this.props.selectNote(note.id)}>
-        <NotesIndexItem note={note} />
+        <NotesIndexItem 
+          note={note} 
+          selected={note.id === this.props.selectedNoteId}
+        />
       </div>
     ));
   }

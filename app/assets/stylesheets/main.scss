@@ -457,7 +457,6 @@ body {
 }
 
 .note-show {
-  border: 1px solid red;
   box-sizing: border-box;  
   display: flex;
   flex-direction: column;
@@ -506,8 +505,7 @@ body {
   color: black;
   font-size: 34px;
   font-weight: 300;
-  flex-grow: 1;
-  flex-shrink: 1;
+  // flex-grow: 1;
   line-height: 24px;
   min-width: 300px;
   padding-bottom: 4px;
@@ -516,8 +514,12 @@ body {
   padding-top: 8px;
 }
 
-.quill-editor {
+.quill-editor-container {
   flex-grow: 1;
+}
+
+.quill-editor {
+  background: red;
 }
 
 .note-show-tags {
@@ -531,4 +533,12 @@ body {
   svg {
     margin-right: 10px;
   }
+}
+
+.note-form {
+  flex-grow: 1;
+}
+
+.selected-note {
+  background-color: rgb(242, 242, 242);
 }

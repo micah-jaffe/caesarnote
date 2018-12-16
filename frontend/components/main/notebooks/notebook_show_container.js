@@ -15,10 +15,12 @@ const defaultNotebook = {
 const mapStateToProps = (state, ownProps) => {
   const notebook = state.entities.notebooks[ownProps.match.params.notebookId] || defaultNotebook;
   const notes = selectNotes(notebook.id, state.entities);
+  const selectedNoteId = state.ui.selection.noteId;
 
   return {
     notebook,
-    notes
+    notes,
+    selectedNoteId
   };
 };
 
