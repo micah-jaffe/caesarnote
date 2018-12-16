@@ -37,6 +37,22 @@ const Home = () => {
 
       <div className="body">
         <div className="hero-image">
+          <div className="splash-text">
+            <h1>
+              Feel organized without the effort
+            </h1>
+            <p>
+              Caesarnote helps you capture and prioritize ideas, projects, and to-do lists, so nothing falls through the cracks.
+            </p>
+            <Link id="splash-signup-btn" to="/signup">
+              Sign up for free
+            </Link>
+
+          </div>
+
+          <div className="splash-image-container">
+            {/* <img className="spash-image" src={window.images.splash_image} /> */}
+          </div>
 
         </div>
       </div>
