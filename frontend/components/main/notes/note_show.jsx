@@ -1,14 +1,18 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 
 class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.note
+    this.state = props.note;
+
+    this.handleInput = this.handleInput.bind(this);
+    this.handleQuillChange = this.handleQuillChange.bind(this);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.note.id !== prevProps.note.id) {
-      this.setState(this.props.note)
+      this.setState(Object.assign({}, this.props.note))
     }
   }
 
@@ -21,7 +25,15 @@ class NoteShow extends React.Component {
     };
   }
 
+  handleQuillChange(input, delta, source, editor) {
+    this.setState(
+      { body: input },
+      () => this.props.updateNote(this.state)
+    );
+  }
+
   render() {
+    // debugger;
     return (
       <section className="note-show">
         <div className="note-show-header">
@@ -32,17 +44,18 @@ class NoteShow extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <input 
               type="text" 
-              onChange={this.handleInput('title')} 
               value={this.state.title} 
+              onChange={this.handleInput('title')} 
               placeholder="Title"
             />
 
-            <textarea 
-              onChange={this.handleInput('body')} 
+            <ReactQuill
+              className="quill-editor"
               value={this.state.body}
-              placeholder="Start writing or drag files"
-            >
-            </textarea>
+              onChange={this.handleQuillChange}
+            />
+           
+           
           </form>
         </div>
 
@@ -56,3 +69,11 @@ class NoteShow extends React.Component {
 };
  
 export default NoteShow;
+
+{/* <textarea
+  onChange={this.handleInput('body')}
+  value={this.state.body}
+  placeholder="Start writing or drag files"
+> 
+  </textarea>
+*/}

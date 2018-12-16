@@ -1,10 +1,12 @@
 import React from 'react';
 
 const NotesIndexItem = ({ note }) => {
+  const unformattedBody = $(note.body).text();
+
   return (
     <div className="notes-index-item">
       <h4>{note.title}</h4>
-      <p>{note.body}</p>
+      <p>{unformattedBody}</p>
       <span>{note.last_updated}</span>
     </div>
   );
