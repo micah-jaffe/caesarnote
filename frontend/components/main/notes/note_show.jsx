@@ -33,11 +33,10 @@ class NoteShow extends React.Component {
   }
 
   render() {
-    // debugger;
     return (
       <section className="note-show">
         <div className="note-show-header">
-          No header
+          Notebook name
         </div>
 
         <div className="note-form">
@@ -69,11 +68,3 @@ class NoteShow extends React.Component {
 };
  
 export default NoteShow;
-
-{/* <textarea
-  onChange={this.handleInput('body')}
-  value={this.state.body}
-  placeholder="Start writing or drag files"
-> 
-  </textarea>
-*/}

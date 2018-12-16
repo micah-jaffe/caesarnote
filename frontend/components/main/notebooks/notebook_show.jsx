@@ -33,9 +33,7 @@ class NotebookShow extends React.Component {
 
   renderNoteShow() {
     return (
-      <div>
-        <NoteShowContainer />
-      </div>
+      <NoteShowContainer />
     );
   }
 

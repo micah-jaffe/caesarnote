@@ -447,12 +447,27 @@ body {
 
 .notes-wrapper {
   display: flex;
+  width: 100%;
+}
+
+.note-show-wrapper {
+  display: flex;
+  flex-grow: 1;
+  float: right;
 }
 
 .note-show {
-  
+  border: 1px solid red;
+  box-sizing: border-box;  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-weight: 300px;
+  line-height: 24px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .quill-editor {
-  border: 1px solid red;
+  // border: 1px solid red;
 }
