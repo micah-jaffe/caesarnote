@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NoteShow from './note_show';
-import { updateNote } from '../../../actions/note_actions';
+import { updateNote, deleteNote } from '../../../actions/note_actions';
 import { openModal } from '../../../actions/modal_actions';
 
 const defaultNote = {
@@ -30,7 +30,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   updateNote: (note) => dispatch(updateNote(note)),
-  openModal: (modal) => dispatch(openModal(modal))
+  openModal: (modal) => dispatch(openModal(modal)),
+  deleteNote: (id) => dispatch(deleteNote(id))
 });
 
 export default connect(

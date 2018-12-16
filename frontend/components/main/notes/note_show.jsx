@@ -60,7 +60,7 @@ class NoteShow extends React.Component {
       "Move to...": this.openPaywall,
       "Share note...": this.openPaywall,
       "Duplicate note": this.openPaywall,
-      "Delete note": this.openPaywall,
+      "Delete note": () => this.props.deleteNote(this.props.note.id),
       "Add shortcut": this.openPaywall,
       "Copy internal link": this.openPaywall,
       "View note info...": this.openPaywall
