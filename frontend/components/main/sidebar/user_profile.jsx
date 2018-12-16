@@ -9,6 +9,7 @@ class UserProfile extends React.Component {
 
     this.showDropdown = this.showDropdown.bind(this);
     this.hideDropdown = this.hideDropdown.bind(this);
+    this.openPaywall = this.openPaywall.bind(this);
   }
 
   showDropdown() {
@@ -17,6 +18,10 @@ class UserProfile extends React.Component {
 
   hideDropdown() {
     this.setState({ dropdown: false })
+  }
+
+  openPaywall() {
+    this.props.openModal('paywall');
   }
 
   render() {
@@ -36,13 +41,14 @@ class UserProfile extends React.Component {
           visible={this.state.dropdown} 
           logout={this.props.logout} 
           currentUser={this.props.currentUser}
+          openPaywall={this.openPaywall}
         />
       </div>
     );
   }
 };
 
-const Dropdown = ({ visible, logout, currentUser }) => {
+const Dropdown = ({ visible, logout, currentUser, openPaywall }) => {
   return (
     <div className={visible ? "user-profile-dropdown" : "no-display"}>
       <ul>
@@ -51,11 +57,11 @@ const Dropdown = ({ visible, logout, currentUser }) => {
           <UserSnippet currentUser={currentUser} />
           <i className="fas fa-check"></i>
         </li>
-        <li className="hoverable">Settings</li>
-        <li className="hoverable">Help</li>
-        <li className="hoverable">What's new in Caesarnote Web</li>
-        <li className="hoverable">Switch to older version of Caesarnote</li>
-        <li className="hoverable" onMouseDown={logout}>Sign out {currentUser.username}</li>
+        <li onMouseDown={openPaywall} className="hoverable">Settings</li>
+        <li onMouseDown={openPaywall} className="hoverable">Help</li>
+        <li onMouseDown={openPaywall} className="hoverable">What's new in Caesarnote Web</li>
+        <li onMouseDown={openPaywall} className="hoverable">Switch to older version of Caesarnote</li>
+        <li onMouseDown={logout} className="hoverable" >Sign out {currentUser.username}</li>
       </ul>
     </div>
   );
