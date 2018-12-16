@@ -1,15 +1,10 @@
 import React from 'react';
 import NotesIndexItem from '../notes/notes_index_item';
 import NoteShowContainer from '../notes/note_show_container';
-import { node } from 'prop-types';
 
 class NotebookShow extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      selectedNote: { title: '', body: '' }
-    };
 
     this.openPaywall = this.openPaywall.bind(this);
   }
@@ -17,7 +12,6 @@ class NotebookShow extends React.Component {
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
-    this.sortNotes();
   }
 
   openPaywall() {
@@ -30,8 +24,8 @@ class NotebookShow extends React.Component {
 
   renderNotesIndexItems() {
     this.sortNotes();
-
-    return this.props.notes.map(note => (
+   
+    return this.props.notes.map((note, i) => (
       <div key={note.id} onClick={() => this.props.selectNote(note.id)}>
         <NotesIndexItem 
           note={note} 
