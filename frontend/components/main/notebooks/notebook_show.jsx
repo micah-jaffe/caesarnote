@@ -18,7 +18,7 @@ class NotebookShow extends React.Component {
   }
 
   sortNotes() {
-    this.props.notes.sort((a, b) => a.last_updated < b.last_updated ? -1 : 1);
+    this.props.notes.sort((a, b) => a.updated_at < b.updated_at ? 1 : -1);
   }
 
   renderNotesIndexItems() {
@@ -29,10 +29,6 @@ class NotebookShow extends React.Component {
         <NotesIndexItem note={note} />
       </div>
     ));
-  }
-
-  autosaveNote() {
-
   }
 
   renderNoteShow() {

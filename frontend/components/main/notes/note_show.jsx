@@ -3,42 +3,20 @@ import React from 'react';
 class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   id: props.note ? props.note.id : null,
-    //   title: props.note ? props.note.title : 'default',
-    //   body: props.note ? props.note.body : 'default',
-    //   user_id: props.note ? props.note.user_id : null,
-    //   notebook_id: props.note ? props.note.notebook_id : null
-    // }
-
     this.state = props.note
-    // debugger;
-    // debugger;
-    // this.state = this.props.note;
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // debugger
+  componentDidUpdate(prevProps) {
     if (this.props.note.id !== prevProps.note.id) {
       this.setState(this.props.note)
     }
   }
 
   handleInput(field) {
-    return e => {this.setState({ [field]: e.target.value }); console.log(this.state)};
-  }
-
-  handleSubmit(e) {
-    let that = this;
-    e.preventDefault();
-    console.log(that.state);
-    this.props.updateNote(this.state);
-  }
-
-  handleChange(e) {
-    return (e) => this.props.updateForm(this.props.note);
+    return e => {
+      this.setState({ [field]: e.target.value });
+      this.props.updateNote(this.state);
+    };
   }
 
   render() {
@@ -50,9 +28,19 @@ class NoteShow extends React.Component {
 
         <div className="note-form">
           <form onSubmit={this.handleSubmit}>
-            <input type="text" onChange={this.handleInput('title')} value={this.state.title} />
-            <textarea onChange={this.handleInput} value={this.state.body}></textarea>
-            <input type="submit" value="Submit"/>
+            <input 
+              type="text" 
+              onChange={this.handleInput('title')} 
+              value={this.state.title} 
+              placeholder="Title"
+            />
+
+            <textarea 
+              onChange={this.handleInput('body')} 
+              value={this.state.body}
+              placeholder="Start writing or drag files"
+            >
+            </textarea>
           </form>
         </div>
 

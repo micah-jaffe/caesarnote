@@ -4,8 +4,8 @@ import { updateNote } from '../../../actions/note_actions';
 
 const defaultNote = {
   id: null,
-  title: 'default',
-  body: 'default',
+  title: '',
+  body: '',
   user_id: null,
   notebook_id: null
 };
