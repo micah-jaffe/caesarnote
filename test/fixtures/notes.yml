@@ -9,6 +9,9 @@
 #  user_id     :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  is_shortcut :boolean          default(FALSE), not null
+#  is_trashed  :boolean          default(FALSE), not null
+#  cipher_key  :integer          default(0), not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
