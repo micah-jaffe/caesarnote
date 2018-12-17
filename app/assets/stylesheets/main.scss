@@ -515,7 +515,6 @@ body {
 
 .note-title-container {
   height: 40px;
-  // width: 100%;
 }
 
 .note-title {
@@ -543,9 +542,14 @@ body {
   border-left: none !important;
   border-right: none !important;
   bottom: 40px;
+  font-family: $sans-serif !important;
+  font-size: 12px !important;
+  line-height: 17px;
+
   position: relative;
   margin-left: 40px;
   margin-right: 40px;
+  min-height: 40px;
   overflow: hidden;
   white-space: nowrap;
   z-index: 1;
@@ -555,7 +559,7 @@ body {
   border: none !important;
   display: flex;
   flex-grow: 1;
-  height: 500px;
+  // height: 500px;
 }
 
 .ql-editor {
@@ -565,8 +569,18 @@ body {
   margin-left: 25px;
   margin-right: 25px;
   margin-top: 15px;
-  min-height: 200px;
+  height: 95% !important;
+  // padding-bottom: 20px !important;
+  // margin-bottom: 100px;
+  // min-height: 200px;
   // overflow-y: scroll;
+  line-height: 1.6 !important;
+  width: 100%;
+}
+
+.ql-picker-options {
+  // z-index: 20 !important;
+  position: absolute !important;
 }
 
 .ql-editor[data-placeholder]:not(:focus):before {
@@ -578,7 +592,7 @@ body {
 }
 
 .ql-picker-options {
-  z-index: 10 !important;
+  z-index: 10000 !important;
 }
 
 .quill-editor-container {
@@ -652,10 +666,4 @@ svg {
   }
 }
 
-.quill-custom {
 
-  // bac: 5px solid red;
-  background: gray;
-  height: 100vh;
-  color: blue;
-}
