@@ -12,7 +12,7 @@ class NotebookShow extends React.Component {
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
-    // this.selectFirstNote();
+    this.selectFirstNote();
   }
 
   componentDidUpdate(prevProps) {

@@ -11,11 +11,13 @@ class NotesIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchNotes();
-    // this.selectFirstNote();
+    this.selectFirstNote();
   }
 
-  componentDidUpdate() {
-    // this.selectFirstNote();
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.notebookId !== prevProps.match.params.notebookId) {
+      this.selectFirstNote();
+    } 
   }
 
   selectFirstNote() {
