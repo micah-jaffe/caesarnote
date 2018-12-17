@@ -100,7 +100,7 @@
 }
 
 .hero-image {
-  // height: 617px;
+  align-items: center;
   box-sizing: border-box;
   background-color: rgb(0, 168, 45);
   background-image: image-url("main-background.png");
@@ -108,18 +108,21 @@
   justify-content: space-between;
   height: 617px;
   padding-bottom: 60px;
-  padding-left: 40px;
-  padding-right: 80px;
+  // padding-left: 40px;
+  // padding-right: 40px;
+  padding-left: 4%;
+  padding-right: 4%;
   padding-top: 120px;
   width: 100vw;
 }
 
 .splash-text {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding-left: 40px;
   padding-right: 60px;
-  width: 47%;
+  width: 50%;
+  height: 100%;
 
   h1 {
     color: white;
@@ -128,6 +131,7 @@
     font-weight: 500;
     line-height: 72px;
     margin-bottom: 20px;
+    max-width: 550px;
   }
 
   p {
@@ -146,8 +150,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   box-sizing: border-box;
+  height: 100%;
   padding: 30px;
-  width: 53%;
+  width: 50%;
 
 }
 
