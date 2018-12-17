@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactQuill from 'react-quill';
 import Dropdown from '../modal/dropdown';
+import Editor from './editor';
 import { Link } from 'react-router-dom';
 
 class NoteShow extends React.Component {
@@ -103,13 +103,22 @@ class NoteShow extends React.Component {
     );
   }
 
-  renderQuillEditor() {
+  // renderQuillEditor() {
+  //   return (
+  //     <ReactQuill
+  //       className="quill-editor"
+  //       value={this.state.body}
+  //       onChange={this.handleQuillChange}
+  //       placeholder="Start writing, drag file, or encrypt your note"
+  //     />
+  //   );
+  // }
+
+   renderQuillEditor() {
     return (
-      <ReactQuill
-        className="quill-editor"
-        value={this.state.body}
-        onChange={this.handleQuillChange}
-        placeholder="Start writing, drag file, or encrypt your note"
+      <Editor 
+        value={this.state.body} 
+        onChange={this.handleQuillChange} 
       />
     );
   }
