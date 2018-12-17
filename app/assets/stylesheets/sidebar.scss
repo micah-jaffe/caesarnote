@@ -7,15 +7,15 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  min-width: 241px;
-  width: 241px;
+  min-width: $sidebar-width;
+  width: $sidebar-width;
   font-family: $sans-serif;
 }
 
 .sidebar-wrapper {
   position: relative;
-  min-width: 241px;
-  width: 241px;
+  min-width: $sidebar-width;
+  width: $sidebar-width;
 }
 
 .user-profile-container {

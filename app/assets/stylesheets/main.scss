@@ -25,7 +25,7 @@ body {
   height: 100vh;
   background: rgb(248, 248, 248);
   border-right: 1px solid rgb(230, 230, 230);
-  width: 345px;
+  width: $notes-index-width;
 }
 
 .notebook-container {
@@ -42,7 +42,7 @@ body {
     height: 166px;
     justify-content: flex-end;
     position: fixed;
-    width: 345px;
+    width: $notes-index-width;
     z-index: 1;
     
   }
@@ -463,7 +463,7 @@ body {
   height: 100vh;
   position: fixed;
   right: 0;
-  width: calc(100% - (241px + 345px));
+  width: $note-show-width;
 }
 
 .note-show {
@@ -482,7 +482,7 @@ body {
   border-bottom: 1px solid rgb(237, 237, 237);
   box-sizing: border-box;
   display: flex;
-  height: 54px;
+  min-height: 54px;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
@@ -529,7 +529,7 @@ body {
   padding-right: 40px;
   padding-top: 8px;
   position: relative;
-  width: 100%;
+  // width: $note-show-width;
 }
 
 .ql-toolbar.ql-snow {

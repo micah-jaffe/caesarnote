@@ -9,3 +9,7 @@ $sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 $soleil-bold: Soleil_Bold, Helvetica, Arial, sans-serif;
 $soleil-medium: Soleil_Medium, Helvetica, Arial, sans-serif;
 $soleil-light: Soleil_Light, Helvetica, Arial, sans-serif;
+
+$sidebar-width: 241px;
+$notes-index-width: 345px;
+$note-show-width: calc(100% - (241px + 345px));
