@@ -68,6 +68,7 @@
   left: 15px;
   top: 56px;
   width: 290px;
+  z-index: 2;
 
   li {
     cursor: pointer;
@@ -227,4 +228,14 @@
 
 #upgrade {
   fill: rgb(255, 179, 102);
+}
+
+.selected-nav {
+  background-color: rgb(64, 64, 64);
+  font-weight: 600;
+  transition: background 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgb(64, 64, 64);
+  }
 }
