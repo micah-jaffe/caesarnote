@@ -9,10 +9,11 @@ body {
   display: flex;
   font-family: $sans-serif;
   font-weight: 300;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  // overflow-y: hidden;
 
   a {
     color: inherit;
@@ -22,9 +23,10 @@ body {
 }
 
 .notebook-container-wrapper {
-  height: 100vh;
   background: rgb(248, 248, 248);
   border-right: 1px solid rgb(230, 230, 230);
+  height: calc(auto + 167px);
+  overflow: scroll;
   width: $notes-index-width;
 }
 
@@ -37,6 +39,8 @@ body {
   header {
     background: rgb(248, 248, 248);
     border-bottom: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 166px;
@@ -401,7 +405,6 @@ body {
   overflow: scroll;
   position: relative;
   top: 167px;
-  height: calc(100vh + 167px);
 }
 
 .notes-index-item {
@@ -454,7 +457,7 @@ body {
 
 .notes-wrapper {
   display: flex;
-  width: 100%;
+  width: $notes-index-width;
 }
 
 .note-show-wrapper {
