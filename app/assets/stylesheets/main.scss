@@ -35,11 +35,15 @@ body {
   font-weight: 300;  
 
   header {
+    background: rgb(248, 248, 248);
     border-bottom: 1px solid rgb(230, 230, 230);
     display: flex;
     flex-direction: column;
     height: 166px;
     justify-content: flex-end;
+    position: fixed;
+    width: 345px;
+    z-index: 1;
     
   }
 
@@ -395,7 +399,9 @@ body {
 
 .notes-index-wrapper {
   overflow: scroll;
-  height: 100%;
+  position: relative;
+  top: 167px;
+  height: calc(100vh + 167px);
 }
 
 .notes-index-item {
@@ -454,7 +460,10 @@ body {
 .note-show-wrapper {
   display: flex;
   flex-grow: 1;
-  float: right;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  width: calc(100% - (241px + 345px));
 }
 
 .note-show {
