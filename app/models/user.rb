@@ -20,7 +20,9 @@ class User < ApplicationRecord
   has_many :notes
 
   attr_reader :password
+
   before_validation :ensure_session_token
+  after_save :create_first_notebook
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64
@@ -48,5 +50,11 @@ class User < ApplicationRecord
     self.session_token = User.generate_session_token
     self.save!
     self.session_token
+  end
+
+  private
+
+  def create_first_notebook
+    self.notebooks.create!(name: "My First Notebook", is_default: true)
   end
 end
