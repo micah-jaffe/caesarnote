@@ -12,8 +12,6 @@ body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  // overflow-y: scroll;
-  // overflow-y: hidden;
 
   a {
     color: inherit;
@@ -25,8 +23,6 @@ body {
 .notebook-container-wrapper {
   background: rgb(248, 248, 248);
   border-right: 1px solid rgb(230, 230, 230);
-  height: calc(auto + 167px);
-  overflow: scroll;
   width: $notes-index-width;
 }
 
@@ -402,9 +398,13 @@ body {
 }
 
 .notes-index-wrapper {
+  bottom: 0px;
+  box-sizing: border-box;
+  border-right: 1px solid rgb(230, 230, 230);
   overflow: scroll;
-  position: relative;
-  top: 167px;
+  position: fixed;
+  top: $notebook-header-height - 1;
+  width: $notes-index-width;
 }
 
 .notes-index-item {
