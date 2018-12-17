@@ -3,10 +3,11 @@
 .login-page {
   position: fixed;
   background-image: image-url("login-background.png");
-  height: 100%;
-  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
   overflow: scroll;
-
 }
 
 .login-form-container {
@@ -25,8 +26,14 @@
   padding-left: 99px;
   padding-right: 99px;
   padding-top: 30px;
-  margin-top: 5%;
   margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+@media (max-height: 750px) {
+  .login-form-container {
+    margin-top: 0;
+  }
 }
 
 .login-form-header {
