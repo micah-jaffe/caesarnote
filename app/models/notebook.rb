@@ -11,6 +11,7 @@
 #
 
 class Notebook < ApplicationRecord
+  validates :is_default, presence: true, inclusion: { in: [true, false] }
   belongs_to :user
   has_many :notes, dependent: :destroy
 
