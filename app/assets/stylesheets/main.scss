@@ -515,6 +515,7 @@ body {
 
 .note-title-container {
   height: 40px;
+  // width: 100%;
 }
 
 .note-title {
@@ -533,7 +534,7 @@ body {
   padding-right: 40px;
   padding-top: 8px;
   position: relative;
-  width: $note-show-width;
+  width: 90%;
 }
 
 .ql-toolbar.ql-snow {
@@ -554,6 +555,7 @@ body {
   border: none !important;
   display: flex;
   flex-grow: 1;
+  height: 500px;
 }
 
 .ql-editor {
@@ -578,6 +580,16 @@ body {
   z-index: 10 !important;
 }
 
+.quill-editor-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.quill.quill-editor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
 .note-show-tags {
   border-top: 1px solid rgb(236, 236, 236);
@@ -593,6 +605,8 @@ body {
 }
 
 .note-form {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -631,4 +645,12 @@ svg {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.quill-custom {
+
+  // bac: 5px solid red;
+  background: gray;
+  height: 100vh;
+  color: blue;
 }
