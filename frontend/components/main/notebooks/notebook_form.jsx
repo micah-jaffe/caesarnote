@@ -3,7 +3,10 @@ import React from 'react';
 class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "" };
+    this.state = {
+      id: this.props.notebook.id,
+      name: this.props.notebook.name
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }

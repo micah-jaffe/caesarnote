@@ -12,7 +12,7 @@ import {
 const mapDispatchToProps = (dispatch) => ({
   updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
   deleteNotebook: (id) => dispatch(deleteNotebook(id)),
-  openModal: (modal) => dispatch(openModal(modal)),
+  openModal: (name, data) => dispatch(openModal(name, data)),
   closeModal: () => dispatch(closeModal())
 });
 

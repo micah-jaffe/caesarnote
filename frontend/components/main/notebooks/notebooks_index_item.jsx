@@ -32,7 +32,7 @@ class NotebooksIndexItem extends React.Component {
     const dropdownItems = {
       "Move to...": this.openPaywall,
       "Share notebook...": this.openPaywall,
-      "Rename notebook": () => this.props.openModal('update_notebook', notebookId),
+      "Rename notebook": () => this.props.openModal('update_notebook', this.props.notebook),
       "Delete notebook": () => this.props.deleteNotebook(notebookId).then(this.hideDropdown()),
       "Add shortcut": this.openPaywall,
       "Set as default notebook": this.openPaywall,
