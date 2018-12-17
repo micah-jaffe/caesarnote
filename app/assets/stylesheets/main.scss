@@ -566,6 +566,7 @@ body {
   margin-right: 25px;
   margin-top: 15px;
   min-height: 200px;
+  // overflow-y: scroll;
 }
 
 .ql-editor[data-placeholder]:not(:focus):before {

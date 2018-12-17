@@ -15,8 +15,10 @@ class NotebookShow extends React.Component {
     // this.selectFirstNote();
   }
 
-  componentDidUpdate() {
-    // this.selectFirstNote();
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.notebookId !== prevProps.match.params.notebookId) {
+      this.selectFirstNote();
+    } 
   }
 
   selectFirstNote() {
