@@ -17,12 +17,11 @@ class NotebooksIndex extends React.Component {
   }
 
   sortNotebooks() {
-    this.props.notebooks.sort((a, b) => a.updated_at < b.updated_at ? 1 : -1);
+    this.props.notebooks.sort((a, b) => a.last_updated_timestamp < b.last_updated_timestamp ? 1 : -1);
   }
 
   render() {
     this.sortNotebooks();
-    // debugger;
     const notebookIndexItems = this.props.notebooks.map(notebook => (
       <NotebookIndexItemContainer
         key={notebook.id} 

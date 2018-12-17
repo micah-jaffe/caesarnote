@@ -21,7 +21,16 @@ class Notebook < ApplicationRecord
     self.name = self.name.blank? ? 'Untitled' : self.name
   end
 
-  def last_updated
-    time_ago_in_words(self.updated_at) + ' ago'
+  def last_updated_timestamp
+    if self.notes.length > 0
+      self.notes.max_by{ |note| note.updated_at }.updated_at
+    else
+      self.updated_at
+    end
   end
+
+  def last_updated
+    time_ago_in_words(self.last_updated_timestamp) + ' ago'
+  end
+
 end
