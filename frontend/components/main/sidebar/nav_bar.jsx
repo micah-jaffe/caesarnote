@@ -62,7 +62,7 @@ class NavBar extends React.Component {
 
           <li onClick={this.handleNotebookClick} className={"align-middle nav-link" + (this.state.selectedNavLink === 3 ? " selected-nav" : "")}>
             <Link className="align-middle" to="/main/notebooks">
-              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" className="nav shortcuts-arrow"><path d="M2 0l4 4-4 4z"></path></svg>
+              <div className={"align-middle" + (this.state.notebookDropdown ? " rotate" : "unrotate")}><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path d="M2 0l4 4-4 4z"></path></svg></div>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M9 4h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9V4zM6 4h2v15H6V4zm5.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-4z"></path></svg>
               <span>Notebooks</span>
             </Link>

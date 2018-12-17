@@ -249,3 +249,11 @@
 .nav-dropdown {
   padding-left: 45px;
 }
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.unrotate {
+  transform: rotate(-90deg);
+}
