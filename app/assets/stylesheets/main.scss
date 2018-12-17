@@ -593,12 +593,16 @@ body {
 }
 
 .note-show-tags {
+  background-color: white;
   border-top: 1px solid rgb(236, 236, 236);
+  border-left: 1px solid rgb(236, 236, 236);
   box-sizing: border-box;
   color: rgb(119, 119, 119);
   height: 50px;
   line-height: 50px;
+  min-height: 50px;
   padding: 10px;
+  z-index: 1;
 
   svg {
     margin-right: 10px;
