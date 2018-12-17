@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
-  // add constructor with local state for which one is selected
   constructor(props) {
     super(props);
 
@@ -16,8 +15,6 @@ class NavBar extends React.Component {
   selectNavLink(navLink) {
     return () => this.setState({ selectedNavLink: navLink });
   }
-
-
 
   render() {
     return (
