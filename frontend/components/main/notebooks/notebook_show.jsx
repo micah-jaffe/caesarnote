@@ -12,14 +12,28 @@ class NotebookShow extends React.Component {
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes();
+    this.selectFirstNote();
   }
 
-  openPaywall() {
-    this.props.openModal('paywall');
+  componentDidUpdate() {
+    this.selectFirstNote();
+  }
+
+  selectFirstNote() {
+    if (this.props.notes.length > 0) {
+      this.sortNotes();
+      this.props.selectNote(this.props.notes[0].id);
+    } else {
+      this.props.selectNote(null);
+    }
   }
 
   sortNotes() {
     this.props.notes.sort((a, b) => a.updated_at < b.updated_at ? 1 : -1);
+  }
+
+  openPaywall() {
+    this.props.openModal('paywall');
   }
 
   renderNotesIndexItems() {
