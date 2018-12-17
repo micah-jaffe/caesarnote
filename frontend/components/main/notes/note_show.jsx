@@ -103,17 +103,6 @@ class NoteShow extends React.Component {
     );
   }
 
-  // renderQuillEditor() {
-  //   return (
-  //     <ReactQuill
-  //       className="quill-editor"
-  //       value={this.state.body}
-  //       onChange={this.handleQuillChange}
-  //       placeholder="Start writing, drag file, or encrypt your note"
-  //     />
-  //   );
-  // }
-
    renderQuillEditor() {
     return (
       <Editor 

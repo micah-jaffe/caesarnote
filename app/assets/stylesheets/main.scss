@@ -1,5 +1,10 @@
 @import "variables";
 
+strong {
+  font-weight: 900;
+  color: red;
+}
+
 body {
   overscroll-behavior-y: none;
 }
@@ -520,7 +525,7 @@ body {
 .note-title {
   background: none;
   border: none;
-  top: 40px;
+  top: 50px;
   color: black;
   font-size: 34px;
   font-weight: 300;
@@ -546,14 +551,43 @@ body {
   font-size: 12px !important;
   line-height: 17px;
 
+  padding-bottom: 0 !important;
+  padding-top: 12px !important;
   position: relative;
   margin-left: 40px;
   margin-right: 40px;
-  min-height: 40px;
-  overflow: hidden;
+  min-height: 50px !important;
+  height: 50px !important;
+  overflow-x: hidden;
+  overflow-y: visible;
   white-space: nowrap;
   z-index: 1;
 }
+
+::-webkit-scrollbar:horizontal {
+ 
+  height: 0px;
+}
+
+// ::-webkit-scrollbar {
+//   height: 5px;
+//   width: 8px;
+//   // width: 5px;
+//   // color: red;
+// }
+
+// ::-webkit-scrollbar-track {
+//   // height: 0px;
+//   // background: red;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   // width: 30px;
+//   background-color:  rgb(0, 168, 45);
+//   border-radius: 10px;
+// }
+
+
 
 .ql-container {
   border: none !important;
