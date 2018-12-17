@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NotebookForm from './notebook_form';
-import { createNotebook } from '../../../actions/notebook_actions';
+import { updateNotebook } from '../../../actions/notebook_actions';
 import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = ({ session }) => ({
@@ -9,7 +9,7 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  action: (notebook) => dispatch(createNotebook(notebook)),
+  action: (notebook) => dispatch(updateNotebook(notebook)),
   closeModal: () => dispatch(closeModal())
 });
 

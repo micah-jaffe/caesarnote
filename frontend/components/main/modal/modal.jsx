@@ -5,18 +5,18 @@ import NotebookCreateFormContainer from '../notebooks/notebook_create_form_conta
 import NotebookUpdateFormContainer from '../notebooks/notebook_update_form_container';
 import Paywall from './paywall';
 
-function Modal({ modal, closeModal }) {
-  if (!modal) {
+function Modal({ name, data, closeModal }) {
+  if (!name) {
     return null;
   }
 
   let component;
-  switch (modal) {
+  switch (name) {
     case 'create_notebook':
       component = <NotebookCreateFormContainer />;
       break;
     case 'update_notebook':
-      component = <NotebookUpdateFormContainer />;
+      component = <NotebookUpdateFormContainer data={data} />;
       break;
     case 'paywall':
       component = <Paywall />;
@@ -40,7 +40,8 @@ function Modal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    name: state.ui.modal ? state.ui.modal.name : null,
+    data: state.ui.modal ? state.ui.modal.data : null
   };
 };
 

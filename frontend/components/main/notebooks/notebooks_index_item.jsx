@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import Dropdown from '../modal/dropdown';
 import { Link } from 'react-router-dom';
 
@@ -32,7 +32,7 @@ class NotebooksIndexItem extends React.Component {
     const dropdownItems = {
       "Move to...": this.openPaywall,
       "Share notebook...": this.openPaywall,
-      "Rename notebook": () => this.props.openModal('update_notebook'),
+      "Rename notebook": () => this.props.openModal('update_notebook', notebookId),
       "Delete notebook": () => this.props.deleteNotebook(notebookId).then(this.hideDropdown()),
       "Add shortcut": this.openPaywall,
       "Set as default notebook": this.openPaywall,

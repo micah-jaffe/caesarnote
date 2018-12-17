@@ -3,9 +3,16 @@ import NotebookForm from './notebook_form';
 import { createNotebook } from '../../../actions/notebook_actions';
 import { closeModal } from '../../../actions/modal_actions';
 
+const nullNotebook = {
+  id: null,
+  name: '',
+  user_id: null
+}
+
 const mapStateToProps = ({ session }) => ({
   userId: session.id,
-  formType: 'create'
+  formType: 'create',
+  notebook: nullNotebook
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -16,4 +23,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NotebookForm);
+)(NotebookForm); 

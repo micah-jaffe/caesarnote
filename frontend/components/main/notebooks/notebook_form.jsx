@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NotebookCreateForm extends React.Component {
+class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { name: "" };
@@ -64,4 +64,4 @@ class NotebookCreateForm extends React.Component {
   }
 };
 
-export default NotebookCreateForm;
+export default NotebookForm;

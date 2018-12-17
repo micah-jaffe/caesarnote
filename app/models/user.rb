@@ -22,7 +22,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   before_validation :ensure_session_token
-  after_save :create_first_notebook
+  after_create :create_first_notebook
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64
