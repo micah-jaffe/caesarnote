@@ -19,8 +19,6 @@ class NewNote extends React.Component {
   }
   
   handleClick(e) {
-    debugger;
-
     e.preventDefault();
     const newNote = {
       title: '',
