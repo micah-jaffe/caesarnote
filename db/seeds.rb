@@ -8,6 +8,7 @@
 
 demoUser = User.create(username: 'Julius', email: 'julius@caesarnote.com', password: 'password')
 
+# these notebook seeds don't work for some reason
 Notebook.create(name: 'My First Notebook', user_id: demoUser.id, is_default: true)
 Notebook.create(name: 'Secret Things', user_id: demoUser.id, is_default: false)
 Notebook.create(name: 'Important Messages', user_id: demoUser.id, is_default: false)
