@@ -16,11 +16,16 @@ class NotebooksIndex extends React.Component {
     this.props.openModal('paywall');
   }
 
+  sortNotebooks() {
+    this.props.notebooks.sort((a, b) => a.updated_at < b.updated_at ? 1 : -1);
+  }
+
   render() {
-    const sortedNotebooks = this.props.notebooks.reverse();
-    const notebookIndexItems = sortedNotebooks.map((notebook, i) => (
+    this.sortNotebooks();
+    // debugger;
+    const notebookIndexItems = this.props.notebooks.map(notebook => (
       <NotebookIndexItemContainer
-        key={`notebook-${i}`} 
+        key={notebook.id} 
         notebook={notebook} 
       />
     ));
