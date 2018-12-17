@@ -9,3 +9,7 @@ export const selectNotes = (notebookId, entities) => {
 export const selectAllNotes = (entities) => {
   return Object.values(entities.notes);
 };
+
+export const selectDefaultNotebook = (entities) => {
+  return Object.values(entities.notebooks).filter(notebook => notebook.is_default)[0];
+};

@@ -8,12 +8,19 @@ class NewNote extends React.Component {
     this.parseNotebookId = this.parseNotebookId.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchNotebooks();
+  }
+
   parseNotebookId() {
-    // hardcode default notebook for now
-    return parseInt(this.props.location.pathname.match(/\d+/)) || 21
+    const notebookIdFromPath = parseInt(this.props.location.pathname.match(/\d+/));
+    const userDefaultNotebookId = this.props.userDefaultNotebook.id;
+    return notebookIdFromPath || userDefaultNotebookId;
   }
   
   handleClick(e) {
+    debugger;
+
     e.preventDefault();
     const newNote = {
       title: '',

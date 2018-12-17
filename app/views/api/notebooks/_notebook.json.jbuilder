@@ -1,1 +1,1 @@
-json.extract! notebook, :id, :name, :user_id, :last_updated, :last_updated_timestamp
+json.extract! notebook, :id, :name, :user_id, :last_updated, :last_updated_timestamp, :is_default
