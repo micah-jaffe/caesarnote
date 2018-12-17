@@ -6,4 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-demoUser = User.create(username: 'demouser', email: 'demouser@caesarnote.com', password: 'password')
+demoUser = User.create(username: 'Julius', email: 'julius@caesarnote.com', password: 'password')
+
+Notebook.create(name: 'My First Notebook', user_id: demoUser.id, is_default: true)
+Notebook.create(name: 'Secret Things', user_id: demoUser.id, is_default: false)
+Notebook.create(name: 'Important Messages', user_id: demoUser.id, is_default: false)
+
+# seed notes here
