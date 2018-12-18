@@ -2,13 +2,15 @@ import React from 'react';
 import Dropdown from '../modal/dropdown';
 import Editor from './editor';
 import { Link } from 'react-router-dom';
+import { richCaesarCipher } from '../../../util/cipher_util';
 
 class NoteShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.note;
-    this.state['fullscreen'] = false;
-    this.state['dropdown'] = false;
+    this.state.fullscreen = false;
+    this.state.dropdown = false;
+    this.state.ciphered = false;
 
     this.handleInput = this.handleInput.bind(this);
     this.handleQuillChange = this.handleQuillChange.bind(this);
@@ -16,6 +18,7 @@ class NoteShow extends React.Component {
     this.openPaywall = this.openPaywall.bind(this);
     this.showDropdown = this.showDropdown.bind(this);
     this.hideDropdown = this.hideDropdown.bind(this);
+    this.cipherNote = this.cipherNote.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -41,10 +44,22 @@ class NoteShow extends React.Component {
     this.props.openModal('paywall');
   }
 
+  cipherNote() {
+    const key = this.state.ciphered ? 1 : -1;
+
+    this.setState({
+      title: richCaesarCipher(this.state.title, key),
+      body: richCaesarCipher(this.state.body, key),
+      ciphered: !this.state.ciphered,
+    }, 
+      () => this.props.updateNote(this.state)
+    );
+  }
+
   handleInput(field) {
     return e => {
-      this.setState(
-        { [field]: e.target.value },
+      this.setState({
+        [field]: e.target.value },
         () => this.props.updateNote(this.state)
       );
     };
@@ -78,7 +93,7 @@ class NoteShow extends React.Component {
         </div>
 
         <div className="align-middle">
-          <button className="share-btn" onClick={this.openPaywall}>Share</button>
+          <button className="share-btn" onClick={this.cipherNote}>{this.state.ciphered ? "Decipher" : "Cipher"}</button>
           <svg tabIndex="0" onFocus={this.showDropdown} onBlur={this.hideDropdown} nxmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" className="note-dropdown-icon svg"><path fill="#7a8083" d="M25 19a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm-9 0a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path></svg>
           <Dropdown visible={this.state.dropdown} classname="note-show-dropdown" items={dropdownItems} />
         </div>
@@ -92,7 +107,7 @@ class NoteShow extends React.Component {
         <input
           className="note-title"
           type="text"
-          value={this.state.title === 'Untitled' ? '' : this.state.title}
+          value={this.state.title === 'Untitled' ? '' : this.state.title} 
           onChange={this.handleInput('title')}
           placeholder="Title"
       />

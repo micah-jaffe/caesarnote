@@ -52,3 +52,12 @@ export const deleteNote = (id) => (dispatch) => (
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
+
+export const cipherNote = (note) => (dispatch) => {
+  note.cipher_key = Math.floor(Math.random() * 25) + 1;
+
+  return NoteApiUtil.updateNote(note).then(
+    note => dispatch(receiveNote(note)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
+  )
+};
