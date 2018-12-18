@@ -18,6 +18,10 @@
 class Note < ApplicationRecord
   belongs_to :user
   belongs_to :notebook
+  has_many :note_tags, dependent: :destroy
+  has_many :tags,
+    through: :note_tags,
+    source: :tag
 
   before_save :set_default_name
 
