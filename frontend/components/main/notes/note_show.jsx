@@ -18,9 +18,6 @@ class NoteShow extends React.Component {
     this.hideDropdown = this.hideDropdown.bind(this);
   }
 
-  componentDidMount() {
-  }
-
   componentDidUpdate(prevProps) {
     if (this.props.note.id !== prevProps.note.id) {
       this.setState(Object.assign({}, this.props.note));
@@ -132,6 +129,7 @@ class NoteShow extends React.Component {
         <div className="note-form">
           <div className="note-title-container">
             {this.renderNoteTitle()}
+            <div className="overflow-fix"></div>
           </div>
 
           <div className="quill-editor-container">

@@ -558,8 +558,9 @@ body {
   margin-right: 40px;
   min-height: 50px !important;
   height: 50px !important;
-  overflow-x: hidden;
-  overflow-y: visible;
+  // overflow-x: auto;
+  // overflow-y: visible;
+  // visible, hidden, scroll, auto, initial, inherit
   white-space: nowrap;
   z-index: 1;
 }
@@ -700,4 +701,12 @@ svg {
   }
 }
 
-
+.overflow-fix {
+  float: right;
+  background: white;
+  width: 60px;
+  height: 40px;
+  position: relative;
+  bottom: 50px;
+  z-index: 2;
+}
