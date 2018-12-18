@@ -14,10 +14,10 @@ const toolbar = [
   [{ color: [] }, { background: [] }],
   ["blockquote", "code-block"],
   [{ align: [] }],
-  [{ list: "ordered" }, { list: "bullet" }],
+  [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
   [{ script: "sub" }, { script: "super" }],
   ["clean"],
-  ["link", "image", "video", "formula"] 
+  ["link", "image", "video"] 
 ];
 
 const modules = {
