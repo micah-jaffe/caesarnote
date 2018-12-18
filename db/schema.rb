@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_17_173601) do
+ActiveRecord::Schema.define(version: 2018_12_18_053304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_12_17_173601) do
     t.boolean "is_shortcut", default: false, null: false
     t.boolean "is_trashed", default: false, null: false
     t.integer "cipher_key", default: 0, null: false
+    t.boolean "is_ciphered", default: false, null: false
     t.index ["notebook_id"], name: "index_notes_on_notebook_id"
     t.index ["title"], name: "index_notes_on_title"
     t.index ["user_id"], name: "index_notes_on_user_id"
