@@ -1,12 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 
-// const FontAttributor = ReactQuill.import('attributors/class/font');
-// FontAttributor.whitelist = [
-//   'sans-serif', 'georgia', 'helvetica', 'courier New', 'times new roman', 'trebuchet', 'verdana'
-// ];
-// Quill.register(FontAttributor, true);
-
 const toolbar = [
   [{ font: [] }],
   [{ size: ["small", false, "large", "huge"] }],
