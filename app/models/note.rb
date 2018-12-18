@@ -12,6 +12,7 @@
 #  is_shortcut :boolean          default(FALSE), not null
 #  is_trashed  :boolean          default(FALSE), not null
 #  cipher_key  :integer          default(0), not null
+#  is_ciphered :boolean          default(FALSE), not null
 #
 
 class Note < ApplicationRecord
