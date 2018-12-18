@@ -20,11 +20,20 @@ class NoteShow extends React.Component {
     this.cipherNote = this.cipherNote.bind(this);
   }
 
+  componentDidMount() {
+    this.autosaveId = setInterval(() => this.props.updateNote(this.state), 5000);
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.note.id !== prevProps.note.id) {
+      this.props.updateNote(this.state);
       this.setState(Object.assign({}, this.props.note));
       this.props.fetchNotebook(this.state.notebook_id);
     }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.autosaveId);
   }
 
   toggleFullscreen() {
@@ -53,7 +62,7 @@ class NoteShow extends React.Component {
       is_ciphered: !this.state.is_ciphered,
       cipher_key: key
     }, 
-      () => this.props.updateNote(this.state)
+      // () => this.props.updateNote(this.state)
     );
   }
 
@@ -61,7 +70,7 @@ class NoteShow extends React.Component {
     return e => {
       this.setState({
         [field]: e.target.value },
-        () => this.props.updateNote(this.state)
+        // () => this.props.updateNote(this.state)
       );
     };
   }
@@ -69,7 +78,7 @@ class NoteShow extends React.Component {
   handleQuillChange(input, delta, source, editor) {
     this.setState(
       { body: input },
-      () => this.props.updateNote(this.state)
+      // () => this.props.updateNote(this.state)
     );
   }
 
