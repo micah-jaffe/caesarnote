@@ -5,19 +5,19 @@ export const RECEIVE_NOTE_TAG = "RECEIVE_NOTE_TAG";
 export const REMOVE_NOTE_TAG = "REMOVE_NOTE_TAG";
 export const RECEIVE_NOTE_TAG_ERRORS = "RECEIVE_NOTE_TAG_ERRORS";
 
-const receiveNoteTags = (note_tags) => ({
+const receiveNoteTags = (noteTags) => ({
   type: RECEIVE_NOTE_TAGS,
-  note_tags
+  noteTags
 });
 
-const receiveNoteTag = (note_tag) => ({
+const receiveNoteTag = (noteTag) => ({
   type: RECEIVE_NOTE_TAG,
-  note_tag
+  noteTag
 });
 
-const removeNoteTag = (note_tag) => ({
+const removeNoteTag = (noteTag) => ({
   type: REMOVE_NOTE_TAG,
-  noteTagId: note_tag.id
+  noteTagId: noteTag.id
 });
 
 export const receiveErrors = (errors) => ({
@@ -27,21 +27,21 @@ export const receiveErrors = (errors) => ({
 
 export const fetchNoteTags = () => (dispatch) => (
   NoteTagApiUtil.fetchNoteTags().then(
-    note_tags => dispatch(receiveNoteTags(note_tags)),
+    noteTags => dispatch(receiveNoteTags(noteTags)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
 
-export const createNoteTag = (note_tag) => (dispatch) => (
-  NoteTagApiUtil.createNoteTag(note_tag).then(
-    note_tag => dispatch(receiveNoteTag(note_tag)),
+export const createNoteTag = (noteTag) => (dispatch) => (
+  NoteTagApiUtil.createNoteTag(noteTag).then(
+    noteTag => dispatch(receiveNoteTag(noteTag)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
 
 export const deleteNoteTag = (id) => (dispatch) => (
   NoteTagApiUtil.deleteNoteTag(id).then(
-    note_tag => dispatch(removeNoteTag(note_tag)),
+    noteTag => dispatch(removeNoteTag(noteTag)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
