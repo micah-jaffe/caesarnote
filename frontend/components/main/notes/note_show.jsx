@@ -44,12 +44,14 @@ class NoteShow extends React.Component {
   }
 
   cipherNote() {
-    const key = this.state.is_ciphered ? 1 : -1;
+    const randomKey = Math.floor(Math.random() * 25) + 1;
+    const key = this.state.cipher_key ? -this.state.cipher_key : randomKey;
 
     this.setState({
       title: richCaesarCipher(this.state.title, key),
       body: richCaesarCipher(this.state.body, key),
       is_ciphered: !this.state.is_ciphered,
+      cipher_key: key
     }, 
       () => this.props.updateNote(this.state)
     );
