@@ -674,6 +674,10 @@ svg {
   bottom: 0;
   right: 0;
   left: 0;
+
+  .overflow-fix {
+    display: none;
+  }
 }
 
 .note-show-dropdown {
