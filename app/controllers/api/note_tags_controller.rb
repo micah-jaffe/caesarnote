@@ -7,7 +7,7 @@ class Api::NoteTagsController < ApplicationController
   end
 
   def create
-    @note_tag = Tag.new(note_tag_params)
+    @note_tag = NoteTag.new(note_tag_params)
 
     if @note_tag.save
       render :show
