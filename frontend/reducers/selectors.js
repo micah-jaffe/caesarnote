@@ -22,4 +22,14 @@ export const selectShortcuts = (entities) => {
   notebooks.forEach(notebook => notebook.shortcutType = 'notebook')
   
   return notes.concat(notebooks);
+};
+
+export const selectTags = (noteId, entities) => {
+  // gett all notetags corresponding to noteId
+  const noteTags = Object.values(entities.noteTags).filter(noteTag => noteTag.note_id === noteId);
+  const tagIds = noteTags.map(noteTag => noteTag.tag_id);
+
+  // only return those tags whose ids are in allowed tagIds
+
+  return Object.values(entities.tags).filter(tag => tagIds.includes(tag.id));
 }
