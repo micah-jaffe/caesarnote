@@ -16,6 +16,13 @@ class Api::TagsController < ApplicationController
     end
   end
 
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy!
+    render :show
+  end
+
+
   def tag_params
     params.require(:tag).permit(:name)
   end

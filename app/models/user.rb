@@ -18,6 +18,10 @@ class User < ApplicationRecord
 
   has_many :notebooks, dependent: :destroy
   has_many :notes, dependent: :destroy
+  has_many :note_tags,
+    through: :notes,
+    source: :note_tags,
+    dependent: :destroy
   has_many :tags,
     through: :notes,
     source: :tags,
