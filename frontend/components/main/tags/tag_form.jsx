@@ -20,7 +20,7 @@ class TagForm extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNoteTag(this.props.selectedNoteId, this.state);
+    this.props.createTag(this.props.selectedNoteId, this.state);
 
     this.setState({ name: '' });
   }
@@ -31,7 +31,7 @@ class TagForm extends React.Component {
 
   renderExistingTags() {
     return (
-      this.props.tags.map(tag => <TagShow key={tag.id} tag={tag} />)
+      this.props.tags.map(tag => <TagShow key={tag.id} tag={tag} deleteTag={this.props.deleteTag}/>)
     );
   }
 

@@ -1,15 +1,6 @@
 import React from 'react';
 import Dropdown from '../modal/dropdown';
 
-// const TagShow = ({ tag }) => {
-//   return (
-//     <div className="tag-show align-middle" tabIndex="0">
-//       <p>{tag.name}</p>
-//       <i className="fa fa-angle-down"></i>
-//     </div>
-//   );
-// };
-
 class TagShow extends React.Component {
   constructor(props) {
     super(props);
@@ -60,10 +51,11 @@ class TagShow extends React.Component {
         id={`tag-${this.props.tag.id}`} 
         className="tag-show align-middle" 
         tabIndex="0"
-        onClick={this.highlightTag}
+        onFocus={this.highlightTag}
         onBlur={this.clearTags}
       >
         <Dropdown visible={this.state.dropdown} classname="tag-show-dropdown" items={dropdownItems} />
+
         <p>{this.props.tag.name}</p>
         <span 
           className="dropdown-icon"

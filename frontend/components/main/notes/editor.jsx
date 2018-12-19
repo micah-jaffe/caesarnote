@@ -7,11 +7,11 @@ const toolbar = [
   ["bold", "italic", "underline", "strike"],
   [{ color: [] }, { background: [] }],
   ["blockquote", "code-block"],
+  ["image", "video"],
   [{ align: [] }],
   [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
   [{ script: "sub" }, { script: "super" }],
-  ["clean"],
-  ["image", "video"] 
+  ["clean"]
 ];
 
 const modules = {
