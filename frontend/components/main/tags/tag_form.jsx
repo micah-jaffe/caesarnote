@@ -42,6 +42,8 @@ class TagForm extends React.Component {
           placeholder={this.props.tags.length === 0 ? "Add tag" : ""}
           onChange={this.handleInput}
           value={this.state.name}
+          tabIndex="0"
+          onBlur={this.handleSubmit}
         />
 
       </form>
