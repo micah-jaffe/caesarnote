@@ -6,8 +6,7 @@ import Root from './components/root';
 import { login, signup, logout } from './actions/session_actions';
 import { fetchNotebook, fetchNotebooks, createNotebook, updateNotebook, deleteNotebook} from './actions/notebook_actions';
 import { fetchNotes, createNote, updateNote, deleteNote } from './actions/note_actions'
-import { fetchNoteTags, deleteNoteTag } from './actions/note_tag_actions'
-import { fetchTags, createTag, deleteTag, createNoteTag } from './actions/tag_actions'
+import { fetchTags, createTag, deleteTag } from './actions/tag_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -49,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateNote = updateNote;
   window.deleteNote = deleteNote;
 
-  window.fetchNoteTags = fetchNoteTags;
-  window.createNoteTag = createNoteTag;
-  window.deleteNoteTag = deleteNoteTag;
+  // window.fetchNoteTags = fetchNoteTags;
+  // window.createNoteTag = createNoteTag;
+  // window.deleteNoteTag = deleteNoteTag;
 
   window.fetchTags = fetchTags;
   window.createTag = createTag;

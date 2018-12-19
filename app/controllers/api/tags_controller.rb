@@ -7,14 +7,10 @@ class Api::TagsController < ApplicationController
   end
 
   def create
-    # debugger
     note = Note.find(params[:note_id])
     existing_tag = current_user.tags.find_by_name(params[:tag][:name])
 
-    # debugger
-
     if existing_tag
-      # debugger
       @note_tag = note.note_tags.new(tag_id: existing_tag.id)
       @tag = existing_tag
 
@@ -25,9 +21,7 @@ class Api::TagsController < ApplicationController
       end
 
     else
-      # debugger
       @tag = note.tags.create(tag_params)
-      # debugger
 
       if @tag.id
         render :show

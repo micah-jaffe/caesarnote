@@ -5,15 +5,15 @@ export const fetchTags = () => (
   })
 );
 
-export const createTag = (tag) => (
-  $.ajax({
-    method: 'POST',
-    url: '/api/tags',
-    data: { tag }
-  })
-);
+// export const createTag = (tag) => (
+//   $.ajax({
+//     method: 'POST',
+//     url: '/api/tags',
+//     data: { tag }
+//   })
+// );
 
-export const createNoteTag = (note_id, tag) => (
+export const createTag = (note_id, tag) => (
   $.ajax({
     method: 'POST',
     url: '/api/tags',

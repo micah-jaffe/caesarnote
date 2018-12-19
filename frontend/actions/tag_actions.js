@@ -32,15 +32,15 @@ export const fetchTags = () => (dispatch) => (
   )
 );
 
-export const createTag = (tag) => (dispatch) => (
-  TagApiUtil.createTag(tag).then(
-    tag => dispatch(receiveTag(tag)),
-    errors => dispatch(receiveErrors(errors.responseJSON))
-  )
-);
+// export const createTag = (tag) => (dispatch) => (
+//   TagApiUtil.createTag(tag).then(
+//     tag => dispatch(receiveTag(tag)),
+//     errors => dispatch(receiveErrors(errors.responseJSON))
+//   )
+// );
 
-export const createNoteTag = (noteId, tag) => (dispatch) => (
-  TagApiUtil.createNoteTag(noteId, tag).then(
+export const createTag = (noteId, tag) => (dispatch) => (
+  TagApiUtil.createTag(noteId, tag).then(
     tag => dispatch(receiveTag(tag)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
