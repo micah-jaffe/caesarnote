@@ -48,10 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateNote = updateNote;
   window.deleteNote = deleteNote;
 
-  // window.fetchNoteTags = fetchNoteTags;
-  // window.createNoteTag = createNoteTag;
-  // window.deleteNoteTag = deleteNoteTag;
-
   window.fetchTags = fetchTags;
   window.createTag = createTag;
   window.deleteTag = deleteTag;

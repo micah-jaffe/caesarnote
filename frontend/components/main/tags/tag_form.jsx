@@ -1,9 +1,3 @@
-// const TagForm = (props) => {
-//   return (
-//     <div className="tag-form">TAGME</div>
-//   );
-// }
-
 import React from 'react';
 import TagShow from './tag_show';
 
@@ -22,23 +16,6 @@ class TagForm extends React.Component {
   handleInput(e) {
     this.setState({ name: e.target.value });
   }
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-    
-  //   // if tag doesn't already exist, create new tag
-  //   const allTagNames = this.props.allTags.map(tag => tag.name);
-  //   if (!allTagNames.includes(this.state.name)) {
-  //     this.props.createTag(this.state);
-  //   }
-
-
-  //   // create new tagging
-  //   this.props.createNoteTag({
-  //     note_id: selectedNoteId,
-  //     tag_id: tagId
-  //   })
-  // }
   
   handleSubmit(e) {
     // debugger
