@@ -553,43 +553,14 @@ body {
   margin-right: 40px;
   min-height: 50px !important;
   height: 50px !important;
-  // overflow-x: auto;
-  // overflow-y: visible;
-  // visible, hidden, scroll, auto, initial, inherit
   white-space: nowrap;
   z-index: 1;
 }
-
-::-webkit-scrollbar:horizontal {
- 
-  height: 0px;
-}
-
-// ::-webkit-scrollbar {
-//   height: 5px;
-//   width: 8px;
-//   // width: 5px;
-//   // color: red;
-// }
-
-// ::-webkit-scrollbar-track {
-//   // height: 0px;
-//   // background: red;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   // width: 30px;
-//   background-color:  rgb(0, 168, 45);
-//   border-radius: 10px;
-// }
-
-
 
 .ql-container {
   border: none !important;
   display: flex;
   flex-grow: 1;
-  // height: 500px;
 }
 
 .ql-editor {
@@ -600,16 +571,11 @@ body {
   margin-right: 25px;
   margin-top: 15px;
   height: 95% !important;
-  // padding-bottom: 20px !important;
-  // margin-bottom: 100px;
-  // min-height: 200px;
-  // overflow-y: scroll;
   line-height: 1.6 !important;
   width: 100%;
 }
 
 .ql-picker-options {
-  // z-index: 20 !important;
   position: absolute !important;
 }
 
@@ -721,6 +687,11 @@ svg {
 
 }
 
+.tag-show-wrapper {
+  border: 1px solid red;
+
+}
+
 .tag-show {
   align-items: center;
   background-color: rgb(240, 241, 241);
@@ -738,12 +709,6 @@ svg {
   text-align: center;
   white-space: nowrap;
   width: fit-content;
-
-
-  &:focus {
-    background-color: rgb(0, 168, 45);
-    color: white;
-  }
 
   p {
     margin-right: 5px;
@@ -883,3 +848,8 @@ svg {
 .dropdown-icon {
   cursor: pointer;
 }
+
+.selected-tag {
+    background-color: rgb(0, 168, 45);
+    color: white;
+  }
