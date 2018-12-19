@@ -31,7 +31,7 @@ class TagsIndexItem extends React.Component {
 
   render() {
     const dropdownItems = {
-      "Delete tag...": () => console.log('hello')//() => this.props.deleteTag(this.props.tag.id)
+      "Delete tag...": () => this.props.deleteTag(this.props.tag.id)
     };
 
     return (

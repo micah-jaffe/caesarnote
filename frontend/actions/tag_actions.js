@@ -41,7 +41,7 @@ export const createTag = (noteId, tag) => (dispatch) => (
 
 export const deleteTag = (id) => (dispatch) => (
   TagApiUtil.deleteTag(id).then(
-    tag => dispatch(removeTag(tag)),
+    payload => dispatch(removeTag(payload.tags[id])),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
