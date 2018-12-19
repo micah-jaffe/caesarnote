@@ -5,9 +5,9 @@ export const RECEIVE_TAG = "RECEIVE_TAG";
 export const REMOVE_TAG = "REMOVE_TAG";
 export const RECEIVE_TAG_ERRORS = "RECEIVE_TAG_ERRORS";
 
-const receiveTags = (tags) => ({
+const receiveTags = (payload) => ({
   type: RECEIVE_TAGS,
-  tags
+  payload
 });
 
 const receiveTag = (payload) => ({
@@ -27,7 +27,7 @@ export const receiveErrors = (errors) => ({
 
 export const fetchTags = () => (dispatch) => (
   TagApiUtil.fetchTags().then(
-    tags => dispatch(receiveTags(tags)),
+    payload => dispatch(receiveTags(payload)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
@@ -41,7 +41,7 @@ export const fetchTags = () => (dispatch) => (
 
 export const createTag = (noteId, tag) => (dispatch) => (
   TagApiUtil.createTag(noteId, tag).then(
-    tag => dispatch(receiveTag(tag)),
+    payload => dispatch(receiveTag(payload)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 )

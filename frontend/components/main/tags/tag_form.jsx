@@ -41,7 +41,7 @@ class TagForm extends React.Component {
   // }
   
   handleSubmit(e) {
-    debugger
+    // debugger
     e.preventDefault();
 
     this.props.createNoteTag(this.props.selectedNoteId, this.state)

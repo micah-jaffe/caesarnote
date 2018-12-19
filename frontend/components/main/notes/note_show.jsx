@@ -22,7 +22,7 @@ class NoteShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetch
+    this.props.fetchTags()
     // this.autosaveId = setInterval(() => this.props.updateNote(this.state), 5000);
   }
 
@@ -32,7 +32,7 @@ class NoteShow extends React.Component {
       this.setState(Object.assign({}, this.props.note));
       this.props.fetchNotebook(this.state.notebook_id);
 
-      this.props.fetchNoteTags();
+      // this.props.fetchNoteTags();
       this.props.fetchTags();
     }
   }

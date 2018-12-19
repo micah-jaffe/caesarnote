@@ -32,6 +32,7 @@ export const fetchNoteTags = () => (dispatch) => (
   )
 );
 
+// probably don't need either of these two since we're doing it on the backend now
 export const createNoteTag = (noteTag) => (dispatch) => (
   NoteTagApiUtil.createNoteTag(noteTag).then(
     noteTag => dispatch(receiveNoteTag(noteTag)),
