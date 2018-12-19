@@ -1,19 +1,14 @@
 import { connect } from 'react-redux';
 import TagShow from './tag_show';
 import { deleteTag, deleteNoteTag } from '../../../actions/tag_actions';
-import { selectTags, selectAllTags, selectNoteTag } from '../../../reducers/selectors';
+import { selectNoteTag } from '../../../reducers/selectors';
 
 
 const mapStateToProps = (state) => {
   const selectedNoteId = state.ui.selection.noteId;
-  // const tag = 
-  // const noteTagId = selectNoteTag(selectedNoteId, __, state.entities);
-  // const allTags = selectAllTags(state.entities);
-  // const tags = selectTags(selectedNoteId, state.entities);
 
   return {
     selectedNoteId,
-    // selectNoteTag,
     entities: state.entities,
     selectNoteTag
   };

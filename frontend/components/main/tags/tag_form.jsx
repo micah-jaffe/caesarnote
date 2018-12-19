@@ -32,13 +32,7 @@ class TagForm extends React.Component {
 
   renderExistingTags() {
     return (
-      this.props.tags.map(tag => <TagShowContainer
-        key={tag.id} 
-        tag={tag} 
-        // deleteTag={this.props.deleteTag}
-        // deleteNoteTag={this.props.deleteNoteTag}
-        // noteId={this.props.selectedNoteId}
-      />)
+      this.props.tags.map(tag => <TagShowContainer key={tag.id} tag={tag} />)
     );
   }
 

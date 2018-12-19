@@ -57,7 +57,4 @@ export const deleteNoteTag = (id) => (dispatch) => (
     payload => dispatch(removeNoteTag(payload.note_tags[id])),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-  // TagApiUtil.deleteNoteTag(id).then(
-  //   res => console.log(res)
-  // )
 );

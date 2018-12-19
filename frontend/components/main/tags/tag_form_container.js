@@ -7,7 +7,7 @@ import { selectTags, selectAllTags } from '../../../reducers/selectors';
 const mapStateToProps = (state) => {
   const selectedNoteId = state.ui.selection.noteId;
   const allTags = selectAllTags(state.entities);
-  const tags = selectTags(selectedNoteId, state.entities)
+  const tags = selectTags(selectedNoteId, state.entities);
 
   return {
     selectedNoteId,
@@ -17,9 +17,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  createTag: (note_id, tag) => dispatch(createTag(note_id, tag)),
-  deleteTag: (id) => dispatch(deleteTag(id)),
-  deleteNoteTag: () => undefined
+  createTag: (note_id, tag) => dispatch(createTag(note_id, tag))
 });
 
 export default connect(

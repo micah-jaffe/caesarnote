@@ -43,7 +43,6 @@ class TagShow extends React.Component {
 
   render() {
     const noteTag = selectNoteTag(this.props.selectedNoteId, this.props.tag.id, this.props.entities);
-    // debugger
     const dropdownItems = {
       "Remove": () => this.props.deleteNoteTag(noteTag.id),
       "Delete from all tags": () => this.props.deleteTag(this.props.tag.id)

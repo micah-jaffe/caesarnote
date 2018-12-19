@@ -5,14 +5,6 @@ export const fetchTags = () => (
   })
 );
 
-// export const createTag = (tag) => (
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/tags',
-//     data: { tag }
-//   })
-// );
-
 export const createTag = (note_id, tag) => (
   $.ajax({
     method: 'POST',
@@ -27,7 +19,6 @@ export const deleteTag = (id) => (
     url: `/api/tags/${id}`
   })
 );
-
 
 export const deleteNoteTag = (id) => (
   $.ajax({
