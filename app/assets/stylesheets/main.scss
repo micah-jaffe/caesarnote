@@ -82,10 +82,11 @@ body {
 }
 
 .notebooks-index-container {
-  height: 100vh;
+  // height: 100vh;
   padding-left: 30px;
   padding-right: 30px;
-  overflow: visible;
+  overflow: scroll;
+  position: relative;
   width: 100%;
 
   h2 {
@@ -756,4 +757,20 @@ svg {
   position: relative;
   // width: 2000px;
   // min-width: 10px;
+}
+
+.tags-index-wrapper {
+  border: 1px solid red;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  line-height: 24px;
+  min-height: 220px;
+  overflow: scroll;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: inherit;
 }
