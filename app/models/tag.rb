@@ -9,7 +9,7 @@
 #
 
 class Tag < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: { scope: :user }
 
   has_many :note_tags, dependent: :destroy
   has_many :notes,
