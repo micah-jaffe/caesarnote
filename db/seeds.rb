@@ -12,9 +12,9 @@ julius = User.create!(username: 'Julius', email: 'julius@caesarnote.com', passwo
 # Notebook.create(name: 'My First Notebook', user_id: demoUser.id, is_default: true)
 Notebook.find_by_name('My First Notebook').destroy!
 
-thinking = Notebook.create!(name: 'Thinking about Thinking', user_id: julius.id, is_default: false, is_shortcut)
-math = Notebook.create!(name: 'Math & CS', user_id: julius.id, is_default: false)
-misc = Notebook.create!(name: 'Miscellaneous', user_id: julius.id, is_default: true)
+thinking = Notebook.create!(name: 'Thinking about Thinking', user_id: julius.id, is_default: false, is_shortcut: false)
+math = Notebook.create!(name: 'Math & CS', user_id: julius.id, is_default: false, is_shortcut: true)
+misc = Notebook.create!(name: 'Miscellaneous', user_id: julius.id, is_default: true, is_shortcut: true)
 
 ##### Notes #####
 Note.create!(
@@ -47,14 +47,14 @@ Note.create!(
   is_shortcut: true,
   is_trashed: false,
   cipher_key: 0,
-  is_ciphered: false>
+  is_ciphered: false
 )
 
 Note.create!(
   title: "Paul Graham on Writing",
   body: "<p><br></p><p><img src=\"http://ep.yimg.com/ay/paulgraham/write-like-you-talk-1.gif\" alt=\"Write Like You Talk\" height=\"18\" width=\"157\"></p><p><br></p><p>October 2015</p><p><br></p><p>Here's a simple trick for getting more people to read what you write: <strong style=\"background-color: rgb(102, 185, 102);\"><em>write in spoken language</em></strong><strong><em>.</em></strong></p><p><br></p><p><strong>Something comes over most people when they start writing</strong>. They write in a different language than they'd use if they were talking to a friend. The sentence structure and even the words are different. No one uses \"pen\" as a verb in spoken English. You'd feel like an idiot using \"pen\" instead of \"write\" in a conversation with a friend.</p><p><br></p><p>The last straw for me was a sentence I read a couple days ago:</p><p><br></p><blockquote><s>The mercurial Spaniard</s> himself declared: \"After Altamira, all is decadence.\"</blockquote><p><br></p><p>It's from Neil Oliver's&nbsp;<em>A History of Ancient Britain</em>. I feel bad making an example of this book, because it's no worse than lots of others. But just imagine calling Picasso \"the mercurial Spaniard\" when talking to a friend. <strong>Even one sentence of this would raise eyebrows in conversation</strong>. And yet people write whole books of it.</p><p><br></p><p>Ok, so written and spoken language are different. Does that make written language worse?</p><p><br></p><p>If you want people to read and understand what you write, yes. Written language is more complex, which makes it more work to read. It's also more formal and distant, which gives the reader's attention permission to drift. But perhaps worst of all, the complex sentences and fancy words give you, the writer, the false impression that you're saying more than you actually are.</p><p><br></p><p>You don't need complex sentences to express complex ideas. When specialists in some abstruse topic talk to one another about ideas in their field, they don't use sentences any more complex than they do when talking about what to have for lunch. They use different words, certainly. But even those they use no more than necessary. And in my experience, the harder the subject, the more informally experts speak. Partly, I think, because they have less to prove, and partly because the harder the ideas you're talking about, the less you can afford to let language get in the way.</p>",
   notebook_id: thinking.id,
-  user_id: julius,
+  user_id: julius.id,
   is_shortcut: false,
   is_trashed: false,
   cipher_key: 0,
@@ -96,10 +96,10 @@ Note.create!(
 
 Note.create!(
   title: "SF Photo",
-  body: "<p><img src=\"https://amp.businessinsider.com/images/58f4e5ebf40daef5008b4bb4-750-500.jpg\"</p>"
+  body: "<p><img src=\"https://amp.businessinsider.com/images/58f4e5ebf40daef5008b4bb4-750-500.jpg\" /></p>",
   notebook_id: misc.id,
   user_id: julius.id,
-  is_shortcut: false,
+  is_shortcut: true,
   is_trashed: false,
   cipher_key: 0,
   is_ciphered: false
@@ -107,10 +107,10 @@ Note.create!(
 
 Note.create!(
   title: "Big O Cheat Sheet",
-  body: "<p><img src=\"https://static1.squarespace.com/static/52b30f7ae4b067ba989438d4/t/5a7bb145ec212df82e61b3bf/1518055786273/Complexity+Cheatsheet.jpg\"</p>"
+  body: "<p><img src=\"https://static1.squarespace.com/static/52b30f7ae4b067ba989438d4/t/5a7bb145ec212df82e61b3bf/1518055786273/Complexity+Cheatsheet.jpg\" /></p>",
   notebook_id: math.id,
   user_id: julius.id,
-  is_shortcut: false,
+  is_shortcut: true,
   is_trashed: false,
   cipher_key: 0,
   is_ciphered: false
@@ -154,7 +154,7 @@ Note.create!(
   body: "<h4><span class=\"ql-size-large\">Data Structures</span></h4><p>Learn about arrays, linked lists, binary trees, hash tables, graphs, stacks, queues, heaps, and other fundamental data structures.</p><p><br></p><h4><span class=\"ql-size-large\">Math &amp;&nbsp;Logic</span></h4><p>You’ll need to know some mathematical concepts from several different areas if you want to excel at algorithms.&nbsp;<span style=\"background-color: transparent;\">Learn about set theory, finite-state machines, regular expressions, matrix multiplication, bitwise operations, solving linear equations, important combinatorics concepts such as permutations, combinations, pigeonhole principle.</span></p><p><br></p><h4><span class=\"ql-size-large\">Computer Architecture</span></h4><p>Learn how data is represented in a computer, the basics of digital logic design, boolean algebra, computer arithmetic, floating-point representation, cache design.&nbsp;<em>Try and learn a little about C and Assembly programming.</em></p><p><br></p><h3><span class=\"ql-size-large\">Moving Forward Past the Fundamentals</span></h3><p>Once you feel like you have a good understanding of&nbsp;<em>most</em>&nbsp;of the concepts listed above, it’s time to start diving into the algorithms part. First, prove that P != NP.</p><p><br></p>",
   notebook_id: math.id,
   user_id: julius.id,
-  is_shortcut: false,
+  is_shortcut: true,
   is_trashed: false,
   cipher_key: 0,
   is_ciphered: false
@@ -168,7 +168,7 @@ Note.create!(
   is_shortcut: false,
   is_trashed: false,
   cipher_key: 0,
-  is_ciphered: false>
+  is_ciphered: false
 )
 
 Note.create!(
