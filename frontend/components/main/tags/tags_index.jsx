@@ -41,7 +41,11 @@ class TagsIndex extends React.Component {
       }
     };
 
-    return partitionedTags;
+    return (
+      <div className="tags-index-items-wrapper">
+        {partitionedTags}
+      </div>
+    );
   }
 
   render() {

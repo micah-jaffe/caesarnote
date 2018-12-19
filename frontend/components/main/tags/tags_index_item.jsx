@@ -2,9 +2,10 @@ import React from 'react';
 
 const TagsIndexItem = ({ tag }) => {
   return (
-    <div className="tags-index-item">
+    <span className="tags-index-item align-middle">
       <span>{tag.name}</span>
-    </div>
+      <i className="fa fa-angle-down"></i>
+    </span>
   );
 }
 

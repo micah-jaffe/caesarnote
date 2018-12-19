@@ -731,6 +731,7 @@ svg {
   padding-right: 12px;
   text-align: center;
   white-space: nowrap;
+  width: fit-content;
 
 
   &:focus {
@@ -796,4 +797,56 @@ svg {
   line-height: 24px;
   padding-bottom: 25px;
   padding-top: 25px;
+}
+
+.tags-index-block{
+  box-sizing: border-box;
+  line-height: 24px;
+  margin-top: 32px;
+
+  h2 {
+    color: rgb(51, 51, 51);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-block-end: 9px;
+  }
+
+  .tags-block-items {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tags-index-item {
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: fit-content;
+
+  span:first-child {
+    margin-right: 10px;
+  }
+  
+  i {
+    display: none;
+  }
+ 
+  &:hover {
+    background-color: rgb(240, 241, 241);
+    border-radius: 12px;
+    cursor: pointer;
+
+    i {
+      display: inline-block;
+      color: rgb(200, 200, 200);
+      padding-top: 3px;
+    }
+  }
 }
