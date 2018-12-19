@@ -13,6 +13,14 @@ export const createTag = (tag) => (
   })
 );
 
+export const createNoteTag = (note_id, tag) => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/tags',
+    data: { note_id, tag }
+  })
+);
+
 export const deleteTag = (id) => (
   $.ajax({
     method: 'DELETE',

@@ -10,9 +10,9 @@ const receiveTags = (tags) => ({
   tags
 });
 
-const receiveTag = (tag) => ({
+const receiveTag = (payload) => ({
   type: RECEIVE_TAG,
-  tag
+  payload
 });
 
 const removeTag = (tag) => ({
@@ -38,6 +38,13 @@ export const createTag = (tag) => (dispatch) => (
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
+
+export const createNoteTag = (noteId, tag) => (dispatch) => (
+  TagApiUtil.createNoteTag(noteId, tag).then(
+    tag => dispatch(receiveTag(tag)),
+    errors => dispatch(receiveErrors(errors.responseJSON))
+  )
+)
 
 export const deleteTag = (id) => (dispatch) => (
   TagApiUtil.deleteTag(id).then(

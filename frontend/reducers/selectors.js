@@ -24,6 +24,10 @@ export const selectShortcuts = (entities) => {
   return notes.concat(notebooks);
 };
 
+export const selectAllTags = (entities) => {
+  return Object.values(entities.tags);
+};
+
 export const selectTags = (noteId, entities) => {
   // gett all notetags corresponding to noteId
   const noteTags = Object.values(entities.noteTags).filter(noteTag => noteTag.note_id === noteId);
@@ -32,4 +36,4 @@ export const selectTags = (noteId, entities) => {
   // only return those tags whose ids are in allowed tagIds
 
   return Object.values(entities.tags).filter(tag => tagIds.includes(tag.id));
-}
+};

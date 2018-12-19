@@ -7,12 +7,33 @@ class Api::TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(tag_params)
+    # debugger
+    note = Note.find(params[:note_id])
+    existing_tag = current_user.tags.find_by_name(params[:tag][:name])
 
-    if @tag.save
-      render :show
+    # debugger
+
+    if existing_tag
+      # debugger
+      @note_tag = note.note_tags.new(tag_id: existing_tag.id)
+      @tag = existing_tag
+
+      if @note_tag.save
+        render :show 
+      else
+        render json: @note_tag.errors.full_messages, status: 422
+      end
+
     else
-      render json: @tag.errors.full_messages, status: 422
+      # debugger
+      @tag = note.tags.create(tag_params)
+      # debugger
+
+      if @tag.id
+        render :show
+      else
+        render json: @tag.errors.full_messages, status: 422
+      end
     end
   end
 
@@ -21,7 +42,6 @@ class Api::TagsController < ApplicationController
     @tag.destroy!
     render :show
   end
-
 
   def tag_params
     params.require(:tag).permit(:name)

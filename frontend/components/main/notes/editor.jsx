@@ -11,7 +11,7 @@ const toolbar = [
   [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
   [{ script: "sub" }, { script: "super" }],
   ["clean"],
-  ["link", "image", "video"] 
+  ["image", "video"] 
 ];
 
 const modules = {

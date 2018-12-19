@@ -23,7 +23,7 @@ class NoteShow extends React.Component {
 
   componentDidMount() {
     this.props.fetch
-    this.autosaveId = setInterval(() => this.props.updateNote(this.state), 5000);
+    // this.autosaveId = setInterval(() => this.props.updateNote(this.state), 5000);
   }
 
   componentDidUpdate(prevProps) {

@@ -34,4 +34,11 @@ class Note < ApplicationRecord
   def last_updated
     time_ago_in_words(self.updated_at) + ' ago'
   end
+
+  def tag_names=(tag_names)
+    self.tags = tag_names.map do |tag_name|
+      Tag.find_or_create_by(name: tag_name)
+    end
+  end
+
 end

@@ -15,6 +15,7 @@ class TagForm extends React.Component {
       name: ''
     };
 
+    this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,8 +23,28 @@ class TagForm extends React.Component {
     this.setState({ name: e.target.value });
   }
 
-  handleSubmit() {
+  // handleSubmit(e) {
+  //   e.preventDefault();
+    
+  //   // if tag doesn't already exist, create new tag
+  //   const allTagNames = this.props.allTags.map(tag => tag.name);
+  //   if (!allTagNames.includes(this.state.name)) {
+  //     this.props.createTag(this.state);
+  //   }
 
+
+  //   // create new tagging
+  //   this.props.createNoteTag({
+  //     note_id: selectedNoteId,
+  //     tag_id: tagId
+  //   })
+  // }
+  
+  handleSubmit(e) {
+    debugger
+    e.preventDefault();
+
+    this.props.createNoteTag(this.props.selectedNoteId, this.state)
   }
 
   renderExistingTags() {
@@ -43,6 +64,7 @@ class TagForm extends React.Component {
         <input 
           type="text"
           placeholder="NEW TAG HERE"
+          onChange={this.handleInput}
         />
 
       </form>
