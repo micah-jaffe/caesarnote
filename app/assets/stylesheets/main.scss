@@ -645,7 +645,9 @@ body {
   height: 50px;
   line-height: 50px;
   min-height: 50px;
+  overflow-x: hidden;
   padding: 10px;
+  width: 5000px;
   z-index: 1;
 
   svg {
@@ -702,7 +704,7 @@ svg {
 
 .overflow-fix {
   float: right;
-  background: white;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1),  rgba(255,255,255,1));
   width: 60px;
   height: 40px;
   position: relative;
@@ -711,8 +713,12 @@ svg {
 }
 
 .tag-form {
-  width: 100%;
-  overflow-x: hidden;
+
+  svg {
+    min-width: 21px;
+    min-height: 23px;
+  }
+
 }
 
 .tag-show {
@@ -796,7 +802,7 @@ svg {
   box-shadow: border-box;
   line-height: 24px;
   padding-bottom: 25px;
-  padding-top: 25px;
+  // padding-top: 25px;
 }
 
 .tags-index-block{
@@ -849,4 +855,13 @@ svg {
       padding-top: 3px;
     }
   }
+}
+
+.tag-form-overflow-fix {
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1),  rgba(255,255,255,1));
+  height: 50px;
+  width: 100px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
