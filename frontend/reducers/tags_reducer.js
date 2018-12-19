@@ -9,7 +9,7 @@ const tagsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_TAGS:
-      return action.payload.tags;
+      return action.payload.tags || {};
     case RECEIVE_TAG:
       return Object.assign({}, state, action.payload.tags);
     case REMOVE_TAG:

@@ -9,7 +9,7 @@ const noteTagsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_TAGS:
-      return action.payload.note_tags;
+      return action.payload.note_tags || {};
     case RECEIVE_TAG:
       return Object.assign({}, state, action.payload.note_tags);
     default:

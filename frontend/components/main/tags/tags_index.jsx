@@ -3,6 +3,7 @@ import TagsIndexItem from './tags_index_item';
 
 class TagsIndex extends React.Component {
   componentDidMount() {
+    debugger
     this.props.fetchTags();
   }
 
@@ -31,7 +32,7 @@ class TagsIndex extends React.Component {
           <div key={`block-${i}`} className="tags-index-block">
             <h2>{String.fromCharCode(i)}</h2>
             <div className="tags-block-items">
-              {filteredTags.map(tag => <TagsIndexItem key={tag.id} tag={tag} />)}
+              {filteredTags.map(tag => <TagsIndexItem key={tag.id} tag={tag} deleteTag={this.props.deleteTag} />)}
             </div>
           </div>
         );

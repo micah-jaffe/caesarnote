@@ -19,7 +19,6 @@ class TagsIndexItem extends React.Component {
 
     this.showDropdown = this.showDropdown.bind(this);
     this.hideDropdown = this.hideDropdown.bind(this);
-    this.openPaywall = this.openPaywall.bind(this);
   }
 
   showDropdown() {
@@ -30,13 +29,9 @@ class TagsIndexItem extends React.Component {
     this.setState({ dropdown: false })
   }
 
-  openPaywall() {
-    this.props.openModal('paywall');
-  }
-
   render() {
     const dropdownItems = {
-      "Delete tag...": this.openPaywall
+      "Delete tag...": () => console.log('hello')//() => this.props.deleteTag(this.props.tag.id)
     };
 
     return (
@@ -53,7 +48,7 @@ class TagsIndexItem extends React.Component {
             <i className="fa fa-angle-down"></i>
           </span>
         </div>
-        
+
         <Dropdown visible={this.state.dropdown} classname="tags-index-item-dropdown" items={dropdownItems} />
       </div>
     );
