@@ -27,3 +27,11 @@ export const deleteTag = (id) => (
     url: `/api/tags/${id}`
   })
 );
+
+
+export const deleteNoteTag = (id) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/note_tags/${id}`
+  })
+);

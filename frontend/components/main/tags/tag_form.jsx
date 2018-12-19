@@ -1,5 +1,6 @@
 import React from 'react';
 import TagShow from './tag_show';
+import TagShowContainer from './tag_show_container';
 
 class TagForm extends React.Component {
   constructor(props) {
@@ -31,7 +32,13 @@ class TagForm extends React.Component {
 
   renderExistingTags() {
     return (
-      this.props.tags.map(tag => <TagShow key={tag.id} tag={tag} deleteTag={this.props.deleteTag}/>)
+      this.props.tags.map(tag => <TagShowContainer
+        key={tag.id} 
+        tag={tag} 
+        // deleteTag={this.props.deleteTag}
+        // deleteNoteTag={this.props.deleteNoteTag}
+        // noteId={this.props.selectedNoteId}
+      />)
     );
   }
 

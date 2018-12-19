@@ -3,6 +3,7 @@ import * as TagApiUtil from '../util/tag_api_util';
 export const RECEIVE_TAGS = "RECEIVE_TAGS";
 export const RECEIVE_TAG = "RECEIVE_TAG";
 export const REMOVE_TAG = "REMOVE_TAG";
+export const REMOVE_NOTE_TAG = "REMOVE_NOTE_TAG";
 export const RECEIVE_TAG_ERRORS = "RECEIVE_TAG_ERRORS";
 
 const receiveTags = (payload) => ({
@@ -18,6 +19,11 @@ const receiveTag = (payload) => ({
 const removeTag = (tag) => ({
   type: REMOVE_TAG,
   tagId: tag.id
+});
+
+const removeNoteTag = (noteTag) => ({
+  type: REMOVE_NOTE_TAG,
+  noteTagId: noteTag.id
 });
 
 export const receiveErrors = (errors) => ({
@@ -44,4 +50,14 @@ export const deleteTag = (id) => (dispatch) => (
     payload => dispatch(removeTag(payload.tags[id])),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
+);
+
+export const deleteNoteTag = (id) => (dispatch) => (
+  TagApiUtil.deleteNoteTag(id).then(
+    payload => dispatch(removeNoteTag(payload.note_tags[id])),
+    errors => dispatch(receiveErrors(errors.responseJSON))
+  )
+  // TagApiUtil.deleteNoteTag(id).then(
+  //   res => console.log(res)
+  // )
 );
