@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TagsIndex from './tags_index';
-import { fetchTags, deleteTag } from '../../../actions/notebook_actions';
+import { fetchTags, deleteTag } from '../../../actions/tag_actions';
 import {
   openModal,
   closeModal

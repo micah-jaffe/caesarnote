@@ -7,7 +7,7 @@ class TagsIndex extends React.Component {
   }
 
   sortTags() {
-    this.props.tags.sort((a, b) => a.name < b.name ? 1 : -1);
+    this.props.tags.sort((a, b) => a.name > b.name ? 1 : -1);
   }
 
   renderTagsIndexHeader() {

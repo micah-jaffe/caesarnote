@@ -121,9 +121,11 @@ class NavBar extends React.Component {
             <span>Shared with Me</span>
           </li>
 
-          <li onClick={this.props.openPaywall} className="align-middle nav-link no-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="nav"><path id="10a" d="M10.265 9.005a2 2 0 1 0 3.47 0H18v9.5a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5v-9.5h4.265zM9.5 16a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm0-2a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm4.235-4.995H18l-4.982-4.606a1.5 1.5 0 0 0-2.036 0L6 9.005h4.265a2 2 0 0 1 3.47 0z"></path></svg>
-            <span>Tags</span>
+          <li onClick={this.selectNavLink(5)} className={"align-middle nav-link no-arrow" + (this.state.selectedNavLink === 5 ? " selected-nav" : "")}>
+            <Link className="align-middle" to="/main/tags">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="nav"><path id="10a" d="M10.265 9.005a2 2 0 1 0 3.47 0H18v9.5a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5v-9.5h4.265zM9.5 16a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm0-2a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm4.235-4.995H18l-4.982-4.606a1.5 1.5 0 0 0-2.036 0L6 9.005h4.265a2 2 0 0 1 3.47 0z"></path></svg>
+              <span>Tags</span>
+            </Link>
           </li>
 
           <li onClick={this.props.openPaywall} className="align-middle nav-link no-arrow">
