@@ -1,15 +1,6 @@
 import React from 'react';
 import Dropdown from '../modal/dropdown';
 
-// const TagsIndexItem = ({ tag }) => {
-//   return (
-//     <span className="tags-index-item align-middle">
-//       <span>{tag.name}</span>
-//       <i className="fa fa-angle-down"></i>
-//     </span>
-//   );
-// }
-
 class TagsIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -40,7 +31,7 @@ class TagsIndexItem extends React.Component {
           <span>{this.props.tag.name}</span>
           {/* <span>{this.props.tag.numNotes}</span> */}
           <span
-            className="tags-index-dropdown-icon"
+            className="dropdown-icon"
             tabIndex="0"
             onFocus={this.showDropdown}
             onBlur={this.hideDropdown}

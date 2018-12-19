@@ -872,3 +872,14 @@ svg {
   left: 30px;
   width: 120px;
 }
+
+.tag-show-dropdown {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  z-index: 1;
+}
+
+.dropdown-icon {
+  cursor: pointer;
+}
