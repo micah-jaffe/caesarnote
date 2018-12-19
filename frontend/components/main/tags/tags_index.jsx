@@ -22,7 +22,7 @@ class TagsIndex extends React.Component {
     this.sortTags();
 
     return (
-      <div className="tags-index-items">
+      <div className="tags-index-items-wrapper">
         {this.props.tags.map(tag => <TagsIndexItem key={tag.id} tag={tag} />)}
       </div>
     );
