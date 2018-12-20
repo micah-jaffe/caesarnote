@@ -40,7 +40,7 @@ export const fetchNotes = () => (dispatch) => {
 export const createNote = (note) => (dispatch) => {
   dispatch(startLoading());
 
-  NoteApiUtil.createNote(note).then(
+  return NoteApiUtil.createNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   ).then(
@@ -51,7 +51,7 @@ export const createNote = (note) => (dispatch) => {
 export const updateNote = (note) => (dispatch) => {
   dispatch(startLoading());
 
-  NoteApiUtil.updateNote(note).then(
+  return NoteApiUtil.updateNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
@@ -59,8 +59,8 @@ export const updateNote = (note) => (dispatch) => {
 
 export const deleteNote = (id) => (dispatch) => {
   dispatch(startLoading());
-  
-  NoteApiUtil.deleteNote(id).then(
+
+  return NoteApiUtil.deleteNote(id).then(
     note => dispatch(removeNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )

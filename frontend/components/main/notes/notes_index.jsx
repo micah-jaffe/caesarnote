@@ -80,7 +80,7 @@ class NotesIndex extends React.Component {
   }
 
   render() {
-    if (this.props.loading) { return <Loader />; }
+    if (this.props.loading) { return <Loader background="notes"/>; }
 
     return (
       <div className="notes-wrapper">

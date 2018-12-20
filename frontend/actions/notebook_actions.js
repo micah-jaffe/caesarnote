@@ -1,4 +1,5 @@
 import * as NotebookApiUtil from '../util/notebook_api_util';
+import { startLoading } from './loader_actions';
 
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
@@ -25,37 +26,47 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-export const fetchNotebooks = () => (dispatch) => (
-  NotebookApiUtil.fetchNotebooks().then(
+export const fetchNotebooks = () => (dispatch) => {
+  dispatch(startLoading());
+
+  return NotebookApiUtil.fetchNotebooks().then(
     notebooks => dispatch(receiveNotebooks(notebooks)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
-export const fetchNotebook = (id) => (dispatch) => (
-  NotebookApiUtil.fetchNotebook(id).then(
+export const fetchNotebook = (id) => (dispatch) => {
+  dispatch(startLoading());
+
+  return NotebookApiUtil.fetchNotebook(id).then(
     notebook => dispatch(receiveNotebook(notebook)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
-export const createNotebook = (notebook) => (dispatch) => (
-  NotebookApiUtil.createNotebook(notebook).then(
+export const createNotebook = (notebook) => (dispatch) => {
+  dispatch(startLoading());
+
+  return NotebookApiUtil.createNotebook(notebook).then(
     notebook => dispatch(receiveNotebook(notebook)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
-export const updateNotebook = (notebook) => (dispatch) => (
-  NotebookApiUtil.updateNotebook(notebook).then(
+export const updateNotebook = (notebook) => (dispatch) => {
+  dispatch(startLoading());
+
+  return NotebookApiUtil.updateNotebook(notebook).then(
     notebook => dispatch(receiveNotebook(notebook)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
-export const deleteNotebook = (id) => (dispatch) => (
-  NotebookApiUtil.deleteNotebook(id).then(
+export const deleteNotebook = (id) => (dispatch) => {
+  dispatch(startLoading());
+
+  return NotebookApiUtil.deleteNotebook(id).then(
     notebook => dispatch(removeNotebook(notebook)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
