@@ -10,6 +10,7 @@ import {
   openModal,
   closeModal
 } from '../../../actions/modal_actions';
+import { fetchNotes } from '../../../actions/note_actions';
 
 const mapStateToProps = (state) => ({
   notebooks: Object.values(state.entities.notebooks),
@@ -22,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
   createNotebook: (notebook) => dispatch(createNotebook(notebook)),
   updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
   deleteNotebook: (id) => dispatch(deleteNotebook(id)),
+  fetchNotes: () => dispatch(fetchNotes()),
   openModal: (modal) => dispatch(openModal(modal)),
   closeModal: () => dispatch(closeModal())
 });

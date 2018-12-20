@@ -8,7 +8,6 @@ import {
   openModal,
   closeModal
 } from '../../../actions/modal_actions';
-import { fetchNotes } from '../../../actions/note_actions';
 import { selectNotebookNotes } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
@@ -19,7 +18,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
   deleteNotebook: (id) => dispatch(deleteNotebook(id)),
-  fetchNotes: () => dispatch(fetchNotes()),
   openModal: (name, data) => dispatch(openModal(name, data)),
   closeModal: () => dispatch(closeModal())
 });

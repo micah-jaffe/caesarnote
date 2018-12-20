@@ -10,7 +10,8 @@ class NotebooksIndex extends React.Component {
   }
   
   componentDidMount() {
-    this.props.fetchNotebooks() 
+    this.props.fetchNotebooks();
+    this.props.fetchNotes();
   }
 
   openPaywall() {
