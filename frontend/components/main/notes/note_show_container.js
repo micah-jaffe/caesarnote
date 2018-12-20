@@ -25,13 +25,13 @@ const mapStateToProps = (state) => {
   const note = state.entities.notes[selectedNoteId] || defaultNote;
   const notebook = state.entities.notebooks[note.notebook_id] || defaultNotebook;
   const tags = selectTags(note.id, state.entities);
-  const loading = state.ui.loading;
+  // const loading = state.ui.loading.notesLoading;
 
   return {
     note,
     notebook,
     tags,
-    loading
+    loading: false
   };
 };
 

@@ -1,5 +1,6 @@
 import React from 'react'; 
 import TagsIndexItem from './tags_index_item';
+import Loader from '../modal/loader';
 
 class TagsIndex extends React.Component {
   componentDidMount() {
@@ -37,7 +38,6 @@ class TagsIndex extends React.Component {
         );
 
         partitionedTags.push(block)
-
       }
     };
 
@@ -49,6 +49,8 @@ class TagsIndex extends React.Component {
   }
 
   render() {
+    // if (this.props.loading) { return <Loader background={"tags"}/>; }
+
     return (
       <div className="tags-index-wrapper">
         {this.renderTagsIndexHeader()}

@@ -8,12 +8,12 @@ import { selectAllNotes } from '../../../reducers/selectors';
 const mapStateToProps = (state) => {
   const selectedNoteId = state.ui.selection.noteId;
   const notes = selectAllNotes(state.entities);
-  const loading = state.ui.loading
+  // const loading = state.ui.loading.notesLoading
 
   return {
     notes,
     selectedNoteId,
-    loading
+    loading: false
   };
 };
 

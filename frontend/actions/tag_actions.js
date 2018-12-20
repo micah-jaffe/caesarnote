@@ -1,4 +1,5 @@
 import * as TagApiUtil from '../util/tag_api_util';
+import { startLoading } from './loader_actions';
 
 export const RECEIVE_TAGS = "RECEIVE_TAGS";
 export const RECEIVE_TAG = "RECEIVE_TAG";
@@ -31,12 +32,14 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-export const fetchTags = () => (dispatch) => (
+export const fetchTags = () => (dispatch) => {
+  dispatch(startLoading());
+  
   TagApiUtil.fetchTags().then(
     payload => dispatch(receiveTags(payload)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
 export const createTag = (noteId, tag) => (dispatch) => (
   TagApiUtil.createTag(noteId, tag).then(

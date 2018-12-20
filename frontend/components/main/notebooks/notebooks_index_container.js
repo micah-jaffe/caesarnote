@@ -13,7 +13,8 @@ import {
 
 const mapStateToProps = (state) => ({
   notebooks: Object.values(state.entities.notebooks),
-  loading: state.ui.loading
+  // loading: state.ui.loading.notebooksLoading
+  loading: false
 });
 
 const mapDispatchToProps = (dispatch) => ({

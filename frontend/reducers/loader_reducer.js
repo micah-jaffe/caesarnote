@@ -9,23 +9,37 @@ import {
   RECEIVE_NOTEBOOK,
   REMOVE_NOTEBOOK
 } from '../actions/notebook_actions';
+import { 
+  RECEIVE_TAGS, 
+  RECEIVE_TAG,
+  REMOVE_TAG
+} from '../actions/tag_actions';
 
-const loaderReducer = (state = false, action) => {
+const initialState = {
+  notesLoading: false,
+  notebooksLoading: false,
+  tagsLoading: false
+};
+
+const loaderReducer = (state = initialState, action) => {
   Object.freeze(state);
 
   switch (action.type) {
+    case RECEIVE_TAGS:
+      return Object.assign({}, state, { tagsLoading: false });
     case RECEIVE_NOTES:
-        return false;
+        return Object.assign({}, state, { notesLoading: false });
     case RECEIVE_NOTE:
-      return false;
+      return Object.assign({}, state, { notesLoading: false });
     case REMOVE_NOTE:
-      return false;
+      return Object.assign({}, state, { notesLoading: false });
     case RECEIVE_NOTEBOOKS:
-        return false;
+        return Object.assign({}, state, { notebooksLoading: false });
     case RECEIVE_NOTEBOOK:
-      return false;
+      return Object.assign({}, state, { notebooksLoading: false });
     case REMOVE_NOTEBOOK:
-      return false;
+      return Object.assign({}, state, { notebooksLoading: false });
+ 
     case START_LOADING:
         return true;
     default:

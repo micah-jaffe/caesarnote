@@ -5,8 +5,10 @@ import { fetchNotes } from '../../../actions/note_actions';
 import { selectTagNotes } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
-  tags: Object.values(state.entities.tags)//,
+  tags: Object.values(state.entities.tags),
   // tagNotes: selectTagNotes()
+  // loading: state.ui.loading.tagsLoading
+  loading: false
 });
 
 const mapDispatchToProps = (dispatch) => ({

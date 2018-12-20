@@ -7,6 +7,6 @@ import loaderReducer from './loader_reducer';
 
 export default combineReducers({
   modal: modalReducer,
-  selection: selectionReducer,
-  loading: loaderReducer
+  selection: selectionReducer
+  // loading: loaderReducer
 });
