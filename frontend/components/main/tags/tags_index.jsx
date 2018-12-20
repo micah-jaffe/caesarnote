@@ -1,10 +1,12 @@
 import React from 'react'; 
 import TagsIndexItem from './tags_index_item';
 import Loader from '../modal/loader';
+import { selectTagNotes } from '../../../reducers/selectors';
 
 class TagsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchTags();
+    this.props.fetchNotes();
   }
 
   sortTags() {
@@ -21,6 +23,7 @@ class TagsIndex extends React.Component {
 
   renderTagsIndexItems() {
     this.sortTags();
+    const { deleteTag, tags, notes, noteTags, selectTagNotes } = this.props;
 
     const partitionedTags = [];
 
@@ -32,7 +35,7 @@ class TagsIndex extends React.Component {
           <div key={`block-${i}`} className="tags-index-block">
             <h2>{String.fromCharCode(i)}</h2>
             <div className="tags-block-items">
-              {filteredTags.map(tag => <TagsIndexItem key={tag.id} tag={tag} deleteTag={this.props.deleteTag} />)}
+              {filteredTags.map(tag => { return <TagsIndexItem key={tag.id} tag={tag} deleteTag={deleteTag} numNotes={selectTagNotes(tag.id, notes, noteTags).length} />})}
             </div>
           </div>
         );

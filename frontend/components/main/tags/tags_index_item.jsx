@@ -29,7 +29,7 @@ class TagsIndexItem extends React.Component {
       <div>
         <div className="tags-index-item">
           <span>{this.props.tag.name}</span>
-          {/* <span>{this.props.tag.numNotes}</span> */}
+          <span>{this.props.numNotes}</span>
           <span
             className="dropdown-icon"
             tabIndex="0"
