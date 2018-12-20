@@ -1,4 +1,5 @@
 import * as NoteApiUtil from '../util/note_api_util';
+import startLoading from './loader_actions';
 
 export const RECEIVE_NOTES = "RECEIVE_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
@@ -27,20 +28,20 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-export const fetchNotes = () => (dispatch) => (
-  NoteApiUtil.fetchNotes().then(
+export const fetchNotes = () => (dispatch) => {
+  dispatch(startLoading());
+
+  return NoteApiUtil.fetchNotes().then(
     notes => dispatch(receiveNotes(notes)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
 export const createNote = (note) => (dispatch) => (
   NoteApiUtil.createNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
-  ).then(({ note }) => { 
-    // debugger
-    dispatch(selectNote(note.id)) })
+  ).then(({ note }) => dispatch(selectNote(note.id)))
 );
 
 export const updateNote = (note) => (dispatch) => (

@@ -29,8 +29,7 @@ class NoteShow extends React.Component {
     if (this.props.note.id !== prevProps.note.id) {
 
       // autosave if title or body changes. length is temporary hack
-      if (this.state.title !== prevProps.note.title || this.state.body !== prevProps.note.body) {
-        debugger
+      if (this.state.title !== prevProps.note.title || this.state.body.length !== prevProps.note.body.length) {
         this.props.updateNote(this.state);
       }
 
