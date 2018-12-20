@@ -42,3 +42,13 @@ export const selectNoteTag = (noteId, tagId, entities) => {
   return Object.values(entities.noteTags)
     .filter(noteTag => noteTag.note_id === noteId && noteTag.tag_id === tagId)[0];
 };
+
+export const selectTagNotes = (tagId, entities) => {
+  // get all notetags corresponding to noteId
+  const noteTags = Object.values(entities.noteTags).filter(noteTag => noteTag.note_id === tagId);
+  const noteIds = noteTags.map(noteTag => noteTag.note_id);
+
+  // only return those tags whose ids are in allowed tagIds
+
+  return Object.values(entities.notes).filter(note => noteIds.includes(note.id));
+};

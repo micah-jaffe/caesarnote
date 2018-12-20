@@ -3,6 +3,7 @@ import NewNote from './new_note';
 import { createNote } from '../../../actions/note_actions';
 import { withRouter } from 'react-router-dom';
 import { selectDefaultNotebook } from '../../../reducers/selectors';
+import { selectNote } from '../../../actions/selection_actions';
 
 const mapStateToProps = (state) => ({
   userId: state.session.id,

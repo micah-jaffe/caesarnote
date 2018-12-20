@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import TagsIndexItem from './tags_index_item';
 
 class TagsIndex extends React.Component {

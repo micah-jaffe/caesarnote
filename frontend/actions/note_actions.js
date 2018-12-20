@@ -5,6 +5,8 @@ export const RECEIVE_NOTE = "RECEIVE_NOTE";
 export const REMOVE_NOTE = "REMOVE_NOTE";
 export const RECEIVE_NOTE_ERRORS = "RECEIVE_NOTE_ERRORS";
 
+import { selectNote } from './selection_actions'
+
 const receiveNotes = (notes) => ({
   type: RECEIVE_NOTES,
   notes
@@ -36,7 +38,9 @@ export const createNote = (note) => (dispatch) => (
   NoteApiUtil.createNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
-  )
+  ).then(({ note }) => { 
+    // debugger
+    dispatch(selectNote(note.id)) })
 );
 
 export const updateNote = (note) => (dispatch) => (
