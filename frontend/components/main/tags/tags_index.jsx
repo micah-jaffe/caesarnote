@@ -1,7 +1,6 @@
 import React from 'react'; 
 import TagsIndexItem from './tags_index_item';
 import Loader from '../modal/loader';
-import { selectTagNotes } from '../../../reducers/selectors';
 
 class TagsIndex extends React.Component {
   componentDidMount() {
@@ -35,7 +34,13 @@ class TagsIndex extends React.Component {
           <div key={`block-${i}`} className="tags-index-block">
             <h2>{String.fromCharCode(i)}</h2>
             <div className="tags-block-items">
-              {filteredTags.map(tag => { return <TagsIndexItem key={tag.id} tag={tag} deleteTag={deleteTag} numNotes={selectTagNotes(tag.id, notes, noteTags).length} />})}
+              {filteredTags.map(tag => (
+                <TagsIndexItem 
+                  key={tag.id} 
+                  tag={tag} 
+                  deleteTag={deleteTag} 
+                  numNotes={selectTagNotes(tag.id, notes, noteTags).length} />
+                ))}
             </div>
           </div>
         );

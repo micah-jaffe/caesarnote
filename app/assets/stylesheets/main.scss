@@ -802,7 +802,13 @@ svg {
   padding-right: 10px;
   width: fit-content;
 
-  span:first-child {
+  .tags-index-item-name {
+    margin-right: 5px;
+    font-weight: 300;
+  }
+
+  .tags-index-item-count {
+    color: rgb(150, 150, 150);
     margin-right: 10px;
   }
   
