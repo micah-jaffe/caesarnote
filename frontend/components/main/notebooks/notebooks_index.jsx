@@ -1,5 +1,6 @@
 import React from 'react';
 import NotebookIndexItemContainer from './notebooks_index_item_container';
+import Loader from '../modal/loader';
 
 class NotebooksIndex extends React.Component {
   constructor(props) {
@@ -21,6 +22,8 @@ class NotebooksIndex extends React.Component {
   }
 
   render() {
+    if (this.props.loading) { return <Loader background="notebooks" />; }
+
     this.sortNotebooks();
     const notebookIndexItems = this.props.notebooks.map(notebook => (
       <NotebookIndexItemContainer

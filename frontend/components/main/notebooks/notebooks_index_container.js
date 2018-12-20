@@ -12,7 +12,8 @@ import {
 } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
-  notebooks: Object.values(state.entities.notebooks)
+  notebooks: Object.values(state.entities.notebooks),
+  loading: state.ui.loading
 });
 
 const mapDispatchToProps = (dispatch) => ({

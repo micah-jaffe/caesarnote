@@ -8,7 +8,7 @@ import {
   RECEIVE_NOTEBOOKS, 
   RECEIVE_NOTEBOOK,
   REMOVE_NOTEBOOK
-} from '../actions/note_actions';
+} from '../actions/notebook_actions';
 
 const loaderReducer = (state = false, action) => {
   Object.freeze(state);
