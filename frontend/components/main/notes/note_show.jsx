@@ -23,21 +23,27 @@ class NoteShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchTags()
-    // this.autosaveId = setInterval(() => this.props.updateNote(this.state), 5000);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.note.id !== prevProps.note.id) {
-      this.props.updateNote(this.state);
+
+      // autosave if title or body changes. length is temporary hack
+      if (this.state.title.length !== prevProps.note.title.length || this.state.body.length !== prevProps.note.body.length) {
+        // debugger
+        this.props.updateNote(this.state);
+      }
+
       this.setState(Object.assign({}, this.props.note));
       this.props.fetchNotebook(this.state.notebook_id);
-
       this.props.fetchTags();
     }
   }
 
   componentWillUnmount() {
-    clearInterval(this.autosaveId);
+    if (this.state.title !== this.props.note.title || this.state.body !== this.props.body) {
+      this.props.updateNote(this.state);
+    }
   }
 
   toggleFullscreen() {

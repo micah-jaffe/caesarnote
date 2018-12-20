@@ -6,7 +6,7 @@ const toolbar = [
   [{ size: ["small", false, "large", "huge"] }],
   ["bold", "italic", "underline", "strike"],
   [{ color: [] }, { background: [] }],
-  ["blockquote", "code-block"],
+  ["blockquote"],
   ["image", "video"],
   [{ align: [] }],
   [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
