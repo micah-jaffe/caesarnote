@@ -37,28 +37,37 @@ export const fetchNotes = () => (dispatch) => {
   )
 };
 
-export const createNote = (note) => (dispatch) => (
+export const createNote = (note) => (dispatch) => {
+  dispatch(startLoading());
+
   NoteApiUtil.createNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
-  ).then(({ note }) => dispatch(selectNote(note.id)))
-);
+  ).then(
+    ({ note }) => dispatch(selectNote(note.id))
+  )
+};
 
-export const updateNote = (note) => (dispatch) => (
+export const updateNote = (note) => (dispatch) => {
+  dispatch(startLoading());
+
   NoteApiUtil.updateNote(note).then(
     note => dispatch(receiveNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
-export const deleteNote = (id) => (dispatch) => (
+export const deleteNote = (id) => (dispatch) => {
+  dispatch(startLoading());
+  
   NoteApiUtil.deleteNote(id).then(
     note => dispatch(removeNote(note)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
-);
+};
 
 export const cipherNote = (note) => (dispatch) => {
+  dispatch(startLoading());
   note.cipher_key = Math.floor(Math.random() * 25) + 1;
 
   return NoteApiUtil.updateNote(note).then(

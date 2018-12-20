@@ -24,12 +24,14 @@ const mapStateToProps = (state) => {
   const selectedNoteId = state.ui.selection.noteId;
   const note = state.entities.notes[selectedNoteId] || defaultNote;
   const notebook = state.entities.notebooks[note.notebook_id] || defaultNotebook;
-  const tags = selectTags(note.id, state.entities)
+  const tags = selectTags(note.id, state.entities);
+  const loading = state.ui.loading;
 
   return {
     note,
     notebook,
-    tags
+    tags,
+    loading
   };
 };
 

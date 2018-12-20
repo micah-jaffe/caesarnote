@@ -4,6 +4,7 @@ import Editor from './editor';
 import TagFormContainer from '../tags/tag_form_container';
 import { Link } from 'react-router-dom';
 import { richCaesarCipher } from '../../../util/cipher_util';
+import Loader from '../modal/loader';
 
 class NoteShow extends React.Component {
   constructor(props) {
@@ -146,6 +147,8 @@ class NoteShow extends React.Component {
   }
 
   render() {
+    if (this.props.loading) { return <Loader />; }
+    
     return (
       <section className={"note-show" + (this.state.fullscreen ? " fullscreen" : "")}>
 

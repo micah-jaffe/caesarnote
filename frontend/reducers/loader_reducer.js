@@ -1,5 +1,9 @@
 import { START_LOADING } from '../actions/loader_actions';
-import { RECEIVE_NOTES } from '../actions/note_actions';
+import { 
+  RECEIVE_NOTES, 
+  RECEIVE_NOTE,
+  REMOVE_NOTE
+} from '../actions/note_actions';
 
 const loaderReducer = (state = false, action) => {
   Object.freeze(state);
@@ -7,6 +11,10 @@ const loaderReducer = (state = false, action) => {
   switch (action.type) {
     case RECEIVE_NOTES:
         return false;
+    case RECEIVE_NOTE:
+      return false;
+    case REMOVE_NOTE:
+      return false;
     case START_LOADING:
         return true;
     default:
