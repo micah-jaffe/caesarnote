@@ -16,7 +16,10 @@ class NotebookShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.notebookId !== prevProps.match.params.notebookId) {
+    debugger;
+    const newNotebookOrRoute = this.props.match.params.notebookId !== prevProps.match.params.notebookId;
+    const newNoteInNotebook = prevProps.selectedNoteId === (this.props.notes[1] ? this.props.notes[1].id : null); 
+    if (newNotebookOrRoute) {
       this.selectFirstNote();
     } 
   }
