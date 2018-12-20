@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import Dropdown from '../modal/dropdown';
 import { Link } from 'react-router-dom';
 
@@ -14,6 +14,10 @@ class NotebooksIndexItem extends React.Component {
     this.openPaywall = this.openPaywall.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchNotes();
+  }
+
   showDropdown() {
     this.setState({ dropdown: true })
   }
@@ -27,7 +31,8 @@ class NotebooksIndexItem extends React.Component {
   }
 
   render() {
-    const notebookId = this.props.notebook.id;
+    const { notebookId, name, notes } = this.props.notebook;
+    // const numNotes = Object.keys(notes).length > 0 ? this.props.selectNotebookNotes(notebookId, notes).length : ''
 
     const dropdownItems = {
       "Move to...": this.openPaywall,
@@ -38,12 +43,14 @@ class NotebooksIndexItem extends React.Component {
       "Set as default notebook": this.openPaywall,
     };
 
+
     return (
       <div className="notebooks-index-item align-middle">
-        <div className="align-middle">
+        <div className="notebook-title-container align-middle">
           <svg width="6" height="9" viewBox="2 240 6 9" xmlns="http://www.w3.org/2000/svg" className="svg notebook-index-icon"><path fill="#9B9B9B" d="M2 240l6 4.5-6 4.5z"></path></svg>
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" className="svg notebook-index-icon" viewBox="0 0 24 24"><path fill="#313131" d="M16 8.33c0-.18-.22-.33-.5-.33h-4c-.28 0-.5.15-.5.33v1.34c0 .18.22.33.5.33h4c.28 0 .5-.15.5-.33zM18 6v11a2 2 0 0 1-2 2H9V4h7a2 2 0 0 1 2 2zM6 4h2v15H6z"></path></svg>
-          <Link className="notebook-link" to={`/main/notebooks/${this.props.notebook.id}`}>{this.props.notebook.name}</Link>
+          <Link className="notebook-link" to={`/main/notebooks/${notebookId}`}>{name}</Link>
+          <span className="notebook-notes-count">({2})</span>
         </div>
 
         <ul className="align-middle">

@@ -8,12 +8,23 @@ import {
   openModal,
   closeModal
 } from '../../../actions/modal_actions';
+import { fetchNotes } from '../../../actions/note_actions';
+import { selectNotebookNotes } from '../../../reducers/selectors';
+
+const mapStateToProps = (state) => ({
+  notes: state.entities.notes,
+  selectNotebookNotes
+});
 
 const mapDispatchToProps = (dispatch) => ({
   updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
   deleteNotebook: (id) => dispatch(deleteNotebook(id)),
+  fetchNotes: () => dispatch(fetchNotes()),
   openModal: (name, data) => dispatch(openModal(name, data)),
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(null, mapDispatchToProps)(NotebooksIndexItem);
+export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(NotebooksIndexItem);
