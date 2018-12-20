@@ -1,6 +1,7 @@
 import React from 'react';
 import NotesIndexItem from './notes_index_item';
 import NoteShowContainer from './note_show_container';
+import Loader from '../modal/loader';
 
 class NotesIndex extends React.Component {
   constructor(props) {
@@ -79,6 +80,8 @@ class NotesIndex extends React.Component {
   }
 
   render() {
+    if (this.props.loading) { return <Loader />; }
+
     return (
       <div className="notes-wrapper">
         <div className="notebook-container-wrapper">
