@@ -128,4 +128,6 @@ Given the 10-day timeline of this project, it was not possible to implement all 
 
 # Image Gallery
 ![login](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/login.png)
+
+
 ![notebooks](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/notebooks.png)
