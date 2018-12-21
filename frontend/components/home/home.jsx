@@ -208,8 +208,8 @@ const Home = () => {
 
           </div>
 
-          <footer>
-            A portfolio site by Micah Jaffe.
+          <footer className="self-promotion">
+            A portfolio site by <span>Micah Jaffe</span>
           </footer>
           
         </div>

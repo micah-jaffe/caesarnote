@@ -386,7 +386,6 @@
   font-family: $soleil-medium;
   font-size: 14px;
   line-height: 22px;
-  padding-bottom: 80px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 0;
@@ -420,4 +419,42 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  .footer-block {
+    box-sizing: border-box;
+    width: 15%;
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 21px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 28px;
+      margin-top: 28px;
+      font-size: 14px;
+      font-weight: 300;
+      font-family: $soleil-light;
+    }
+  }
+}
+
+.self-promotion {
+  border-top: 3px solid black;
+  box-sizing: border-box;
+  font-family: $soleil-bold;
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 40px;
+  padding-right: 3px;
+  padding-top: 40px;
+  text-align: right;
+  width: 100%;
+
+  span {
+    color: rgb(0, 168, 45);
+  }
 }
