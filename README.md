@@ -45,7 +45,7 @@ In order to be able to create a new note via the sidebar from anywhere within th
 
 ![ciphered](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/ciphered.png)
 
-There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was implmented as follows:
+There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was impelmented as follows:
 
 ```javascript
 export const richCaesarCipher = (htmlString, shift = 0, mode = 'encode') => {
@@ -119,4 +119,13 @@ cipherNote() {
   }
 ```
 
+# Future Features
 
+Given the 10-day timeline of this project, it was not possible to implement all desired features. Top priorities for further work include:
+* Search
+* Note filtering and sorting
+* Dark theme
+
+# Image Gallery
+![login](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/login.png)
+![notebooks](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/notebooks.png)
