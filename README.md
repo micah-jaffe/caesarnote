@@ -74,6 +74,8 @@ export const caesarShift = (char, shift) => {
 };
 ```
 
+Further, the application must maintain state of whether a note is ciphered or not so as to be able to cipher or decipher appropriately. This was implemented via a database column containing the cipher key for each note. The cipher key defaults to `0` when a new note is created and is randomly chosen when the note is first ciphered.
+
 ```javascript
 cipherNote() {
     const randomKey = Math.floor(Math.random() * 25) + 1;
@@ -88,8 +90,9 @@ cipherNote() {
   }
 ```
 
+## Note Creation
 
-
+In order to be able to create a new note via the sidebar from anywhere within the application, the note creation component first searches for a notebook to post to in the URL, and if it doesn't find one it posts to the user's default notebook. A note or notebook created with an empty title will default to 'Untitled' through the backend.
 
 ```javascript
  parseNotebookId() {
