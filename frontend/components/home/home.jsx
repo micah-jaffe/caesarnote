@@ -38,7 +38,7 @@ const Home = () => {
         <div className="hero-image">
           <div className="splash-text">
             <h1>
-              Protect your data without the effot
+              Protect your data without the effort
             </h1>
             <p>
               Caesarnote is a cryptographic cloud-based note-taking app that uses state-of-the-art algorithms to keep your data safe.
