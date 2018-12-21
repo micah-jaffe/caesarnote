@@ -318,8 +318,66 @@
   }
 }
 
+
+
+.how-it-works {
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  h2 {
+    font-family: $soleil-light;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    margin-bottom: 100px;
+  }
+
+  .hiw-card {
+    padding-left: 30px;
+    padding-right: 30px;
+    vertical-align: top;
+    width: 25%;
+
+    img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+    }
+
+    .info {
+      width: 100%;
+    }
+
+    h3 {
+      color: black;
+      font-family: $soleil-bold;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      list-style: 32px;
+      margin-top: 24px;
+      margin-bottom: 0px;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    p {
+      color: rgb(32, 32, 32);
+      font-family: $soleil-light;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 32px;
+      margin-top: 16px;
+      text-align: center;
+    }
+  }
+}
+
+
 .homepage-footer {
   // margin-top: 200px;
   // margin-bottom: -160px;
 }
-

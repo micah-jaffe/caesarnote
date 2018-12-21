@@ -111,6 +111,43 @@ const Home = () => {
           </div>
         </div>
 
+        <div className="how-it-works homepage-section">
+          <h2>How it works</h2>
+          <div className="cards-container">
+            <div className="hiw-card">
+              <div className="info">
+                <img src={window.images.sign_up_logo} alt=""/>
+                <h3>Sign Up</h3>
+                <p>Create your free account and choose the plan that fits your needs.</p>
+              </div>
+            </div>
+
+            <div className="hiw-card">
+              <div className="info">
+                <img src={window.images.new_note} alt="" />
+                <h3>Add Content</h3>
+                <p>Type notes, add attachments, clip web pages, or record memos.</p>
+              </div>
+            </div>
+
+            <div className="hiw-card">
+              <div className="info">
+                <img src={window.images.search_image} alt="" />
+                <h3>Find Everything</h3>
+                <p>Organize your way. Use notebooks, tags, or our powerful search to find everything you need quickly.</p>
+              </div>
+            </div>      
+
+            <div className="hiw-card">
+              <div className="info">
+                <img src={window.images.checkbox} alt="" />
+                <h3>Get Things Done</h3>
+                <p>Manage projects, take meeting notes, set reminders, and edit documents.</p>
+              </div>
+            </div>                   
+          </div>
+        </div>
+
       </div>
 
       <footer className="homepage-footer">
