@@ -36,13 +36,14 @@ const Home = () => {
       </nav>
 
       <div className="body">
+
         <div className="hero-image">
           <div className="splash-text">
             <h1>
               Feel organized without the effort
             </h1>
             <p>
-              Caesarnote helps you capture and prioritize ideas, projects, and to-do lists, so nothing falls through the cracks.
+              Caesarnote is a cryptographic cloud-based note-taking app designed to ensure that your data security comes first.
             </p>
             <Link id="splash-signup-btn" to="/signup">
               Sign up for free
@@ -50,14 +51,28 @@ const Home = () => {
 
           </div>
 
-          <div className="splash-image-container">
-            {/* <img className="spash-image" src={window.images.splash_image} /> */}
-          </div>
+          <div className="splash-image-container"></div>
 
         </div>
+
+        <div className="focus-section">
+          <img src={window.images.homepage_focus} alt="" />
+          <h2>Focus on what matters most</h2>
+
+          <div className="cards-container">
+            <div className="card">
+              Manage everything from big projects to personal moments.
+          </div>
+            <div className="card">
+              Capture ideas and inspiration in notes, voice, and pictures.
+          </div>
+            <div className="card">
+              Never lose track of your tasks and deadlines.
+          </div>
+          </div>
+        </div>
+
       </div>
-
-
     </div>
   );
 };

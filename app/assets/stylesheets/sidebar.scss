@@ -36,6 +36,10 @@
   padding-top: 3px;
   padding-bottom: 3px;
   cursor: pointer;
+
+  &:hover {
+    color: rgb(230, 230 ,230);
+  }
 }
 
 .avatar {
