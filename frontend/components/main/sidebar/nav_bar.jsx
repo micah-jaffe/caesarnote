@@ -35,11 +35,13 @@ class NavBar extends React.Component {
   }
 
   renderNotebooks() {
+    const handleClick = this.selectNavLink(3);
+
     if (this.state.notebookDropdown) {
       return (
         this.props.notebooks.map(notebook => (
           <li key={notebook.id} className="align-middle nav-link nav-dropdown">
-            <Link className="align-middle" to={`/main/notebooks/${notebook.id}`}>
+            <Link className="align-middle" to={`/main/notebooks/${notebook.id}`} onClick={handleClick}>
               <svg xmlns="http://www.w3.org/2000/svg" className="svg" fill="#ccc" width="14" height="14" viewBox="0 0 14 14"><path id="31a" d="M3 2v10h7a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zM2 1h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2V1zm2 1v10h1V2H4zm2 3v1h4V5H6z"></path></svg>
               <span>{notebook.name}</span>
             </Link>
@@ -64,9 +66,11 @@ class NavBar extends React.Component {
   }
 
   renderNotebookShortcut(notebook) {
+    const handleClick = this.selectNavLink(3);
+
     return (
       <li key={notebook.id} className="align-middle nav-link nav-dropdown">
-        <Link className="align-middle" to={`/main/notebooks/${notebook.id}`}>
+        <Link className="align-middle" to={`/main/notebooks/${notebook.id}`} onClick={handleClick}>
           <svg xmlns="http://www.w3.org/2000/svg" className="svg" fill="#ccc" width="14" height="14" viewBox="0 0 14 14"><path id="31a" d="M3 2v10h7a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zM2 1h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2V1zm2 1v10h1V2H4zm2 3v1h4V5H6z"></path></svg>
           <span>{notebook.name}</span>
         </Link>
@@ -75,9 +79,11 @@ class NavBar extends React.Component {
   }
 
   renderNoteShortcut(note) {
+    const handleClick = this.selectNavLink(2);
+
     return (
       <li onClick={() => this.props.selectNote(note.id)} key={note.id} className="align-middle nav-link nav-dropdown">
-        <Link className="align-middle" to="/main">
+        <Link className="align-middle" to="/main" onClick={handleClick}>
           <svg xmlns="http://www.w3.org/2000/svg" className="svg" fill="#ccc" width="14" height="14" viewBox="0 0 14 14"><path id="31a" d="M9 13H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v7l-3 3zm0-1.457L10.543 10H9v1.543zM10 2H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4V9h3V3a1 1 0 0 0-1-1zM5 6h4v1H5V6zm0-2h4v1H5V4zm2 5H5V8h2v1z"></path></svg>
           <span>{note.title}</span>
         </Link>
