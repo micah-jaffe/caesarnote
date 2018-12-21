@@ -1,6 +1,7 @@
 # Caesarnote
 
 [Caesarnote](https://caesarnote.herokuapp.com/) is a cryptographic cloud-based note-taking app inspired (heavily) by Evernote. Caesarnote implements many of the core features of Evernote, including:
+* Secure user authentication
 * Note creation, editing, and deletion with full-featured rich-text editing, autosave, and full-screen mode
 * Notebooks and tags for note organization
 * Shortcuts for faster navigation
@@ -13,6 +14,9 @@ Caesarnote's tech stack consists of React and Redux on the front end and Ruby on
 
 # Key Features
 
+## Note Encryption
+
+There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was implmented as follows:
 
 ```javascript
 export const richCaesarCipher = (htmlString, shift = 0, mode = 'encode') => {
@@ -68,4 +72,41 @@ export const caesarShift = (char, shift) => {
     return String.fromCharCode(shifted + endPos + 1); 
   }
 };
+```
+
+```javascript
+cipherNote() {
+    const randomKey = Math.floor(Math.random() * 25) + 1;
+    const key = this.state.cipher_key ? -this.state.cipher_key : randomKey;
+
+    this.setState({
+      title: richCaesarCipher(this.state.title, key),
+      body: richCaesarCipher(this.state.body, key),
+      is_ciphered: !this.state.is_ciphered,
+      cipher_key: key
+    });
+  }
+```
+
+
+
+
+```javascript
+ parseNotebookId() {
+    const notebookIdFromPath = parseInt(this.props.location.pathname.match(/\d+/));
+    const userDefaultNotebookId = this.props.userDefaultNotebook.id;
+    return notebookIdFromPath || userDefaultNotebookId;
+  }
+  
+  handleClick(e) {
+    e.preventDefault();
+    const newNote = {
+      title: '',
+      body: '',
+      notebook_id: this.parseNotebookId(),
+      user_id: this.props.userId
+    };
+
+    this.props.createNote(newNote);
+  }
 ```
