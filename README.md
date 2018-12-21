@@ -14,7 +14,36 @@ Caesarnote's tech stack consists of React and Redux on the front end and Ruby on
 
 # Key Features
 
+## Note Creation
+
+![main](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/main.png)
+
+In order to be able to create a new note via the sidebar from anywhere within the application, the note creation component first searches for a notebook to post to in the URL, and if it doesn't find one it posts to the user's default notebook. A note or notebook created with an empty title will default to 'Untitled' through the backend.
+
+```javascript
+ parseNotebookId() {
+    const notebookIdFromPath = parseInt(this.props.location.pathname.match(/\d+/));
+    const userDefaultNotebookId = this.props.userDefaultNotebook.id;
+    return notebookIdFromPath || userDefaultNotebookId;
+  }
+  
+  handleClick(e) {
+    e.preventDefault();
+    const newNote = {
+      title: '',
+      body: '',
+      notebook_id: this.parseNotebookId(),
+      user_id: this.props.userId
+    };
+
+    this.props.createNote(newNote);
+  }
+```
+
+
 ## Note Encryption
+
+![ciphered](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/ciphered.png)
 
 There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was implmented as follows:
 
@@ -90,26 +119,4 @@ cipherNote() {
   }
 ```
 
-## Note Creation
 
-In order to be able to create a new note via the sidebar from anywhere within the application, the note creation component first searches for a notebook to post to in the URL, and if it doesn't find one it posts to the user's default notebook. A note or notebook created with an empty title will default to 'Untitled' through the backend.
-
-```javascript
- parseNotebookId() {
-    const notebookIdFromPath = parseInt(this.props.location.pathname.match(/\d+/));
-    const userDefaultNotebookId = this.props.userDefaultNotebook.id;
-    return notebookIdFromPath || userDefaultNotebookId;
-  }
-  
-  handleClick(e) {
-    e.preventDefault();
-    const newNote = {
-      title: '',
-      body: '',
-      notebook_id: this.parseNotebookId(),
-      user_id: this.props.userId
-    };
-
-    this.props.createNote(newNote);
-  }
-```
