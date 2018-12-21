@@ -25,12 +25,30 @@ class SessionForm extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    const demoUser = { 
-      email: 'julius@caesarnote.com',
-      password: 'password'
+    this.setState({ email: '', password: '' });
+
+    const demoEmail = 'julius@caesarnote.com'.split('');
+    const demoPassword = 'password'.split('');
+
+    const animateDemoLogin = () => {
+      const intervalId = setInterval(() => {
+        let email = this.state.email;
+        let password = this.state.password;
+
+        if (demoEmail.length > 0) {
+          email += demoEmail.shift();
+          this.setState({ email });
+        } else if (demoPassword.length > 0) {
+          password += demoPassword.shift();
+          this.setState({ password });
+        } else {
+          clearInterval(intervalId);
+          this.props.login({ email: 'julius@caesarnote.com', password: 'password' })
+        }
+      }, 80);
     };
 
-    this.props.login(demoUser);
+    animateDemoLogin();
   }
   
   renderFormFooter() {
