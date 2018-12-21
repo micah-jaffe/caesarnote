@@ -148,11 +148,74 @@ const Home = () => {
           </div>
         </div>
 
-      </div>
+        <div className="homepage-footer">
+          <div className="logo-with-text align-middle">
+            <a href="/">
+              <img className="logo" src={window.images.logo} />
+              <h1>Caesarnote</h1>
+            </a>
+          </div>
 
-      <footer className="homepage-footer">
-        A portfolio site by Micah Jaffe.
-      </footer>
+          <div className="footer-links-container">
+            <div className="footer-block">
+              <h3>Product</h3>
+              <p>Why Caesarnote</p>
+              <p>Caesarnote Basic</p>
+              <p>Caesarnote Premium</p>
+              <p>Caesarnote Business</p>
+              <p>Compare Plans</p>
+              <p>Student Discount</p>
+              <p>Download App</p>
+            </div>
+
+            <div className="footer-block">
+              <h3>Features</h3>
+              <p>Web Clipper</p>
+              <p>Templates</p>
+              <p>Spaces</p>
+              <p>Integrations</p>
+              <p>Notes Sync</p>
+              <p>PDF &amp; Doc Search</p>
+              <p>Search Handwriting</p>
+              <p>Document Scanning</p>
+              <p>Notebooks and Tags</p>
+            </div>
+
+            <div className="footer-block">
+              <h3>Community</h3>
+              <p>Our Community</p>
+              <p>Certified Consultants</p>
+              <p>Developers</p>
+              <p>Events</p>
+              <p>Forum</p>
+            </div>
+
+            <div className="footer-block">
+              <h3>Support</h3>
+              <p>Help &amp; Learning</p>
+              <p>Troubleshooting</p>
+              <p>Blog</p>
+            </div>
+
+            <div className="footer-block">
+              <h3>Company</h3>
+              <p>About Us</p>
+              <p>Press</p>
+              <p>Careers</p>
+              <p>Inclusion &amp; Diversity</p>
+              <p>Contact Us</p>
+            </div>
+
+          </div>
+
+          <footer>
+            A portfolio site by Micah Jaffe.
+          </footer>
+          
+        </div>
+
+      </div>
+     
     </div>
   );
 };

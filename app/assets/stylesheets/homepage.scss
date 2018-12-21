@@ -378,6 +378,46 @@
 
 
 .homepage-footer {
-  // margin-top: 200px;
-  // margin-bottom: -160px;
+  align-items: flex-start;
+  border: 1px solid red;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: $soleil-medium;
+  font-size: 14px;
+  line-height: 22px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+
+  .logo-with-text {
+    border-bottom: 3px solid black;
+    display: flex;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    width: 100%;
+
+    a {
+      display: flex;
+      align-items: center;
+      margin-left: -30PX;
+    }
+
+    img {
+      position: relative;
+      top: 0;
+    }
+
+    h1 {
+      left: 0;
+      margin-left: -25px;
+    }
+  }
+}
+
+.footer-links-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
