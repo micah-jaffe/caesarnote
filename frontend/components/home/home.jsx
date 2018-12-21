@@ -15,10 +15,8 @@ const Home = () => {
           </div>
 
           <ul className="nav-links">
-            <li>Plans</li>
-            <li>Features</li>
-            <li>Help &amp; Learning</li>
-            <li>About Us</li>
+            <li><a href="https://www.linkedin.com/in/micah-jaffe/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://github.com/micah-jaffe/"><i class="fab fa-github"></i> Github</a></li>
           </ul>
         </div>
 
@@ -209,7 +207,7 @@ const Home = () => {
           </div>
 
           <footer className="self-promotion">
-            A portfolio site by <span>Micah Jaffe</span>
+            A portfolio site by <a href="https://www.linkedin.com/in/micah-jaffe/">Micah Jaffe</a>
           </footer>
           
         </div>
