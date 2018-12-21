@@ -1,6 +1,6 @@
-# README
+# Caesarnote
 
-Caesarnote is a cryptographic cloud-based note-taking app inspired (heavily) by Evernote. Caesarnote implements many of the core features of Evernote, including:
+[Caesarnote](https://caesarnote.herokuapp.com/) is a cryptographic cloud-based note-taking app inspired (heavily) by Evernote. Caesarnote implements many of the core features of Evernote, including:
 * Note creation, editing, and deletion with full-featured rich-text editing, autosave, and full-screen mode
 * Notebooks and tags for note organization
 * Shortcuts for faster navigation
