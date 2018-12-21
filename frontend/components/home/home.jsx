@@ -55,7 +55,7 @@ const Home = () => {
 
         </div>
 
-        <div className="focus-section">
+        <div className="focus homepage-section">
           <img src={window.images.homepage_focus} alt="" />
           <h2>Focus on what matters most</h2>
 
@@ -68,11 +68,54 @@ const Home = () => {
           </div>
             <div className="card">
               Never lose track of your tasks and deadlines.
+            </div>
           </div>
+        </div>
+
+        <div className="stairs homepage-section">
+          <img src={window.images.homepage_stairs} alt="" />
+          <h2>At work, at home, and everywhere in between</h2>
+          <p>Caesarnote's plans and pricing are designed to fit your needs.</p>
+        </div>
+
+        <div className="brain homepage-section">
+          <div className="info">
+            <h3>Remember everything important</h3>
+            <p>A single place for your notes, ideas, lists, and reminders.</p>
+          </div>
+
+          <div className="image">
+            <img src={window.images.homepage_brain} alt="" />
+          </div>
+        </div>
+
+        <div className="devices homepage-section">
+          <div className="image">
+            <img src={window.images.homepage_devices} alt="" />
+          </div>
+
+          <div className="info">
+            <h3>Stay organized, wherever you are</h3>
+            <p>Plan, keep records, and manage projects from any device-even offline.</p>
+          </div>
+        </div>
+
+        <div className="teams homepage-section">
+          <div className="info">
+            <h3>Collaborate with your team</h3>
+            <p>Manage projects, deadlines, clients, and meetings with ease.</p>
+          </div>
+
+          <div className="image">
+            <img src={window.images.homepage_team} alt="" />
           </div>
         </div>
 
       </div>
+
+      <footer className="homepage-footer">
+        A portfolio site by Micah Jaffe.
+      </footer>
     </div>
   );
 };

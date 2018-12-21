@@ -153,7 +153,6 @@
   height: 100%;
   padding: 30px;
   width: 50%;
-
 }
 
 #splash-signup-btn {
@@ -183,11 +182,15 @@
   }
 }
 
-.focus-section {
-  align-items: center;
-  background-color: rgb(245, 245, 245);
+.homepage-section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 160px;
+}
+
+.focus {
+  align-items: center;
+  background-color: rgb(245, 245, 245);
   font-family: $soleil-light;
   padding-top: 120px;
   padding-bottom: 60px;
@@ -219,3 +222,104 @@
     text-align: center;
   }
 }
+
+.stairs {
+  // padding-bottom: 160px;
+  // padding-top: 160px;
+
+  img {
+    height: 64px;
+    width: 64px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-family: $soleil-light;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  p {
+    font-family: $soleil-medium;
+    font-size: 24px;
+    line-height: 40px;
+    padding-left: 132px;
+    padding-right: 132px;
+    margin-top: 22px;
+    text-align: center;
+  }
+}
+
+.brain {
+  flex-direction: row;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  img {
+    box-sizing: border-box;
+    max-height: 360px;
+    max-width: 100%;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+
+  h3 {
+    color: rgb(0, 168, 45);
+    font-family: $soleil-medium;
+    font-size: 40px;
+    line-height: 48px;
+    margin-block-end: 40px;
+  }
+
+  p {
+    color: rgb(36, 41, 47);
+    font-family: $soleil-medium;
+    font-size: 24px;
+    line-height: 40px;
+  }
+}
+
+.image {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.devices {
+  flex-direction: row;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  img {
+    box-sizing: border-box;
+    padding-right: 10%;
+    max-height: 360px;
+    max-width: 100%;
+  }
+}
+
+.teams {
+  flex-direction: row;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  img {
+    max-width: 100%;
+    max-height: 360px;
+  }
+}
+
+.homepage-footer {
+  // margin-top: 200px;
+  // margin-bottom: -160px;
+}
+
