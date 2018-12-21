@@ -142,6 +142,10 @@ body {
   padding-top: 13px;
   text-transform: uppercase;
 
+  > div:first-child {
+    min-width: 250px;
+  }
+
   li {
     margin-left: 20px;
     width: 130px;
