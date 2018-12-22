@@ -25,7 +25,9 @@ class Notebook < ApplicationRecord
 
   def last_updated_timestamp
     if self.notes.length > 0
-      self.notes.max_by{ |note| note.updated_at }.updated_at
+      note_max = self.notes.max_by{ |note| note.updated_at }.updated_at
+      notebook_max = self.updated_at
+      [note_max, notebook_max].max
     else
       self.updated_at
     end
