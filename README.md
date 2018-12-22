@@ -8,7 +8,7 @@
 
 Unlike Evernote, which has been subject to [data leaks](https://www.cnn.com/2013/03/04/tech/web/evernote-hacked/index.html) in the past, Caesarnote ships with [state-of-the-art note encryption](https://en.wikipedia.org/wiki/Caesar_cipher) to make your data cryptographically impenetrable.
 
-Caesarnote's tech stack consists of React and Redux on the front end and Ruby on Rails and PostgresQL on the backend. The project incorporates the React-Quill library for rich-text editing. Caesarnote was designed and built in 10 days.
+Caesarnote's tech stack consists of React and Redux on the front end and Ruby on Rails and PostgreSQL on the backend. The project incorporates the React-Quill library for rich-text editing. Caesarnote was designed and built in 10 days.
 
 ![splash](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/splash.png)
 
@@ -45,7 +45,7 @@ In order to create a new note via the sidebar from anywhere within the applicati
 
 ![ciphered](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/ciphered.png)
 
-There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application it is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was impelmented as follows:
+There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application it is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was implemented as follows:
 
 ```javascript
 export const richCaesarCipher = (htmlString, shift = 0, mode = 'encode') => {
