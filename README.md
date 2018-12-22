@@ -18,7 +18,7 @@ Caesarnote's tech stack consists of React and Redux on the front end and Ruby on
 
 ![main](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/main.png)
 
-In order to be able to create a new note via the sidebar from anywhere within the application, the note creation component first searches for a notebook to post to in the URL, and if it doesn't find one it posts to the user's default notebook. A note or notebook created with an empty title will default to 'Untitled' through the backend.
+In order to create a new note via the sidebar from anywhere within the application, the note creation component first searches for a notebook to post to in the URL, and if it doesn't find one it posts to the user's default notebook. A note or notebook created with an empty title will default to 'Untitled' through the backend.
 
 ```javascript
  parseNotebookId() {
@@ -45,7 +45,7 @@ In order to be able to create a new note via the sidebar from anywhere within th
 
 ![ciphered](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/ciphered.png)
 
-There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was impelmented as follows:
+There is no known algorithm for a rich-text Caesar cipher (suprising, given how practical an application it is). A conventional Caesar cipher won't work since rich-text tags (`<img>`, `<em>`) and reserved characters (`&amp;`, `&nbsp;`) must be preserved while their inner HTML should be ciphered. A hand-rolled algorithm was impelmented as follows:
 
 ```javascript
 export const richCaesarCipher = (htmlString, shift = 0, mode = 'encode') => {
@@ -103,7 +103,7 @@ export const caesarShift = (char, shift) => {
 };
 ```
 
-Further, the application must maintain state of whether a note is ciphered or not so as to be able to cipher or decipher appropriately. This was implemented via a database column containing the cipher key for each note. The cipher key defaults to `0` when a new note is created and is randomly chosen when the note is first ciphered.
+Further, the application must maintain state of whether a note is ciphered so as to cipher or decipher appropriately. This was implemented via a database column containing the cipher key for each note. The cipher key defaults to `0` when a new note is created and is randomly chosen when the note is first ciphered.
 
 ```javascript
 cipherNote() {
