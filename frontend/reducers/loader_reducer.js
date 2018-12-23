@@ -1,19 +1,7 @@
 import { START_LOADING } from '../actions/loader_actions';
-import { 
-  RECEIVE_NOTES, 
-  RECEIVE_NOTE,
-  REMOVE_NOTE
-} from '../actions/note_actions';
-import { 
-  RECEIVE_NOTEBOOKS, 
-  RECEIVE_NOTEBOOK,
-  REMOVE_NOTEBOOK
-} from '../actions/notebook_actions';
-import { 
-  RECEIVE_TAGS, 
-  RECEIVE_TAG,
-  REMOVE_TAG
-} from '../actions/tag_actions';
+import { RECEIVE_NOTES, RECEIVE_NOTE, REMOVE_NOTE } from '../actions/note_actions';
+import { RECEIVE_NOTEBOOKS, RECEIVE_NOTEBOOK, REMOVE_NOTEBOOK } from '../actions/notebook_actions';
+import { RECEIVE_TAGS } from '../actions/tag_actions';
 
 const initialState = {
   notesLoading: false,
@@ -39,9 +27,8 @@ const loaderReducer = (state = initialState, action) => {
       return Object.assign({}, state, { notebooksLoading: false });
     case REMOVE_NOTEBOOK:
       return Object.assign({}, state, { notebooksLoading: false });
- 
     case START_LOADING:
-        return true;
+      return true;
     default:
       return state;
   }

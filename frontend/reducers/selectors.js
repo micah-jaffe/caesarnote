@@ -16,7 +16,6 @@ export const selectDefaultNotebook = (entities) => {
 
 export const selectNotebookNotes = (notebookId, notes) => {
   return Object.values(notes).filter(note => note.notebook_id === notebookId);
-  
 };
 
 export const selectShortcuts = (entities) => {

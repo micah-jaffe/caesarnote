@@ -1,6 +1,4 @@
-import {
-  SELECT_NOTE,
-} from '../actions/selection_actions';
+import { SELECT_NOTE } from '../actions/selection_actions';
 
 const noteSelectorReducer = (state = null, action) => {
   switch (action.type) {

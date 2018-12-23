@@ -1,8 +1,4 @@
-import {
-  RECEIVE_TAGS,
-  RECEIVE_TAG,
-  REMOVE_NOTE_TAG
-} from '../actions/tag_actions';
+import { RECEIVE_TAGS, RECEIVE_TAG, REMOVE_NOTE_TAG } from '../actions/tag_actions';
 
 const noteTagsReducer = (state = {}, action) => {
   Object.freeze(state);

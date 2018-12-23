@@ -1,8 +1,4 @@
-import {
-  RECEIVE_NOTES,
-  RECEIVE_NOTE,
-  REMOVE_NOTE
-} from '../actions/note_actions';
+import { RECEIVE_NOTES, RECEIVE_NOTE, REMOVE_NOTE } from '../actions/note_actions';
 
 const notesReducer = (state = {}, action) => {
   Object.freeze(state);
