@@ -8,8 +8,7 @@ import { selectAllNotes } from '../../../reducers/selectors';
 const mapStateToProps = (state) => {
   const selectedNoteId = state.ui.selection.noteId;
   const notes = selectAllNotes(state.entities);
-  // const loading = state.ui.loading.notesLoading
-  const searchQuery = state.ui.filters.search ? state.ui.filters.search.searchQuery : "";
+  const searchQuery = state.ui.filters.search.searchQuery;
 
   return {
     notes,

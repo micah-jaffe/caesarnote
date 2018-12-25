@@ -35,10 +35,11 @@ class NotesIndex extends React.Component {
   }
 
   filterNotes() {
-    const { searchQuery } = this.props;
+    let { searchQuery } = this.props;
+    searchQuery = searchQuery.toLowerCase();
 
     return this.props.notes.filter(note => (
-      note.title.includes(searchQuery) || note.body.includes(searchQuery)
+      note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery)
     ));
   }
 
@@ -67,7 +68,7 @@ class NotesIndex extends React.Component {
   }
 
   renderAllNotesHeader() {
-    const numNotes = this.props.notes.length;
+    const numNotes = this.filterNotes().length;
 
     return (
       <header className="notebook-header">
