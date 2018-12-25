@@ -35,16 +35,14 @@ body {
   header {
     background: rgb(248, 248, 248);
     border-bottom: 1px solid rgb(230, 230, 230);
-    // border-right: 1px solid rgb(230, 230, 230);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 166px;
     justify-content: flex-end;
-    // position: absolute;
     width: $notes-index-width;
     z-index: 1;
-    
+  
   }
 
   h1 {
@@ -190,12 +188,12 @@ body {
   }
 
   .notebook-actions-icon {
-      text-align: right;
+    text-align: right;
 
-      &:hover {
-        cursor: pointer;
-      }
+    &:hover {
+      cursor: pointer;
     }
+  }
 
   > div {
     color: rgb(49, 49, 49);
@@ -233,7 +231,6 @@ body {
       color: rgb(49, 49, 49);
     }
   }
-
 }
 
 .notebook-notes-count {
@@ -423,7 +420,6 @@ body {
 .notes-index-wrapper {
   bottom: 0px;
   box-sizing: border-box;
-  // border-right: 1px solid rgb(230, 230, 230);
   overflow: scroll;
   position: fixed;
   top: $notebook-header-height - 1;
@@ -710,11 +706,6 @@ svg {
 
 }
 
-.tag-show-wrapper {
-  border: 1px solid red;
-
-}
-
 .tag-show {
   align-items: center;
   background-color: rgb(240, 241, 241);
@@ -749,8 +740,6 @@ svg {
   line-height: 20px;
   outline: none;
   position: relative;
-  // width: 2000px;
-  // min-width: 10px;
 }
 
 .tags-index-wrapper {
@@ -790,7 +779,6 @@ svg {
   box-shadow: border-box;
   line-height: 24px;
   padding-bottom: 25px;
-  // padding-top: 25px;
 }
 
 .tags-index-block{
@@ -896,39 +884,4 @@ svg {
   top: calc(50% - 32px);
   left: calc(50% + 32px);
   z-index: 10;
-
-}
-
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 4px solid rgb(0, 168, 45);;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: rgb(0, 168, 45) transparent transparent transparent;
-}
-
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

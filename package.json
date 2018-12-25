@@ -17,7 +17,7 @@
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description": "A cryptographic cloud-based note-taking app",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
@@ -26,22 +26,22 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --more=development",
+    "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micah-jaffe/notify.git"
+    "url": "git+https://github.com/micah-jaffe/caesarnote.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/micah-jaffe/notify/issues"
+    "url": "https://github.com/micah-jaffe/caesarnote/issues"
   },
   "engines": {
     "node": "8.4.0",
     "npm": "6.1.0"
   },
-  "homepage": "https://github.com/micah-jaffe/notify#readme"
+  "homepage": "https://github.com/micah-jaffe/caesarnote#readme"
 }
