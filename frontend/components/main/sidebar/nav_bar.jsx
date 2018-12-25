@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
-      selectedNavLink: null,
       notebookDropdown: false,
       shortcutsDropdown: false
     };
@@ -32,6 +31,17 @@ class NavBar extends React.Component {
 
   selectNavLink(navLink) {
     return () => this.setState({ selectedNavLink: navLink });
+  }
+
+  selectedNavLink() {
+    switch(this.props.location.pathname) {
+      case "/main":
+        return 2;
+      case "/main/notebooks":
+        return 3;
+      case "/main/tags":
+        return 5;
+    }
   }
 
   renderNotebooks() {
@@ -108,14 +118,14 @@ class NavBar extends React.Component {
 
           {this.renderShortcuts()}
 
-          <li onClick={this.selectNavLink(2)} className={"align-middle nav-link no-arrow" + (this.state.selectedNavLink === 2 ? " selected-nav" : "")}>
+          <li onClick={this.selectNavLink(2)} className={"align-middle nav-link no-arrow" + (this.selectedNavLink() === 2 ? " selected-nav" : "")}>
             <Link className="align-middle" to="/main"> 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="nav"><path id="14a" d="M16 16h2v-1h-2a.997.997 0 0 0-1 1v3h1v-3zM8 4h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm1.5 4a.5.5 0 0 0 0 1h5a.5.5 0 1 0 0-1h-5zm0 3a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm0 3a.5.5 0 1 0 0 1h3a.5.5 0 1 0 0-1h-3z"></path></svg>
               <span>All Notes</span>
             </Link>
           </li>
 
-          <li onClick={this.handleNotebookClick} className={"align-middle nav-link" + (this.state.selectedNavLink === 3 ? " selected-nav" : "")}>
+          <li onClick={this.handleNotebookClick} className={"align-middle nav-link" + (this.selectedNavLink() === 3 ? " selected-nav" : "")}>
             <Link className="align-middle" to="/main/notebooks">
               <div className={"align-middle" + (this.state.notebookDropdown ? " rotate" : "unrotate")}><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path d="M2 0l4 4-4 4z"></path></svg></div>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M9 4h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9V4zM6 4h2v15H6V4zm5.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-4z"></path></svg>
@@ -130,7 +140,7 @@ class NavBar extends React.Component {
             <span>Shared with Me</span>
           </li>
 
-          <li onClick={this.selectNavLink(5)} className={"align-middle nav-link no-arrow" + (this.state.selectedNavLink === 5 ? " selected-nav" : "")}>
+          <li onClick={this.selectNavLink(5)} className={"align-middle nav-link no-arrow" + (this.selectedNavLink() === 5 ? " selected-nav" : "")}>
             <Link className="align-middle" to="/main/tags">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="nav"><path id="10a" d="M10.265 9.005a2 2 0 1 0 3.47 0H18v9.5a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5v-9.5h4.265zM9.5 16a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm0-2a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm4.235-4.995H18l-4.982-4.606a1.5 1.5 0 0 0-2.036 0L6 9.005h4.265a2 2 0 0 1 3.47 0z"></path></svg>
               <span>Tags</span>

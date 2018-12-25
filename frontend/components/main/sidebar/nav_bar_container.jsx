@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import NavBar from './nav_bar';
 import { openModal } from '../../../actions/modal_actions';
-import { selectShortcuts } from '../../../reducers/selectors';
+import { selectShortcuts, selectAllNotebooks } from '../../../reducers/selectors';
 import { selectNote } from '../../../actions/selection_actions';
 
 const mapStateToProps = (state) => ({
-  notebooks: Object.values(state.entities.notebooks),
+  notebooks: selectAllNotebooks(state.entities),
   shortcuts: selectShortcuts(state.entities)
 });
 
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
   selectNote: (id) => dispatch(selectNote(id))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps, 
   mapDispatchToProps
-)(NavBar);
+)(NavBar));
