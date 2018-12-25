@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import TagsIndex from './tags_index';
 import { fetchTags, deleteTag } from '../../../actions/tag_actions';
 import { fetchNotes } from '../../../actions/note_actions'; 
@@ -14,7 +15,6 @@ const mapStateToProps = (state) => ({
   noteTags: selectAllNoteTags(state.entities),
   notes: selectAllNotes(state.entities),
   selectTagNotes,
-  // loading: state.ui.loading.tagsLoading
   loading: false
 });
 
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchNotes: () => dispatch(fetchNotes())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps, 
   mapDispatchToProps
-  )(TagsIndex);
+  )(TagsIndex));

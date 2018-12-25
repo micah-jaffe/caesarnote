@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import SearchBar from './search_bar';
-import { searchQuery } from '../../../actions/search_actions';
+import { searchQuery } from '../../../actions/filter_actions';
 
 const mapDispatchToProps = (dispatch) => ({
   searchQuery: (query) => dispatch(searchQuery(query))

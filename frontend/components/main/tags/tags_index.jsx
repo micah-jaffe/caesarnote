@@ -3,6 +3,11 @@ import TagsIndexItem from './tags_index_item';
 import Loader from '../modal/loader';
 
 class TagsIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
   componentDidMount() {
     this.props.fetchTags();
     this.props.fetchNotes();
@@ -10,6 +15,10 @@ class TagsIndex extends React.Component {
 
   sortTags() {
     this.props.tags.sort((a, b) => a.name > b.name ? 1 : -1);
+  }
+  
+  handleClick(e) {
+    this.props.history.push("/main");
   }
 
   renderTagsIndexHeader() {
@@ -22,7 +31,7 @@ class TagsIndex extends React.Component {
 
   renderTagsIndexItems() {
     this.sortTags();
-    const { deleteTag, tags, notes, noteTags, selectTagNotes } = this.props;
+    const { deleteTag, notes, noteTags, selectTagNotes } = this.props;
 
     const partitionedTags = [];
 
@@ -33,7 +42,7 @@ class TagsIndex extends React.Component {
         const block = (
           <div key={`block-${i}`} className="tags-index-block">
             <h2>{String.fromCharCode(i)}</h2>
-            <div className="tags-block-items">
+            <div className="tags-block-items" onClick={this.handleClick}>
               {filteredTags.map(tag => (
                 <TagsIndexItem 
                   key={tag.id} 
@@ -57,7 +66,7 @@ class TagsIndex extends React.Component {
   }
 
   render() {
-    // if (this.props.loading) { return <Loader background={"tags"}/>; }
+    if (this.props.loading) { return <Loader background={"tags"}/>; }
 
     return (
       <div className="tags-index-wrapper">

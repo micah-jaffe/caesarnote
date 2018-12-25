@@ -1,4 +1,4 @@
-import { SEARCH_QUERY } from "../actions/search_actions";
+import { SEARCH_QUERY } from "../actions/filter_actions";
 
 const initialState = { searchQuery: "" };
 
