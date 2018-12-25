@@ -34,14 +34,23 @@ class NotesIndex extends React.Component {
     this.props.notes.sort((a, b) => a.updated_at < b.updated_at ? 1 : -1);
   }
 
+  filterNotes() {
+    const { searchQuery } = this.props;
+
+    return this.props.notes.filter(note => (
+      note.title.includes(searchQuery) || note.body.includes(searchQuery)
+    ));
+  }
+
   openPaywall() {
     this.props.openModal('paywall');
   }
 
   renderNotesIndexItems() {
     this.sortNotes();
+    const filteredNotes = this.filterNotes();
 
-    return this.props.notes.map(note => (
+    return filteredNotes.map(note => (
       <div key={note.id} onClick={() => this.props.selectNote(note.id)}>
         <NotesIndexItem
           note={note}
