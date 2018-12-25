@@ -80,8 +80,8 @@ class NavBar extends React.Component {
 
   renderNoteShortcut(note) {
     const handleClick = () => {
-      this.selectNavLink(2)
-      this.props.selectNote(note.id)
+      this.selectNavLink(2);
+      this.props.selectNote(note.id);
     };
 
     return (

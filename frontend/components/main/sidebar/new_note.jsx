@@ -27,6 +27,7 @@ class NewNote extends React.Component {
       user_id: this.props.userId
     };
 
+    this.props.history.push("/main");
     this.props.createNote(newNote);
   }
   
