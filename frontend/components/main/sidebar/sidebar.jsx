@@ -1,6 +1,6 @@
 import React from 'react';
 import UserProfileContainer from './user_profile_container';
-import SearchBar from './search_bar';
+import SearchBarContainer from './search_bar_container';
 import NewNoteContainer from './new_note_container';
 import NavBarContainer from './nav_bar_container';
 
@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
       <div className="sidebar-wrapper">
         <section className="sidebar">
           <UserProfileContainer />
-          <SearchBar />
+          <SearchBarContainer />
           <NewNoteContainer />
           <NavBarContainer />
         </section>
