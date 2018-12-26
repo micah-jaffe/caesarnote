@@ -10,10 +10,24 @@ class NavBar extends React.Component {
       shortcutsDropdown: false
     };
 
-    this.selectNavLink = this.selectNavLink.bind(this);
     this.renderNotebooks = this.renderNotebooks.bind(this);
     this.handleNotebookClick = this.handleNotebookClick.bind(this);
     this.handleShortcutsClick = this.handleShortcutsClick.bind(this);
+    this.resetSearchQuery = this.resetSearchQuery.bind(this);
+  }
+
+  selectedNavLink() {
+    const pathStr = this.props.location.pathname;
+    switch (pathStr) {
+      case "/main":
+        return 2;
+      case "/main/notebooks":
+        return 3;
+      case "/main/tags":
+        return 5;
+    }
+
+    if (pathStr.includes("/main/notebooks/")) { return 3 }
   }
 
   handleShortcutsClick() {
@@ -24,34 +38,20 @@ class NavBar extends React.Component {
 
   handleNotebookClick() {
     this.setState({ 
-      selectedNavLink: 3,
       notebookDropdown: !this.state.notebookDropdown
     });
   }
 
-  selectNavLink(navLink) {
-    return () => this.setState({ selectedNavLink: navLink });
-  }
-
-  selectedNavLink() {
-    switch(this.props.location.pathname) {
-      case "/main":
-        return 2;
-      case "/main/notebooks":
-        return 3;
-      case "/main/tags":
-        return 5;
-    }
+  resetSearchQuery() {
+    this.props.searchQuery({ searchQuery: "" })
   }
 
   renderNotebooks() {
-    const handleClick = this.selectNavLink(3);
-
     if (this.state.notebookDropdown) {
       return (
         this.props.notebooks.map(notebook => (
           <li key={notebook.id} className="align-middle nav-link nav-dropdown">
-            <Link className="align-middle" to={`/main/notebooks/${notebook.id}`} onClick={handleClick}>
+            <Link className="align-middle" to={`/main/notebooks/${notebook.id}`}>
               <svg xmlns="http://www.w3.org/2000/svg" className="svg" fill="#ccc" width="14" height="14" viewBox="0 0 14 14"><path id="31a" d="M3 2v10h7a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zM2 1h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2V1zm2 1v10h1V2H4zm2 3v1h4V5H6z"></path></svg>
               <span>{notebook.name}</span>
             </Link>
@@ -76,11 +76,9 @@ class NavBar extends React.Component {
   }
 
   renderNotebookShortcut(notebook) {
-    const handleClick = this.selectNavLink(3);
-
     return (
       <li key={notebook.id} className="align-middle nav-link nav-dropdown">
-        <Link className="align-middle" to={`/main/notebooks/${notebook.id}`} onClick={handleClick}>
+        <Link className="align-middle" to={`/main/notebooks/${notebook.id}`}>
           <svg xmlns="http://www.w3.org/2000/svg" className="svg" fill="#ccc" width="14" height="14" viewBox="0 0 14 14"><path id="31a" d="M3 2v10h7a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zM2 1h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2V1zm2 1v10h1V2H4zm2 3v1h4V5H6z"></path></svg>
           <span>{notebook.name}</span>
         </Link>
@@ -90,7 +88,6 @@ class NavBar extends React.Component {
 
   renderNoteShortcut(note) {
     const handleClick = () => {
-      this.selectNavLink(2);
       this.props.selectNote(note.id);
     };
 
@@ -118,7 +115,7 @@ class NavBar extends React.Component {
 
           {this.renderShortcuts()}
 
-          <li onClick={this.selectNavLink(2)} className={"align-middle nav-link no-arrow" + (this.selectedNavLink() === 2 ? " selected-nav" : "")}>
+          <li onClick={this.resetSearchQuery} className={"align-middle nav-link no-arrow" + (this.selectedNavLink() === 2 ? " selected-nav" : "")}>
             <Link className="align-middle" to="/main"> 
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="nav"><path id="14a" d="M16 16h2v-1h-2a.997.997 0 0 0-1 1v3h1v-3zM8 4h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm1.5 4a.5.5 0 0 0 0 1h5a.5.5 0 1 0 0-1h-5zm0 3a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm0 3a.5.5 0 1 0 0 1h3a.5.5 0 1 0 0-1h-3z"></path></svg>
               <span>All Notes</span>
@@ -140,7 +137,7 @@ class NavBar extends React.Component {
             <span>Shared with Me</span>
           </li>
 
-          <li onClick={this.selectNavLink(5)} className={"align-middle nav-link no-arrow" + (this.selectedNavLink() === 5 ? " selected-nav" : "")}>
+          <li className={"align-middle nav-link no-arrow" + (this.selectedNavLink() === 5 ? " selected-nav" : "")}>
             <Link className="align-middle" to="/main/tags">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="nav"><path id="10a" d="M10.265 9.005a2 2 0 1 0 3.47 0H18v9.5a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5v-9.5h4.265zM9.5 16a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm0-2a.5.5 0 1 0 0 1h5a.5.5 0 1 0 0-1h-5zm4.235-4.995H18l-4.982-4.606a1.5 1.5 0 0 0-2.036 0L6 9.005h4.265a2 2 0 0 1 3.47 0z"></path></svg>
               <span>Tags</span>

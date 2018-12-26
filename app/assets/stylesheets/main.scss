@@ -813,6 +813,10 @@ svg {
   padding-right: 10px;
   width: fit-content;
 
+  a {
+    display: inline-block;
+  }
+
   .tags-index-item-name {
     margin-right: 5px;
     font-weight: 300;

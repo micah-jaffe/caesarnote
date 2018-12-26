@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from '../modal/dropdown';
+import { Link } from 'react-router-dom';
 
 class TagsIndexItem extends React.Component {
   constructor(props) {
@@ -28,8 +29,10 @@ class TagsIndexItem extends React.Component {
     return (
       <div>
         <div className="tags-index-item">
-          <span className="tags-index-item-name">{this.props.tag.name}</span>
-          <span className="tags-index-item-count">({this.props.numNotes})</span>
+          <Link to="/main">
+            <span className="tags-index-item-name">{this.props.tag.name}</span>
+            <span className="tags-index-item-count">({this.props.numNotes})</span>
+          </Link>
           <span
             className="dropdown-icon"
             tabIndex="0"

@@ -3,11 +3,6 @@ import TagsIndexItem from './tags_index_item';
 import Loader from '../modal/loader';
 
 class TagsIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-  
   componentDidMount() {
     this.props.fetchTags();
     this.props.fetchNotes();
@@ -15,10 +10,6 @@ class TagsIndex extends React.Component {
 
   sortTags() {
     this.props.tags.sort((a, b) => a.name > b.name ? 1 : -1);
-  }
-  
-  handleClick(e) {
-    this.props.history.push("/main");
   }
 
   renderTagsIndexHeader() {
@@ -42,7 +33,7 @@ class TagsIndex extends React.Component {
         const block = (
           <div key={`block-${i}`} className="tags-index-block">
             <h2>{String.fromCharCode(i)}</h2>
-            <div className="tags-block-items" onClick={this.handleClick}>
+            <div className="tags-block-items">
               {filteredTags.map(tag => (
                 <TagsIndexItem 
                   key={tag.id} 
