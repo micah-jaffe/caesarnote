@@ -8,6 +8,8 @@ class NotesIndex extends React.Component {
     super(props);
 
     this.openPaywall = this.openPaywall.bind(this);
+    this.searchFilter = this.searchFilter.bind(this);
+    this.trashFilter = this.trashFilter.bind(this);
   }
 
   componentDidMount() {
@@ -30,40 +32,41 @@ class NotesIndex extends React.Component {
     }
   }
 
+  processNotes() {
+    this.sortNotes();
+    return this.filterNotes();
+  }
+
   sortNotes() {
     this.props.notes.sort((a, b) => a.updated_at < b.updated_at ? 1 : -1);
   }
 
   filterNotes() {
-    const { notes, searchQuery, isTrash } = this.props;
-    return notes.filter(note => (
-      (note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery)) && note.is_trashed === isTrash
-    ));
+    return this.props.notes
+      .filter(this.searchFilter())
+      .filter(this.trashFilter());
   }
 
-  // searchFilterNotes(notes) {
-  //   let { searchQuery } = this.props;
-  //   searchQuery = searchQuery.toLowerCase();
+  searchFilter() {
+    let { searchQuery } = this.props;
+    searchQuery = searchQuery.toLowerCase();
 
-  //   return notes.filter(note => (
-  //     note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery)
-  //   ));
-  // }
+    return note => note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery);
+  }
 
-  // trashFilterNotes(notes) {
-  //   const { isTrash } = this.props;
-  //   return notes.filter(note => note.is_trashed === isTrash)
-  // }
+  trashFilter() {
+    const { trash } = this.props;
+    return note => note.is_trashed === trash;
+  }
 
   openPaywall() {
     this.props.openModal('paywall');
   }
 
   renderNotesIndexItems() {
-    this.sortNotes();
-    const filteredNotes = this.filterNotes();
+    const processedNotes = this.processNotes();
 
-    return filteredNotes.map(note => (
+    return processedNotes.map(note => (
       <div key={note.id} onClick={() => this.props.selectNote(note.id)}>
         <NotesIndexItem
           note={note}
@@ -79,12 +82,12 @@ class NotesIndex extends React.Component {
     );
   }
 
-  renderAllNotesHeader() {
+  renderHeader() {
     const numNotes = this.filterNotes().length;
 
     return (
       <header className="notebook-header">
-        <h1>All Notes</h1>
+        <h1>{this.props.trash ? "Trash" : "All Notes"}</h1>
         <div className="notebook-info-header align-middle">
           <div className="notes-count">
             {numNotes} Notes
@@ -110,7 +113,7 @@ class NotesIndex extends React.Component {
 
           <section className="notebook-container">
             <div className="notebook-header-wrapper">
-              {this.renderAllNotesHeader()}
+              {this.renderHeader()}
             </div>
 
 

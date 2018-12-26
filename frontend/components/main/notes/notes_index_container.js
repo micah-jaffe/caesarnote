@@ -9,14 +9,14 @@ const mapStateToProps = (state, ownProps) => {
   const selectedNoteId = state.ui.selection.noteId;
   const notes = selectAllNotes(state.entities);
   const searchQuery = state.ui.filters.search.searchQuery;
-  const isTrash = ownProps.match.path === "/main/trash";
+  const trash = ownProps.match.path === "/main/trash";
 
   return {
     notes,
     selectedNoteId,
     searchQuery,
     loading: false,
-    isTrash
+    trash
   };
 };
 
