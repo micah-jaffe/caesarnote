@@ -14,32 +14,42 @@ Caesarnote's tech stack consists of React and Redux on the front end and Ruby on
 
 # Key Features
 
-## Note Creation
+## Note Processing
 
 ![main](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/main.png)
 
-In order to create a new note via the sidebar from anywhere within the application, the note creation component first searches for a notebook to post to in the URL, and if it doesn't find one it posts to the user's default notebook. A note or notebook created with an empty title will default to 'Untitled' through the backend.
+Each time notes are rendered, they are sorted and filtered by various parameters. In order to keep code clean and readable as the number of processing parameters grows, a modularized note processing procedure was developed as follows:
 
 ```javascript
- parseNotebookId() {
-    const notebookIdFromPath = parseInt(this.props.location.pathname.match(/\d+/));
-    const userDefaultNotebookId = this.props.userDefaultNotebook.id;
-    return notebookIdFromPath || userDefaultNotebookId;
+  processNotes() {
+    this.sortNotes();
+    return this.filterNotes();
   }
-  
-  handleClick(e) {
-    e.preventDefault();
-    const newNote = {
-      title: '',
-      body: '',
-      notebook_id: this.parseNotebookId(),
-      user_id: this.props.userId
-    };
 
-    this.props.createNote(newNote);
+  sortNotes() {
+    this.props.notes.sort((a, b) => a.updated_at < b.updated_at ? 1 : -1);
+  }
+
+  filterNotes() {
+    return this.props.notes
+      .filter(this.searchFilter())
+      .filter(this.trashFilter());
+  }
+
+  searchFilter() {
+    let { searchQuery } = this.props;
+    searchQuery = searchQuery.toLowerCase();
+
+    return note => note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery);
+  }
+
+  trashFilter() {
+    const { trash } = this.props;
+    return note => note.is_trashed === trash;
   }
 ```
 
+Though the application currently only supports one sort parameter and two filter parameters, future versions may include many different sort parameters (chronological by date created, alphabetical by title) and filter parameters (tags). This structure will allow for easy additions of future parameters while maintaining readable and modular code.
 
 ## Note Encryption
 
