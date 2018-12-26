@@ -35,13 +35,25 @@ class NotesIndex extends React.Component {
   }
 
   filterNotes() {
-    let { searchQuery } = this.props;
-    searchQuery = searchQuery.toLowerCase();
-
-    return this.props.notes.filter(note => (
-      note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery)
+    const { notes, searchQuery, isTrash } = this.props;
+    return notes.filter(note => (
+      (note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery)) && note.is_trashed === isTrash
     ));
   }
+
+  // searchFilterNotes(notes) {
+  //   let { searchQuery } = this.props;
+  //   searchQuery = searchQuery.toLowerCase();
+
+  //   return notes.filter(note => (
+  //     note.title.toLowerCase().includes(searchQuery) || note.body.toLowerCase().includes(searchQuery)
+  //   ));
+  // }
+
+  // trashFilterNotes(notes) {
+  //   const { isTrash } = this.props;
+  //   return notes.filter(note => note.is_trashed === isTrash)
+  // }
 
   openPaywall() {
     this.props.openModal('paywall');

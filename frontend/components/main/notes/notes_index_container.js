@@ -5,16 +5,18 @@ import { selectNote } from '../../../actions/selection_actions';
 import { openModal } from '../../../actions/modal_actions';
 import { selectAllNotes } from '../../../reducers/selectors';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   const selectedNoteId = state.ui.selection.noteId;
   const notes = selectAllNotes(state.entities);
   const searchQuery = state.ui.filters.search.searchQuery;
+  const isTrash = ownProps.match.path === "/main/trash";
 
   return {
     notes,
     selectedNoteId,
     searchQuery,
-    loading: false
+    loading: false,
+    isTrash
   };
 };
 
