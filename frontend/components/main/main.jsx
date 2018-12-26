@@ -8,10 +8,6 @@ import TagsIndexContainer from './tags/tags_index_container';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <main className="main">
@@ -22,7 +18,9 @@ class Main extends React.Component {
           <Route path="/main/notebooks/:notebookId" component={NotebookShowContainer} />
           <Route path="/main/notebooks" component={NotebooksIndexContainer} />
           <Route path="/main/tags" component={TagsIndexContainer} />
+          <Route path="/main/trash" component={NotesIndexContainer} />
           <Route exact path="/main" component={NotesIndexContainer} />
+          <Redirect to="/main" />
         </Switch>
       </main>
     );

@@ -387,7 +387,7 @@ body {
   position: absolute;
   right: 20px;
   width: 200px;
-  z-index: 2;
+  z-index: 3;
 
   ul {
     width: inherit;
@@ -814,7 +814,7 @@ svg {
   width: fit-content;
 
   a {
-    display: inline-block;
+    display: inline-block
   }
 
   .tags-index-item-name {
