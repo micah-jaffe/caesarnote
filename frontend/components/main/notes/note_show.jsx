@@ -31,7 +31,8 @@ class NoteShow extends React.Component {
 
       // autosave if title or body changes. length is temporary hack
       if (this.state.title !== prevProps.note.title || this.state.body.length !== prevProps.note.body.length) {
-        this.props.updateNote(this.state);
+        newNote = Object.assign(this.state, { is_trashed: false });
+        this.props.updateNote(newNote);
       }
 
       this.setState(Object.assign({}, this.props.note));
@@ -42,7 +43,8 @@ class NoteShow extends React.Component {
 
   componentWillUnmount() {
     if (this.state.title !== this.props.note.title || this.state.body !== this.props.body) {
-      this.props.updateNote(this.state);
+      newNote = Object.assign(this.state, { is_trashed: false });
+      this.props.updateNote(newNote);
     }
   }
 
