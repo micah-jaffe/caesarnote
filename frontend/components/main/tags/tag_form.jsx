@@ -1,5 +1,4 @@
 import React from 'react';
-import TagShow from './tag_show';
 import TagShowContainer from './tag_show_container';
 
 class TagForm extends React.Component {
