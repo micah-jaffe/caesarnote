@@ -5,6 +5,8 @@
 * Note creation, editing, and deletion with full-featured rich-text editing, autosave, and full-screen mode
 * Notebooks and tags for note organization
 * Shortcuts for faster navigation
+* Search by note content
+* Trash bin for retrieval of deleted notes
 
 Unlike Evernote, which has been subject to [data leaks](https://www.cnn.com/2013/03/04/tech/web/evernote-hacked/index.html) in the past, Caesarnote ships with [state-of-the-art note encryption](https://en.wikipedia.org/wiki/Caesar_cipher) to make your data cryptographically impenetrable.
 
@@ -132,9 +134,9 @@ cipherNote() {
 # Future Features
 
 Given the 10-day timeline of this project, it was not possible to implement all desired features. Top priorities for further work include:
-* Search
-* Note filtering and sorting
+* Additional note filtering and sorting
 * Dark theme
+* Note sharing
 
 # Image Gallery
 ![login](https://github.com/micah-jaffe/caesarnote/blob/master/app/assets/images/readme/login.png)
