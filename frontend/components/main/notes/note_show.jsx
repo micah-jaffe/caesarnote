@@ -92,11 +92,20 @@ class NoteShow extends React.Component {
   }
 
   renderNoteHeader() {
+    const trashOrDeleteNote = (note) => {
+      if (note.is_trashed) {
+        this.props.deleteNote(note.id);
+      } else {
+        const trashedNote = Object.assign(note, { is_trashed: true });
+        this.props.updateNote(trashedNote);
+      }
+    }
+    
     const dropdownItems = {
       "Move to...": this.openPaywall,
       "Share note...": this.openPaywall,
       "Duplicate note": this.openPaywall,
-      "Delete note": () => this.props.deleteNote(this.props.note.id),
+      "Delete note": () => trashOrDeleteNote(this.props.note),
       "Add shortcut": this.openPaywall,
       "Copy internal link": this.openPaywall,
       "View note info...": this.openPaywall
