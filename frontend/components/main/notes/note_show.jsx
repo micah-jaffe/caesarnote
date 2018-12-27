@@ -41,13 +41,12 @@ class NoteShow extends React.Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   debugger;
-  //   if (this.state.title !== this.props.note.title || this.state.body !== this.props.body) {
-  //     const newNote = Object.assign(this.state, { is_trashed: false });
-  //     this.props.updateNote(newNote);
-  //   }
-  // }
+  componentWillUnmount() {
+    if (this.state.title !== this.props.note.title || this.state.body.length !== this.props.note.body.length) {
+      const newNote = Object.assign(this.state, { is_trashed: false });
+      this.props.updateNote(newNote);
+    }
+  }
 
   toggleFullscreen() {
     this.setState({ fullscreen: !this.state.fullscreen });
