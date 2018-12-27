@@ -18,15 +18,14 @@ class NotesIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.match.params.notebookId !== prevProps.match.params.notebookId) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
       this.selectFirstNote();
-    } 
+    }
   }
 
   selectFirstNote() {
     if (this.props.notes.length > 0) {
-      this.sortNotes();
-      this.props.selectNote(this.props.notes[0].id);
+      this.props.selectNote(this.processNotes()[0].id);
     } else {
       this.props.selectNote(null);
     }

@@ -42,6 +42,7 @@ class NoteShow extends React.Component {
   }
 
   // componentWillUnmount() {
+  //   debugger;
   //   if (this.state.title !== this.props.note.title || this.state.body !== this.props.body) {
   //     const newNote = Object.assign(this.state, { is_trashed: false });
   //     this.props.updateNote(newNote);
