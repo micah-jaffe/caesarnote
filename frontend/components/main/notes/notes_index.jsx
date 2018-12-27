@@ -25,8 +25,11 @@ class NotesIndex extends React.Component {
   }
 
   selectFirstNote() {
-    if (this.props.notes.length > 0) {
-      this.props.selectNote(this.processNotes()[0].id);
+    const processedNotes = this.processNotes();
+
+    if (processedNotes > 0) {
+      debugger
+      this.props.selectNote(processedNotes[0].id);
     } else {
       this.props.selectNote(null);
     }
