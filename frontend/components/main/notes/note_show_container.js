@@ -5,27 +5,13 @@ import { fetchNotebook } from '../../../actions/notebook_actions';
 import { fetchTags } from '../../../actions/tag_actions';
 import { openModal } from '../../../actions/modal_actions';
 import { selectTags } from '../../../reducers/selectors';
-
-const defaultNote = {
-  id: 0,
-  title: '',
-  body: '',
-  user_id: 0,
-  notebook_id: 0
-};
-
-const defaultNotebook = {
-  id: null,
-  name: '',
-  user_id: null
-};
+import { nullNote, nullNotebook } from '../../../util/null_entity_util';
 
 const mapStateToProps = (state) => {
   const selectedNoteId = state.ui.selection.noteId;
-  const note = state.entities.notes[selectedNoteId] || defaultNote;
-  const notebook = state.entities.notebooks[note.notebook_id] || defaultNotebook;
+  const note = state.entities.notes[selectedNoteId] || nullNote;
+  const notebook = state.entities.notebooks[note.notebook_id] || nullNotebook;
   const tags = selectTags(note.id, state.entities);
-  // const loading = state.ui.loading.notesLoading;
 
   return {
     note,

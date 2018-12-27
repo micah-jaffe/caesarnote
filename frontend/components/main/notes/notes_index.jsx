@@ -137,5 +137,3 @@ class NotesIndex extends React.Component {
 };
 
 export default NotesIndex;
-
-
