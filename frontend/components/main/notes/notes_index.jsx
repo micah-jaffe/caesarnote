@@ -8,6 +8,7 @@ class NotesIndex extends React.Component {
     super(props);
 
     this.openPaywall = this.openPaywall.bind(this);
+    this.processNotes = this.processNotes.bind(this);
     this.searchFilter = this.searchFilter.bind(this);
     this.trashFilter = this.trashFilter.bind(this);
   }
