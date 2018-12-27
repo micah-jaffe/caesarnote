@@ -2,12 +2,7 @@ import { connect } from 'react-redux';
 import NotebookForm from './notebook_form';
 import { createNotebook } from '../../../actions/notebook_actions';
 import { closeModal } from '../../../actions/modal_actions';
-
-const nullNotebook = {
-  id: null,
-  name: '',
-  user_id: null
-}
+import { nullNotebook } from '../../../util/null_entity_util';
 
 const mapStateToProps = ({ session }) => ({
   userId: session.id,

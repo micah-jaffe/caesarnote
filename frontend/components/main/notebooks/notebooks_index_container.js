@@ -11,10 +11,10 @@ import {
   closeModal
 } from '../../../actions/modal_actions';
 import { fetchNotes } from '../../../actions/note_actions';
+import { selectAllNotebooks } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
-  notebooks: Object.values(state.entities.notebooks),
-  // loading: state.ui.loading.notebooksLoading
+  notebooks: selectAllNotebooks(state.entities),
   loading: false
 });
 

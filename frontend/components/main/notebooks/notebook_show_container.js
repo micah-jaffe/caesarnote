@@ -6,15 +6,10 @@ import { fetchNotes } from '../../../actions/note_actions';
 import { selectNotes } from '../../../reducers/selectors';
 import { selectNote } from '../../../actions/selection_actions';
 import { openModal } from '../../../actions/modal_actions';
-
-const defaultNotebook = { 
-  id: null,
-  name: null,
-  user_id: null
-};
+import { nullNotebook } from "../../../util/null_entity_util";
 
 const mapStateToProps = (state, ownProps) => {
-  const notebook = state.entities.notebooks[ownProps.match.params.notebookId] || defaultNotebook;
+  const notebook = state.entities.notebooks[ownProps.match.params.notebookId] || nullNotebook;
   const notes = selectNotes(notebook.id, state.entities);
   const selectedNoteId = state.ui.selection.noteId;
 
