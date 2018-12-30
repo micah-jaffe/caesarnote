@@ -22,10 +22,10 @@ class User < ApplicationRecord
     through: :notes,
     source: :note_tags,
     dependent: :destroy
-  has_many :tags,
-    through: :notes,
-    source: :tags,
-    dependent: :destroy
+  has_many :tags, dependent: :destroy
+    # through: :notes,
+    # source: :tags,
+    # dependent: :destroy
 
   attr_reader :password
 

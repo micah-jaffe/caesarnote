@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# julius = User.find_by_username('Julius')
+# julius.destroy! if julius
+
+##### Demo User #####
 julius = User.create!(username: 'Julius', email: 'julius@caesarnote.com', password: 'password')
 
 ##### Notebooks #####
@@ -264,7 +268,7 @@ farnam_street = Note.create!(
 
 ##### Tags #####
 
-blogs = Tag.create!(name: 'Blogs')
+blogs = Tag.create!(name: 'Blogs', user_id: julius.id)
 
 NoteTag.create!(note_id: farnam_street.id, tag_id: blogs.id)
 NoteTag.create!(note_id: friendships.id, tag_id: blogs.id)
@@ -277,7 +281,7 @@ NoteTag.create!(note_id: buffett.id, tag_id: blogs.id)
 NoteTag.create!(note_id: feynman.id, tag_id: blogs.id)
 NoteTag.create!(note_id: second_order.id, tag_id: blogs.id)
 
-mental_models = Tag.create!(name: 'Mental Models')
+mental_models = Tag.create!(name: 'Mental Models', user_id: julius.id)
 
 NoteTag.create!(note_id: farnam_street.id, tag_id: mental_models.id)
 NoteTag.create!(note_id: naval.id, tag_id: mental_models.id)
@@ -289,7 +293,7 @@ NoteTag.create!(note_id: dual_processing.id, tag_id: mental_models.id)
 NoteTag.create!(note_id: bayes.id, tag_id: mental_models.id)
 NoteTag.create!(note_id: fast_and_slow.id, tag_id: mental_models.id)
 
-psychology = Tag.create!(name: 'Psychology')
+psychology = Tag.create!(name: 'Psychology', user_id: julius.id)
 
 NoteTag.create!(note_id: farnam_street.id, tag_id: psychology.id)
 NoteTag.create!(note_id: basecamp.id, tag_id: psychology.id)
@@ -298,7 +302,7 @@ NoteTag.create(note_id: dual_processing.id, tag_id: psychology.id)
 NoteTag.create(note_id: fast_and_slow.id, tag_id: psychology.id)
 NoteTag.create(note_id: adam_grant.id, tag_id: psychology.id)
 
-business = Tag.create!(name: 'Business')
+business = Tag.create!(name: 'Business', user_id: julius.id)
 
 NoteTag.create!(note_id: basecamp.id, tag_id: business.id)
 NoteTag.create!(note_id: naval.id, tag_id: business.id)
@@ -307,23 +311,23 @@ NoteTag.create!(note_id: second_order.id, tag_id: business.id)
 NoteTag.create!(note_id: fast_and_slow.id, tag_id: business.id)
 NoteTag.create!(note_id: adam_grant.id, tag_id: business.id)
 
-writing = Tag.create!(name: 'Writing') 
+writing = Tag.create!(name: 'Writing', user_id: julius.id) 
 
 NoteTag.create!(note_id: paul_graham.id, tag_id: writing.id)
 NoteTag.create!(note_id: ggg.id, tag_id: writing.id)
 NoteTag.create!(note_id: fast_and_slow.id, tag_id: writing.id)
 
-philosophy = Tag.create!(name: 'Philosophy')
+philosophy = Tag.create!(name: 'Philosophy', user_id: julius.id)
 
 NoteTag.create!(note_id: paul_graham.id, tag_id: philosophy.id)
 
-career = Tag.create!(name: 'Career')
+career = Tag.create!(name: 'Career', user_id: julius.id)
 
 NoteTag.create!(note_id: eightyhours.id, tag_id: career.id)
 NoteTag.create!(note_id: buffett.id, tag_id: career.id)
 NoteTag.create!(note_id: adam_grant.id, tag_id: career.id)
 
-math = Tag.create!(name: 'Math')
+math = Tag.create!(name: 'Math', user_id: julius.id)
 
 NoteTag.create!(note_id: intro_to_ml.id, tag_id: math.id)
 NoteTag.create!(note_id: linear_odes.id, tag_id: math.id)
@@ -331,17 +335,17 @@ NoteTag.create!(note_id: bayes.id, tag_id: math.id)
 NoteTag.create!(note_id: wiles.id, tag_id: math.id)
 NoteTag.create!(note_id: chaos.id, tag_id: math.id)
 
-compsci = Tag.create!(name: 'CompSci')
+compsci = Tag.create!(name: 'CompSci', user_id: julius.id)
 
 NoteTag.create!(note_id: eightyhours.id, tag_id: compsci.id)
 NoteTag.create!(note_id: bobby_tables.id, tag_id: compsci.id)
 NoteTag.create!(note_id: intro_to_ml.id, tag_id: compsci.id)
 
-funny_tag = Tag.create!(name: 'Funny')
+funny_tag = Tag.create!(name: 'Funny', user_id: julius.id)
 
 NoteTag.create!(note_id: asinine.id, tag_id: funny_tag.id)
 NoteTag.create!(note_id: bars.id, tag_id: funny_tag.id)
 
-news = Tag.create!(name: 'News')
+news = Tag.create!(name: 'News', user_id: julius.id)
 
 NoteTag.create!(note_id: nyt.id, tag_id: news.id)

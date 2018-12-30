@@ -21,7 +21,7 @@ class Api::TagsController < ApplicationController
       end
 
     else
-      @tag = note.tags.create(tag_params)
+      @tag = note.tags.create(tag_params.merge({ user_id: current_user.id }))
 
       if @tag.id
         render :show
