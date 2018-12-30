@@ -11,11 +11,11 @@ class NotesIndex extends React.Component {
     this.processNotes = this.processNotes.bind(this);
     this.searchFilter = this.searchFilter.bind(this);
     this.trashFilter = this.trashFilter.bind(this);
+    this.selectFirstNote = this.selectFirstNote.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchNotes();
-    this.selectFirstNote();
+    this.props.fetchNotes().then(this.selectFirstNote);
   }
 
   componentDidUpdate(prevProps) {
