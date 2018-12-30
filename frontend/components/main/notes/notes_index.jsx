@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import NotesIndexItem from './notes_index_item';
 import NoteShowContainer from './note_show_container';
 import Loader from '../modal/loader';
@@ -27,8 +27,7 @@ class NotesIndex extends React.Component {
   selectFirstNote() {
     const processedNotes = this.processNotes();
 
-    if (processedNotes > 0) {
-      debugger
+    if (processedNotes.length > 0) {
       this.props.selectNote(processedNotes[0].id);
     } else {
       this.props.selectNote(null);
