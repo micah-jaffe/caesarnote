@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# julius = User.find_by_username('Julius')
-# julius.destroy! if julius
+julius = User.find_by_username('Julius')
+julius.destroy! if julius
 
 ##### Demo User #####
 julius = User.create!(username: 'Julius', email: 'julius@caesarnote.com', password: 'password')
