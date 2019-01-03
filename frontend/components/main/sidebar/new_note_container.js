@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import NewNote from './new_note';
 import { createNote } from '../../../actions/note_actions';
+import { fetchNotebooks } from '../../../actions/notebook_actions'
 import { withRouter } from 'react-router-dom';
 import { selectDefaultNotebook } from '../../../reducers/selectors';
 

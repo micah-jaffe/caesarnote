@@ -7,7 +7,6 @@ class NotebookForm extends React.Component {
       id: this.props.notebook.id,
       name: this.props.notebook.name,
     };
-    debugger
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
