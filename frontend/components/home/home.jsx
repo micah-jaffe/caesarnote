@@ -17,6 +17,7 @@ const Home = () => {
           <ul className="nav-links">
             <li><a href="https://www.linkedin.com/in/micah-jaffe/"><i className="fab fa-linkedin"></i> LinkedIn</a></li>
             <li><a href="https://github.com/micah-jaffe/"><i className="fab fa-github"></i> Github</a></li>
+            <li><a href="https://micah-jaffe.com"><i className="fas fa-home"></i> Portfolio</a></li>
           </ul>
         </div>
 
