@@ -8,7 +8,7 @@ const Home = () => {
       <nav className="main-nav">
         <div className="left-nav-wrapper">
           <div className="logo-with-text align-middle">
-            <a href="/">
+            <a href="/" className="align-middle">
               <img className="logo" src={window.images.logo} />
               <h1>Caesarnote</h1>
             </a>
